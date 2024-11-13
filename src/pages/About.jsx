@@ -1,11 +1,11 @@
+import Aboutme from "../Components/Aboutme"
+
 const About = () => {
     return (
-        <div>
-            <h1>
-                Placeholder
-            </h1>
-        </div>
-    );
-};
+        <main>
+        <Aboutme/>
+        </main>
+      );
+    };
 
 export default About;
