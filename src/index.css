@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html{
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  color: #1A1A1A;
+  width: 100dvw;
+  overflow-x: hidden;
+  height: 100%;
+  background: white;
+  border-color: #3b3b3b;
+  user-select: none;
+}
+
+.screen-max-width {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  position: relative;
+  max-width: 1120px;
+}
+
+.title-max-width {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  position: relative;
+  max-width: 1480px;
+}
+
+.expert-class {
+  @apply w-8 mx-1 opacity-60
+}
+
+.common-padding {
+  @apply sm:py-32 py-20 sm:px-10 px-5
+}
