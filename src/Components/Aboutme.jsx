@@ -17,7 +17,7 @@ const Aboutme = () => {
               </div>
               <div className="max-w-[31%]">
               <img src={PFIMG} alt="PF image" className="rounded-2xl"/>
-              <h2 className="text-xl font-bold mt-3">Waar kan je me 's nachts voor wakker maken?</h2>
+              <h2 className="text-xl font-bold mt-3">Waar kan je me &apos;s nachts voor wakker maken?</h2>
                 <ul className="mt-2">
                   <li>- Broodje carpaccio</li>
                   <li>- Rondje in de Python</li>

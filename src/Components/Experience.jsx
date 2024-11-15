@@ -1,5 +1,4 @@
-import { APPLEMOCKUPIMG, BORAIMG, CSSIMG, FILMREVIEWMOCKUPIMG, GSAPIMG, HTMLIMG, HYOIMG, ITZYIMG, JAVASCRIPTMOCKUPIMG, JOYIMG, JSIMG, ONLINEIDMOCKUPIMG, PFIMG, REACTIMG, RIVLMEDIAMOCKUPIMG, WORDIMG, YOOAHIMG } from "../utils"
-
+/* eslint-disable react/jsx-no-comment-textnodes */
 const Experience = () => {
   return (
     <section id="Experience" className="text-gray">

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react'
 import { APPLEMOCKUPIMG, CSSIMG, FILMREVIEWMOCKUPIMG, GSAPIMG, HTMLIMG, JAVASCRIPTMOCKUPIMG, JSIMG, ONLINEIDMOCKUPIMG, REACTIMG, RIVLMEDIAMOCKUPIMG, WORDIMG } from "../utils"
