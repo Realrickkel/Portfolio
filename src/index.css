@@ -60,6 +60,25 @@ body {
   columns: 300px;
   
 }
+
+.link{
+  color: #FF9A00;
+  font-weight: 500;
+}
+
+#linkUnderline{
+  background-color: #FF9A00;
+  height: 0.16rem;
+}
+
+.i_fade{
+  opacity: 0;
+}
+
+.text_light{
+  color: #FF9A00;
+}
+
 /*
 .gradient-bg{
   width: 100vw;

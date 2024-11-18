@@ -25,7 +25,7 @@ const Projects = () => {
         scrollTrigger: {
           trigger: box,
           start: 'top 80%',
-          toggleActions: "play none playe none",
+          toggleActions: "play none play none",
         },
         ease: 'power2.Out'
       })
