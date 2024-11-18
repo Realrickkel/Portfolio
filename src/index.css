@@ -49,6 +49,8 @@ body {
   max-width: 1480px;
 }
 
+
+
 .experience-img{
   width: 100%;
   margin-bottom: 1rem;
@@ -77,6 +79,10 @@ body {
 
 .text_light{
   color: #FF9A00;
+}
+
+@media only screen and (max-width: 640px) {
+
 }
 
 /*

@@ -80,8 +80,8 @@ const RIVLMediaComponent = () => {
 
     return (
         <section id='RIVLMediaID' className="">
-            <div>
-                <div className="flex justify-between title-max-width m-4 border-t-2 p-2">
+            <div className="">
+                <div className="w-[90vw] flex justify-between title-max-width m-4 border-t-2 p-2 px-8 lg:px-2">
                     <h2 className="text-lg border-solid border-l-neutral-900">//RIVL media</h2>
                     <div className="flex mt-1 items-center">
                       <img src={HTMLIMG} alt="HTML image" className="tech-used !ml-0"/>
@@ -90,14 +90,14 @@ const RIVLMediaComponent = () => {
                     </div>
                 </div>
                     <div className="screen-max-width flex flex-col">
-                        <div className="flex justify-center items-center h-[80vh] mt-10 my-24 bg-slate-100 rounded-2xl px-10">
+                        <div className="flex justify-center items-center lg:h-[80vh] h-max lg:py-10 py-52 xl:mt-10 mt-0 my-24 bg-slate-100 lg:rounded-2xl px-10 lg:px-44 xl:px-10">
                             <img src={RIVLMEDIABANNERIMG} alt="HTML image" className="flex rounded-2xl"/>
                         </div>
                         <div>
                             <h1 className="text-4xl font-bold text-center">Een Website designen!</h1>
                         </div>
-                        <div className="common-padding !px-0 flex flex-row">
-                            <div id="" className="max-w-[60%]">
+                        <div className="common-padding !px-0 flex xl:flex-row flex-col">
+                            <div id="" className="lg:max-w-[50vw] max-w-[80%] m-auto">
                                 <div className="flex flex-col">
                                     <h2 className="text-2xl font-bold text-gray-500">Aanpak van de website van <span className="text-gray-950">RIVL Media:</span> Design, UX/UI en SEO verbeteringen</h2> 
                                     <p>De website van RIVL Media heeft onlangs een uitgebreide herziening ondergaan met als doel een modernere uitstraling, betere gebruikservaring en verbeterde zichtbaarheid online.</p> 
@@ -124,7 +124,7 @@ const RIVLMediaComponent = () => {
                                         <div className="ms-3">
                                             <h3 className="font-semibold">Link</h3>
                                             <ul className="mt-2 relative">
-                                                <li><a href="https://www.rivlmedia.nl" id="link" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>rivlmedia.nl</a></li>
+                                                <li><a href="https://www.rivlmedia.nl" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>rivlmedia.nl</a></li>
                                                 <span id="linkUnderline" className="w-0 absolute"></span>
                                             </ul>
                                         </div>
