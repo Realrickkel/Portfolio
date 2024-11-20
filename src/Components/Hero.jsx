@@ -2,12 +2,15 @@ import { CSSIMG, GSAPIMG, HTMLIMG, JSIMG, REACTIMG } from "../utils"
 
 const Hero = () => {
   return (
-    <section id='Hero' className="flex w-screen items-center overflow-hidden h-screen relative">
+    <section id='Hero' className="flex w-screen items-center justify-center overflow-hidden h-screen relative">
+      <div className="flex bg-red-600 -z-10 w-[70vw] xl:w-[78vw] h-[85vh] absolute items-center justify-center border-solid border-gray-950 border-2 rounded-2xl">
+
+      </div>
         <div className="screen-max-width flex p-10"> 
             <div className="flex flex-col m-auto">
                 <div className="flex flex-col items-center">
                   <p className="text-gray-500">front-end developer</p>
-                  <h1 className="xl:text-8xl lg:text-7xl md:text-6xl text-4xl font-bold">Rick van Laarhoven</h1>
+                  <h1 className="xl:text-8xl lg:text-6xl md:text-5xl text-3xl font-bold">Rick van Laarhoven</h1>
                 </div>
                 <div className="flex mt-4 items-center">
                   <img src={CSSIMG} alt="CSS image" className="expert-class"/>

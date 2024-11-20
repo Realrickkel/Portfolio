@@ -9,8 +9,6 @@ import { ScrollTrigger } from "gsap/all";
 import { animateWithGsap } from "../utils/Animations";
 gsap.registerPlugin(ScrollTrigger)
 
-
-
 const RIVLMediaComponent = () => {
     const[animate, setAnimate] = useState(false)
     const[animateOut, setAnimateOut] = useState(false)
@@ -32,6 +30,15 @@ const RIVLMediaComponent = () => {
             setOpenMod(false)
         }
     },[openMod])
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            //Check of dit ook in andere browsers werkt
+            behavior: "instant",
+          })
+      }, [])
 
     useGSAP(() => {
 
@@ -100,7 +107,7 @@ const RIVLMediaComponent = () => {
 
 
     return (
-        <section id='RIVLMediaID' className="overflow-hidden">
+        <section id='RIVLMediaID' className="">
 
             <div className="">
                 <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
@@ -238,9 +245,9 @@ const RIVLMediaComponent = () => {
                             </div>
                         </div>
                         
-                        <div className="lg:max-w-[70vw] xl:max-w-[78vw] max-w-[95vw] m-auto sm:max-w-[90vw] p-2 sm:p-0">
+                        <div className="lg:max-w-[70vw] xl:max-w-[78vw] max-w-[95vw] m-auto sm:max-w-[90vw] p-1 sm:p-0 h-full">
                             <div id="Design" className="common-padding !px-0 flex flex-row justify-between items-start h-100%">
-                                <div id="" className="max-w-[15%] sticky top-2 ">
+                                <div id="" className="max-w-[15%] sticky top-2">
                                     <div className="relative md:rotate-0 md:translate-y-0 -rotate-90 sm:translate-y-24 translate-y-20">
                                         <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">Design</h2>
                                         <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">Design</h2>

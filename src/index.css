@@ -60,6 +60,7 @@ body {
 .experience-class{
   /*column-count: 3;*/
   columns: 300px;
+  column-gap: 2rem;
   
 }
 
@@ -232,15 +233,16 @@ svg{
 
 .img-exp{
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
 }
 
 .glass-view{
   background: rgba(255, 255, 255, 0.18);
-border-radius: 1rem;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .expert-class {
@@ -257,4 +259,14 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 .common-padding {
   @apply sm:py-20 py-20 sm:px-10 px-5
+}
+
+.experience-div {
+  @apply flex flex-row gap-5 mb-5 max-w-[40vw] justify-between
+}
+
+.experience-tags {
+  background: #FF9A00;
+  border-radius: 9999px;
+  @apply py-1 px-3
 }

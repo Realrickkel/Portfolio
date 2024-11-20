@@ -35,9 +35,12 @@ const Projects = () => {
   
   
   return (
-    <section id="Projects" className="text-gray common-padding">
-      <div>
-        <h2 className="text-lg title-max-width m-4 border-t-2 border-solid border-l-neutral-900">// Projects</h2>
+    <section id="Projects" className="text-gray flex flex-col justify-center items-center common-padding">
+        <div className="w-[70vw] xl:w-[78vw]">
+          <h2 className="flex justify-between title-max-width m-4 border-t-2 p-2 px-4 lg:px-2">// Projects</h2>
+        </div>
+      
+      <div className="max-w-[70vw] xl:max-w-[78vw]">
           <div className="screen-max-width min-h-fit">
           <div className="experience-class px-4 relative" ref = {scrollRef}>
               <div className="experience-img" >
