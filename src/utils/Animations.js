@@ -16,3 +16,23 @@ export const animateWithGsap = (target, animationProps, scrollProps) => {
         }
     })
 }
+
+export const animateHoverWithGsap = (target, animationProps, scrollProps) =>{
+        
+            gsap.to(target, {
+              color: '#FF9A00',
+              duration: 0.2,
+              boxShadow: '10px 10px 20px 10px rgba(0, 0, 0, 0.1)',
+            })
+              
+}
+
+export const animateUnHoverWithGsap = (target, animationProps, scrollProps) =>{
+        
+    gsap.to(target, {
+      color: '#000',
+      duration: 0.2,
+      boxShadow: '0px 0px 0px 0px rgba(0, 0, 0, 0.1)',
+    })
+      
+}

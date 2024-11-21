@@ -1,8 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/*
+
 :root {
+  /*
   --color-bg1: rgb(255, 255, 255);
   --color-bg2: rgb(255, 255, 255);
   --color1: 77, 77, 77;
@@ -12,7 +13,13 @@
   --color5: 5, 5, 5;
   --circle-size: 20%;
   --blending: hard-light;
-}*/
+  */
+  --color-a: #ffffff;
+  --color-b: #848484;
+  --color-c: #ffffff;
+  --color-d: #FF9A00;
+
+}
 
 html{
   scroll-behavior: smooth;
@@ -84,6 +91,16 @@ body {
 
 @media only screen and (max-width: 640px) {
 
+}
+
+.noise {
+  /* ... */
+  width: 100%;
+  height: 100%;
+  background:
+    url('./utils/Noise.svg');
+  filter: contrast(180%) brightness(1500%);
+  mix-blend-mode: screen;
 }
 
 /*
@@ -262,11 +279,24 @@ svg{
 }
 
 .experience-div {
-  @apply flex flex-row gap-5 mb-5 max-w-[40vw] justify-between
+  color: #000;
+  @apply flex md:flex-row flex-col gap-2 md:gap-5 mb-10 max-w-[90vw] md:max-w-[65vw] xl:max-w-[50vw] 2xl:max-w-[40vw] p-5 justify-between border-2 border-solid border-transparent rounded-2xl
 }
+
+.experience-block{
+  @apply w-[100%] md:w-[80%]
+}
+
+/*
+.experience-div:hover {
+  color: #FF9A00;
+  @apply flex flex-row gap-5 mb-10 max-w-[40vw] p-5 justify-between border-2 border-solid rounded-2xl shadow-xl
+}
+*/
 
 .experience-tags {
   background: #FF9A00;
   border-radius: 9999px;
+  font-weight: 500;
   @apply py-1 px-3
 }

@@ -36,11 +36,11 @@ const Projects = () => {
   
   return (
     <section id="Projects" className="text-gray flex flex-col justify-center items-center common-padding">
-        <div className="w-[70vw] xl:w-[78vw]">
+        <div className="w-[90vw] md:w-[76vw]">
           <h2 className="flex justify-between title-max-width m-4 border-t-2 p-2 px-4 lg:px-2">// Projects</h2>
         </div>
       
-      <div className="max-w-[70vw] xl:max-w-[78vw]">
+      <div className="max-w-[90vw] md:max-w-[76vw]">
           <div className="screen-max-width min-h-fit">
           <div className="experience-class px-4 relative" ref = {scrollRef}>
               <div className="experience-img" >
@@ -90,7 +90,7 @@ const Projects = () => {
                 <img src={ONLINEIDMOCKUPIMG} alt="PF image" className="img-exp" loading="eager"/>
                 <div className="flex flex-row justify-between mt-1">
                   <div className="max-w-[70%]">
-                    <h3 className="text-base font-bold text-neutral-700">Onderhoud Online-ID</h3>
+                    <h3 className="text-base font-bold text-neutral-700">Onderhoud Online ID</h3>
                     <h4 className="text-xs">Het onderhouden en uitbreiden van de website</h4>
                     <div className="flex mt-1 items-center">
                       <img src={HTMLIMG} alt="HTML image" className="tech-used !ml-0"/>
