@@ -29,21 +29,21 @@ const Experience = () => {
   })*/
   if(hover === true){
     animateHoverWithGsap('#exp1', {})
-    console.log('true')
+    
   } else {
     animateUnHoverWithGsap('#exp1', {})
   }
 
   if(hover2 === true){
     animateHoverWithGsap('#exp2', {})
-    console.log('true')
+    
   } else {
     animateUnHoverWithGsap('#exp2', {})
   }
 
   if(hover3 === true){
     animateHoverWithGsap('#exp3', {})
-    console.log('true')
+    
   } else {
     animateUnHoverWithGsap('#exp3', {})
   }

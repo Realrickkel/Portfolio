@@ -36,3 +36,19 @@ export const animateUnHoverWithGsap = (target, animationProps, scrollProps) =>{
     })
       
 }
+
+export const animateHoverExperienceWithGsap = (target, animationProps, scrollProps) =>{       
+  gsap.to(target, {
+    color: '#ff9A00',
+    duration: 0.2,
+  })
+    
+}
+
+export const animateUnHoverExperienceWithGsap = (target, animationProps, scrollProps) =>{ 
+  gsap.to(target, {
+    color: '#000',
+    duration: 0.2,
+  })
+    
+}

@@ -275,7 +275,7 @@ svg{
 } 
 
 .common-padding {
-  @apply sm:py-20 py-20 sm:px-10 px-5
+  @apply py-10 md:py-20 sm:px-10 px-5
 }
 
 .experience-div {

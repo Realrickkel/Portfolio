@@ -21,31 +21,31 @@ export default {
             translate: "0, 0",
           },
           "10%": {
-            transform: "translate(-50%, 50%)", 
+            transform: "translate(-40vw, 15vh)", 
           },
 
           "30%": {
             rotate: "90deg",
-            transform: "translate(-100%, 200%)", 
+            transform: "translate(-80vw, 55vh)", 
           },
           "50%": {
-            transform: "translate(-140%, 50%)" 
+            transform: "translate(-60vw, 50vh)" 
           },
           "70%": {
             rotate: "45deg",
-            transform: "translate(-230%, 160%)",
+            transform: "translate(-115vw, 80vh)",
           },
           "90%": {
             rotate: "5deg",
-            transform: "translate(-80%, 0%)",
+            transform: "translate(-40vw, 0vh)",
           },
         },
       },
       animation: {
         //dze misschien een eigen animatie maken
-        blob: "blob 25s infinite ease-in-out",
+        blob: "blob 35s -10s infinite ease-in-out",
         "blob-reverse":
-          "blob 40s infinite ease-in-out reverse"
+          "blob 50s infinite ease-in-out reverse"
       },
     },
   },

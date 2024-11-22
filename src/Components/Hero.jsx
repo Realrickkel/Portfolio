@@ -4,13 +4,13 @@ const Hero = () => {
   return (
     <section id='Hero' className="flex w-screen items-center justify-center overflow-hidden h-screen relative">
       
-      <div className="flex overflow-hidden -z-10 w-[90vw] md:w-[76vw] h-[85vh] absolute items-center justify-center border-solid border-gray-950 border-2 rounded-2xl before:absolute before:left-[140%] before:top-[70%] before:h-[120%] before:w-[80%] before:origin-[100%] before:animate-blob-reverse before:bg-gradient-to-br before:from-[--color-b] before:via-[--color-d] before:to-[--color-b] before:rounded-full before:blur-[50px] before:brightness-125">
+      <div className="flex overflow-hidden -z-10 w-[90vw] md:w-[76vw] h-[85vh] absolute items-center justify-center border-solid border-gray-950 border-2 rounded-2xl before:absolute xl:before:left-[80vw] xl:before:top-[70vh] xl:before:h-[60vh] xl:before:w-[35vw] xl:before:origin-[0%] before:left-[100vw] before:top-[5vh] before:h-[60vh] before:w-[80vw] before:origin-[0%] before:animate-blob-reverse before:bg-gradient-to-br before:from-[--color-b] before:via-[--color-d] before:to-[--color-b] before:rounded-full before:blur-[50px] before:brightness-125">
         <div className="flex w-[90vw] md:w-[76vw] h-[85vh] absolute items-center justify-center">
         <div className="noise"></div>
       </div>
       </div>
 
-      <div className="flex overflow-hidden -z-10 w-[90vw] md:w-[76vw] h-[85vh] absolute items-center justify-center border-solid border-gray-950 border-2 rounded-2xl before:absolute before:left-[80%] before:top-[60%] before:h-[70%] before:w-[30%] before:origin-[180%] before:animate-blob before:bg-gradient-to-br before:from-[--color-b] before:via-[--color-d] before:to-[--color-b] before:rounded-full before:blur-[50px] before:brightness-125">
+      <div className="flex overflow-hidden -z-10 w-[90vw] md:w-[76vw] h-[85vh] absolute items-center justify-center border-solid border-gray-950 border-2 rounded-2xl before:absolute xl:before:left-[80vw] xl:before:top-[45vh] xl:before:h-[50vh] xl:before:w-[21vw] xl:before:origin-[-30vw] lg:before:h-[40vh] lg:before:w-[28vw] before:left-[100vw] before:top-[5vh] before:h-[60vh] before:w-[80vw] before:origin-[-30vw] before:animate-blob before:animate-delay-1000 before:bg-gradient-to-br before:from-[--color-b] before:via-[--color-d] before:to-[--color-b] before:rounded-full before:blur-[50px] before:brightness-125">
         <div className="flex w-[90vw] md:w-[76vw] h-[85vh] absolute items-center justify-center">
         <div className="noise"></div>
       </div>

@@ -31,14 +31,14 @@ const RIVLMediaComponent = () => {
         }
     },[openMod])
 
-    useEffect(() => {
+    /*useEffect(() => {
         window.scrollTo({
             top: 0,
             left: 0,
             //Check of dit ook in andere browsers werkt
             behavior: "instant",
           })
-      }, [])
+      }, [])*/
 
     useGSAP(() => {
 
@@ -141,7 +141,7 @@ const RIVLMediaComponent = () => {
 
                         <div className="common-padding !px-0 flex flex-1 lg:flex-row flex-col lg:max-w-[70vw] xl:max-w-[78vw] m-auto gap-10 overflow-hidden h-full">
                             <div id="" className="lg:max-w-[51vw] xl:max-w-[65%] max-w-[90vw] mx-auto flex flex-col justify-between">
-                                <div className="flex flex-col">
+                                <div className="flex flex-col gap-2">
                                     <h2 className="text-2xl font-bold text-gray-500">Aanpak van de website van <span className="text-gray-950">RIVL Media:</span> Design, UX/UI en SEO verbeteringen</h2> 
                                     <p>De website van RIVL Media heeft onlangs een uitgebreide herziening ondergaan met als doel een modernere uitstraling, betere gebruikservaring en verbeterde zichtbaarheid online.</p>
                                     <p>Met deze verbeteringen is de website van RIVL Media niet alleen een stuk gebruiksvriendelijker geworden, maar ook een krachtig instrument om nieuwe klanten aan te trekken en bestaande relaties te versterken. De nieuwe site weerspiegelt nu de professionele en innovatieve aanpak die RIVL Media kenmerkt.</p>
@@ -256,22 +256,49 @@ const RIVLMediaComponent = () => {
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="my-4">
                                         <img src={KLEURIMG} name="KLEURIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <h2 className="text-xl font-bold mt-2">Kleurenschema en Typografie: </h2>
-                                        <p className="text-sm">Er is een harmonieus kleurenpalet ontwikkeld dat de merkidentiteit van RIVL Media versterkt. De gekozen typografie straalt moderniteit en toegankelijkheid uit, wat het leesgemak vergroot.</p>
+                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
+                                            <div className="flex flex-col flex-1">
+                                                <h2 className="text-xl font-semibold">Kleurenschema en Typografie: </h2>
+                                                <p className="text-sm ">Er is een harmonieus kleurenpalet ontwikkeld dat de merkidentiteit van RIVL Media versterkt.</p>
+                                            </div>
+                                            <div className="flex flex-col flex-1">
+                                                <p className="text-sm mt-1">De gekozen typografie straalt moderniteit en toegankelijkheid uit, wat het leesgemak vergroot.</p>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div className="my-4">
                                         <img src={DYNAMISCHIMG} name="DYNAMISCHIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <h2 className="text-xl font-bold mt-2">Dynamische visuele Elementen:  </h2>
-                                        <p className="text-sm">Het gebruik van hoogwaardige afbeeldingen, subtiele animaties en video’s maakt de website levendig en engaging.</p>
+                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
+                                            <div className="flex flex-col flex-1">
+                                                <h2 className="text-xl font-semibold ">Dynamische Elementen: </h2>
+                                                <p className="text-sm">Het gebruik van hoogwaardige afbeeldingen, subtiele animaties en video’s maakt de website levendig en engaging.</p>
+                                            </div>
+                                            <div className="flex flex-col flex-1">
+                                                <p className="text-sm mt-1">Hierdoor voelen bezoekers zich sneller vertrouwd met de website, wat de kans vergroot dat ze terugkeren of overgaan tot actie.</p>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div className="my-4">
+                                    <div className="mt-4">
                                         <img src={STRAKIMG} name="STRAKIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <h2 className="text-xl font-bold mt-2">Strak en Gecontroleerd: </h2>
-                                        <p className="text-sm">Overbodige elementen zijn verwijderd om een heldere en overzichtelijke lay-out te creëren. Hierdoor komen de belangrijkste boodschappen beter naar voren.</p>
+                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
+                                            <div className="flex flex-col flex-1">
+                                                <h2 className="text-xl font-semibold ">Strak en Gecontroleerd: </h2>
+                                                <p className="text-sm">Overbodige elementen zijn verwijderd om een heldere en overzichtelijke lay-out te creëren. Hierdoor komen de belangrijkste boodschappen beter naar voren.</p>
+                                            </div>
+                                            <div className="flex flex-col flex-1">
+                                                <p className="text-sm mt-1">Deze benadering zorgt ervoor dat bezoekers niet worden afgeleid, wat de navigatie vereenvoudigt en de gebruikerservaring aanzienlijk versterkt.</p>
+                                            </div>
+                                        </div>
                                     </div>
 
+                                </div>
+                            </div>
+
+                            <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16">
+                                <div className="md:text-4xl text-xl font-bold md:leading-[3.5rem] italic">
+                                    <p >"Het design van de website speelt een cruciale rol in hoe bezoekers RIVL Media ervaren. Bij het herontwerpen is er gefocust op het creëren van een visueel aantrekkelijke en professionele uitstraling die naadloos aansluit bij de missie en waarden van het bedrijf."</p>
                                 </div>
                             </div>
 
@@ -285,20 +312,28 @@ const RIVLMediaComponent = () => {
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="my-4" >
                                         <img src={INTERACTIESIMG} name="INTERACTIESIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <h2 className="text-xl font-bold mt-2">Geoptimaliseerde Interacties:  </h2>
-                                        <p className="text-sm">Call-to-actions, zoals knoppen en formulieren, zijn strategisch geplaatst en duidelijk zichtbaar. Dit verhoogt de conversieratio en stimuleert interactie met bezoekers.</p>
+                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
+                                            <div className="flex flex-col flex-1">
+                                                <h2 className="text-xl font-semibold ">Geoptimaliseerde Interacties: </h2>
+                                                <p className="text-sm">Call-to-actions, zoals knoppen en formulieren, zijn strategisch geplaatst en duidelijk zichtbaar. Dit verhoogt de conversieratio en stimuleert interactie met bezoekers.</p>
+                                            </div>
+                                            <div className="flex flex-col flex-1">
+                                                <p className="text-sm mt-1">Door gebruik te maken van visuele hiërarchie en voldoende witruimte, worden bezoekers subtiel maar effectief geleid naar de gewenste acties.</p>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div className="my-4">
                                         <img src={MOBILEIMG} name="MOBILEIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <h2 className="text-xl font-bold mt-2">Mobile-first Design: </h2>
-                                        <p className="text-sm">De website is volledig responsief en biedt een naadloze ervaring op alle apparaten. Of je nu op een desktop, tablet of smartphone kijkt, de website past zich moeiteloos aan.</p>
-                                    </div>
-
-                                    <div className="my-4">
-                                        <img src={RIVLMEDIABANNERIMG} name="RIVLMEDIABANNERIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <h2 className="text-xl font-bold mt-2">Nog een punt </h2>
-                                        <p className="text-sm">ratatata ratata tata tatata</p>
+                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
+                                            <div className="flex flex-col flex-1">
+                                                <h2 className="text-xl font-semibold ">Mobile-first Design: </h2>
+                                                <p className="text-sm">De website is volledig responsief en biedt een naadloze ervaring op alle apparaten. Of je nu op een desktop, tablet of smartphone kijkt, de website past zich moeiteloos aan.</p>
+                                            </div>
+                                            <div className="flex flex-col flex-1">
+                                                <p className="text-sm mt-1">Dit is essentieel in een tijd waarin een groot deel van je bezoekers de website op een telefoon of tablet bekijkt.</p>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -312,20 +347,36 @@ const RIVLMediaComponent = () => {
                                     </div>
                                 </div>
                                 <div  className="flex flex-col md:max-w-[80%] max-w-[90%]">
-                                    <div className="my-4">
+                                    <div className="mt-4">
                                         <img src={RIVLMEDIASEOIMG} name="RIVLMEDIABANNERIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <h2 className="text-xl font-bold mt-2">Technische Optimalisaties:  </h2>
-                                        <p className="text-sm">De laadsnelheid is verhoogd door bestanden te comprimeren, caching toe te passen en onnodige scripts te verwijderen. Ook is de site-structuur verbeterd, wat niet alleen gebruikers maar ook zoekmachines helpt om de inhoud beter te begrijpen.</p>
+                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
+                                            <div className="flex flex-col flex-1">
+                                                    <h2 className="text-xl font-semibold">Technische Optimalisaties: </h2>
+                                                    <p className="text-sm ">De laadsnelheid is verhoogd door bestanden te comprimeren, caching toe te passen en onnodige scripts te verwijderen. Ook is de site-structuur verbeterd, wat niet alleen gebruikers maar ook zoekmachines helpt om de inhoud beter te begrijpen.</p>
+                                                </div>
+                                                <div className="flex flex-col flex-1">
+                                                    <h2 className="text-xl font-semibold">Gerichte Contentstrategie:</h2>
+                                                    <p className="text-sm ">Door uitgebreid zoekwoordonderzoek is bepaald welke termen de doelgroep van RIVL Media gebruikt. Vervolgens zijn deze geïntegreerd in de tekst, meta-titels, en beschrijvingen zonder afbreuk te doen aan de leesbaarheid en kwaliteit van de content.</p>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <div className="my-4">
-                                        <img src={CONTENTSTRATEGIEIMG} name="CONTENTSTRATEGIEIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <h2 className="text-xl font-bold mt-2">Gerichte Contentstrategie  </h2>
-                                        <p className="text-sm">Door uitgebreid zoekwoordonderzoek is bepaald welke termen de doelgroep van RIVL Media gebruikt. Vervolgens zijn deze geïntegreerd in de tekst, meta-titels, en beschrijvingen zonder afbreuk te doen aan de leesbaarheid en kwaliteit van de content.</p>
-                                    </div>
-
                                 </div>
                             </div>
+
+                            <div className="px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16">
+                                <div className="flex-1 flex text-sm">
+                                    <p className="md:text-4xl text-xl font-bold md:leading-[3.5rem] italic">"De website van RIVL Media is een krachtig instrument geworden om nieuwe klanten aan te trekken en bestaande relaties te versterken."</p>
+                                </div>
+                            </div>
+                            <div className="flex md:flex-row flex-col gap-3 mt-2 md:px-28">
+                                <div className="flex flex-col flex-1">
+                                    <p className="text-sm ">Met een slimme combinatie van visueel aantrekkelijk design en strategische content biedt de website een optimale gebruikerservaring die bezoekers inspireert en overtuigt. Door heldere navigatie en boeiende call-to-actions wordt het voor potentiële klanten eenvoudig om de diensten van RIVL Media te ontdekken en contact op te nemen.</p>
+                                </div>
+                                <div className="flex flex-col flex-1">
+                                    <p className="text-sm ">De website fungeert als een overtuigend visitekaartje dat direct vertrouwen wekt. Dankzij duidelijke informatie over diensten, succesverhalen en een professioneel design krijgen bezoekers een helder beeld van de waarde die RIVL Media kan bieden, waardoor ze worden aangemoedigd om de eerste stap te zetten naar een samenwerking.</p>
+                                </div>
+                            </div>
+                            
                         </div>
                         
                     </div>
