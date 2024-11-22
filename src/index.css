@@ -29,7 +29,7 @@ html{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 body {
@@ -263,7 +263,7 @@ svg{
 }
 
 .expert-class {
-  @apply w-8 mx-1 opacity-60
+  @apply md:w-8 w-6 mx-1 opacity-60
 }
 
 .tech-used {

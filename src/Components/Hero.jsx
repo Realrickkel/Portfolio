@@ -1,4 +1,4 @@
-import { CSSIMG, GSAPIMG, HTMLIMG, JSIMG, REACTIMG } from "../utils"
+import { CSSIMG, GSAPIMG, HTMLIMG, JSIMG, REACTIMG, WORDIMG } from "../utils"
 
 const Hero = () => {
   return (
@@ -24,12 +24,13 @@ const Hero = () => {
                   <p className="text-gray-500">front-end developer</p>
                   <h1 className="xl:text-8xl lg:text-6xl md:text-5xl text-3xl font-bold">Rick van Laarhoven</h1>
                 </div>
-                <div className="flex mt-4 items-center">
+                <div className="flex md:mt-4 mt-1 items-center justify-center md:justify-start">
                   <img src={CSSIMG} alt="CSS image" className="expert-class"/>
                   <img src={HTMLIMG} alt="HTML image" className="expert-class"/>
                   <img src={JSIMG} alt="Javascript image" className="expert-class"/>
                   <img src={REACTIMG} alt="React image" className="expert-class"/>
                   <img src={GSAPIMG} alt="GSAP image" className="expert-class"/>
+                  <img src={WORDIMG} alt="GSAP image" className="expert-class"/>
                 </div>
             </div>
         </div>

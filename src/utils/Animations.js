@@ -10,8 +10,8 @@ export const animateWithGsap = (target, animationProps, scrollProps) => {
             trigger: target,
             //dit handelt de verschillende manieren hoe een blokje in beeld komt af, 1: First enter, 2: leave 3: enter back 4: leave back
             toggleActions: 'play none play none',
-            //startpositie van de animatie
-            start: 'top 80%',
+            //startpositie van de animatie, deze nog ff checken
+            start: 'top 60%',
             ...scrollProps,
         }
     })

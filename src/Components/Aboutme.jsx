@@ -12,7 +12,7 @@ const Aboutme = () => {
                 
                 <p>Naast een solide carrièreswitch richting professioneel “sportkijker,” ben ik ook behoorlijk geïnteresseerd in kunstmatige intelligentie. En nee, ik bedoel niet de AI die me ooit een keer met 4-0 versloeg in schaak. Ik werk echt met AI, van die slimme algoritmes die data omtoveren tot inzichten, en daar ben ik eigenlijk net zo goed in als in het vinden van een perfecte livestream van een voetbalwedstrijd.</p> 
                 
-                <p>Dus, of het nu gaat om het ontdekken van het geheim achter een slimme AI, juichen voor een recordronde in de F1, of een marathon gamen zonder afleiding, ik ben van de partij. En ja, ik beschouw Netflix-marathons als een sport, want dat is een endurance-test waar ik ook heus goed in ben. </p>
+                <p>Dus, of het nu gaat om het ontdekken van het geheim achter een slimme AI, juichen voor een recordronde in de F1, of een marathon gamen zonder afleiding, ik ben van de partij. En ja, ik beschouw Netflix-marathons als een sport, want dat is een endurance-test waar ik ook zeker goed in ben. </p>
                 
               </div>
               <div className="max-w-[31%]">
