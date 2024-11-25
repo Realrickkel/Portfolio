@@ -2,10 +2,12 @@ import { GITHUBIMG, INSTAGRAMIMG, LINKEDINIMG } from "../utils";
 
 export const navLists = [
     {name: "Projects",
-     link: '/#Projects'
+     link: "/#Projects",
+     targetid: "Projects"
     }, 
     {name: "Experience",
-     link: '/#Experience'
+     link: "/#Experience",
+     targetid: "Experience"
     },
   ];
 

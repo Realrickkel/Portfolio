@@ -4,18 +4,50 @@ import { useGSAP } from '@gsap/react'
 import { APPLEMOCKUPIMG, CSSIMG, FILMREVIEWMOCKUPIMG, GSAPIMG, HTMLIMG, JAVASCRIPTMOCKUPIMG, JSIMG, ONLINEIDMOCKUPIMG, REACTIMG, RIVLMEDIAMOCKUPIMG, WORDIMG } from "../utils"
 
 import { ScrollTrigger } from "gsap/all";
-import { useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { animateHoverExperienceWithGsap, animateUnHoverExperienceWithGsap } from "../utils/Animations";
+import { Context } from "../context/Context";
 gsap.registerPlugin(ScrollTrigger)
 
 const Projects = () => {
+  const {loaded, setLoaded} = useContext(Context)
   const [hover, setHover] = useState(false)
   const [hover2, setHover2] = useState(false)
   const [hover3, setHover3] = useState(false)
   const [hover4, setHover4] = useState(false)
   const [hover5, setHover5] = useState(false)
   const scrollRef = useRef();
+
+  useEffect(() => {
+    const img = new Image();
+  img.onload = () => {
+    // when it finishes loading, update the component state
+    setLoaded(true);
+    console.log('true')
+  }
+  img.src = RIVLMEDIAMOCKUPIMG; // by setting an src, you trigger browser download
+  }, [])
+
+  useGSAP(() => {
+
+    const fadeInTitlesProjects = gsap.utils.toArray(".fade_in_title_pro");
+
+    fadeInTitlesProjects.forEach((fadeTitleP) => {
+      gsap.fromTo(fadeTitleP, {
+          opacity: 0,
+      },{
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+              trigger: fadeTitleP,
+              start: 'top 90%',
+          },
+          ease: 'power2.Out'
+      })
+  })
+  },[])
+  
   
   useGSAP(() => {
     const boxes = gsap.utils.toArray(scrollRef.current.children);
@@ -84,7 +116,7 @@ const Projects = () => {
   
   return (
     <section id="Projects" className="text-gray flex flex-col justify-center items-center common-padding">
-        <div className="w-[90vw] md:w-[76vw]">
+        <div className="w-[90vw] md:w-[76vw] fade_in_title_pro">
           <h2 className="flex justify-between title-max-width m-4 border-t-2 p-2 px-4 lg:px-2">// Projects</h2>
         </div>
       

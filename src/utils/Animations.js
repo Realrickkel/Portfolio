@@ -41,6 +41,7 @@ export const animateHoverExperienceWithGsap = (target, animationProps, scrollPro
   gsap.to(target, {
     color: '#ff9A00',
     duration: 0.2,
+    
   })
     
 }
@@ -49,6 +50,7 @@ export const animateUnHoverExperienceWithGsap = (target, animationProps, scrollP
   gsap.to(target, {
     color: '#000',
     duration: 0.2,
+    
   })
     
 }

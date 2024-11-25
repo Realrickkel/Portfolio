@@ -11,6 +11,8 @@ import Apple from "./pages/Apple";
 import OnlineID from "./pages/OnlineID";
 import JavscriptGame from "./pages/JavscriptGame";
 import Review from "./pages/Review";
+import Projects from "./Components/Projects";
+import Experience from "./Components/Experience";
 const App = () => {
 
   return (
@@ -19,6 +21,8 @@ const App = () => {
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/#Projects" element={<Projects />} />
+                <Route path="/#Experience" element={<Experience />} />
                 <Route path="/rivlmedia" element={<RIVLMedia />} />
                 <Route path="/apple" element={<Apple />} />
                 <Route path="/onlineid" element={<OnlineID />} />

@@ -336,9 +336,9 @@ const RIVLMediaComponent = () => {
                                 </div>
                             </div>
 
-                            <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 t_slide">
+                            <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 ">
                                 <div className="md:text-4xl text-xl font-bold md:leading-[3rem] leading-[1.6rem] italic">
-                                    <p >"Het design van de website speelt een cruciale rol in hoe bezoekers RIVL Media ervaren. Bij het herontwerpen is er gefocust op het creëren van een visueel aantrekkelijke en professionele uitstraling die naadloos aansluit bij de missie en waarden van het bedrijf."</p>
+                                    <p className="t_slide">"Het design van de website speelt een cruciale rol in hoe bezoekers RIVL Media ervaren. Bij het herontwerpen is er gefocust op het creëren van een visueel aantrekkelijke en professionele uitstraling die naadloos aansluit bij de missie en waarden van het bedrijf."</p>
                                 </div>
                             </div>
 

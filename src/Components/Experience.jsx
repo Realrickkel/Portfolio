@@ -4,29 +4,56 @@ import { useGSAP } from '@gsap/react'
 import { useState } from "react";
 import { animateHoverWithGsap, animateUnHoverWithGsap } from "../utils/Animations";
 
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger)
+
 const Experience = () => {
   const [hover, setHover] = useState(false)
   const [hover2, setHover2] = useState(false)
   const [hover3, setHover3] = useState(false)
+  
 
   useGSAP(() => {
 
-    /*const expBoxes = gsap.utils.toArray(".experience-div");
-    expBoxes.forEach((expBox) => {
-    if(hover === true) {
-      gsap.to(expBox, {
-        color: '#FF9A00',
-        duration: 0.2,
-        boxShadow: '10px 10px 20px 10px rgba(0, 0, 0, 0.1)',
+    const fadeInTitlesExp = gsap.utils.toArray(".fade_in_title_exp");
+    const sliders = gsap.utils.toArray(".t_slideX");
+
+    sliders.forEach((slide) => {
+      gsap.fromTo(slide, {
+          opacity: 0,
+          x: '-200',
+      },{
+          opacity: 1,
+          x: '0',
+          duration: 0.5,
+          scrollTrigger: {
+              trigger: slide,
+              start: 'top 90%',
+          },
+          ease: 'power2.inOut'
       })
-    } else {
-      gsap.to(expBox, {
-        color: '#000',
-        duration: 0.2,
-        boxShadow: '0px 0px 0px 0px rgba(0, 0, 0, 0.1)',
-      })
-    }
-  })*/
+  })
+
+  
+  fadeInTitlesExp.forEach((fadeTitleE) => {
+    gsap.fromTo(fadeTitleE, {
+        opacity: 0,
+    },{
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+            trigger: fadeTitleE,
+            start: 'top 90%',
+        },
+        ease: 'power2.Out'
+    })
+})
+
+
+  },[])
+
+  useGSAP(() => {
+
   if(hover === true){
     animateHoverWithGsap('#exp1', {})
     
@@ -49,12 +76,11 @@ const Experience = () => {
   }
 
   },[hover, hover2, hover3])
-  
-  
+
   return (
 
     <section id="Experience" className="text-gray flex flex-col justify-center items-center common-padding">
-      <div className="w-[90vw] md:w-[76vw]">
+      <div className="w-[90vw] md:w-[76vw] fade_in_title_exp">
           <h2 className="flex justify-between title-max-width m-4 border-t-2 p-2 px-4 lg:px-2">// Experience</h2>
         </div>
 
@@ -62,7 +88,7 @@ const Experience = () => {
         <div className="screen-max-width min-h-fit">
           <div className="relative">
             <div className="md:common-padding flex flex-col">
-              <div id="exp1" className="experience-div" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+              <div id="exp1" className="experience-div t_slideX" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
                 <div className="">
                   <p className="text-sm py-1 text-gray-100">2021-HEDEN</p>
                 </div>
@@ -82,7 +108,7 @@ const Experience = () => {
                   </div>
                 </div>
               </div>
-              <div id="exp2" className="experience-div" onMouseEnter={() => setHover2(true)} onMouseLeave={() => setHover2(false)}>
+              <div id="exp2" className="experience-div t_slideX" onMouseEnter={() => setHover2(true)} onMouseLeave={() => setHover2(false)}>
                 <div className="">
                   <p className="text-sm py-1 text-gray-100">2023 - 2024</p>
                 </div>
@@ -99,7 +125,7 @@ const Experience = () => {
                   </div>
                 </div>
               </div>
-              <div id="exp3" className="experience-div" onMouseEnter={() => setHover3(true)} onMouseLeave={() => setHover3(false)}>
+              <div id="exp3" className="experience-div t_slideX" onMouseEnter={() => setHover3(true)} onMouseLeave={() => setHover3(false)}>
                 <div className="">
                   <p className="text-sm py-1 text-gray-100">2019 - 2021</p>
                 </div>
