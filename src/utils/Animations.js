@@ -54,3 +54,84 @@ export const animateUnHoverExperienceWithGsap = (target, animationProps, scrollP
   })
     
 }
+
+export const animateTextWithGsap = (target, artistTitle, artistTitle2, artistTitle3, artistTitle4, artistTitle5) => {
+
+  var tl = gsap.timeline({repeat: -1});
+
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: artistTitle,
+    },
+    ease: "none",
+  },'+=0.5');
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: " ",
+      rtl: true
+    },
+    ease: "none",
+  },'+=2');
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: artistTitle2,
+    },
+    ease: "none",
+  },'+=0.5');
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: " ",
+      rtl: true
+    },
+    ease: "none",
+  },'+=2');
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: artistTitle3,
+    },
+    ease: "none",
+  },'+=0.5');
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: " ",
+      rtl: true
+    },
+    ease: "none",
+  },'+=2');
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: artistTitle4,
+    },
+    ease: "none",
+  },'+=0.5');
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: " ",
+      rtl: true
+    },
+    ease: "none",
+  },'+=2');
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: artistTitle5,
+    },
+    ease: "none",
+  },'+=0.5');
+  tl.to(target, {
+    duration: 0.5,
+    text: {
+      value: " ",
+      rtl: true
+    },
+    ease: "none",
+  },'+=2');
+}

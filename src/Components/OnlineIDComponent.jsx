@@ -1,4 +1,4 @@
-import { HYOIMG, JOYIMG } from "../utils"
+import { CHAEINIMG, HYOIMG, JOYIMG } from "../utils"
 
 const OnlineIDComponent = () => {
     return (
@@ -16,7 +16,7 @@ const OnlineIDComponent = () => {
                                 <p>ONGELOOFLIJK GOEDE TEKSTEN</p>
                             </div>
                             <div  className="flex flex-col max-w-[60%]">
-                            <img src={HYOIMG} alt="PF image" className="rounded-2xl"/>
+                            <img src={CHAEINIMG} alt="PF image" className="rounded-2xl"/>
                                 <h2 className="text-xl font-bold mt-3">Waar kan je me 's nachts voor wakker maken?</h2>
                                 <ul className="mt-2">
                                     <li>- Broodje carpaccio</li>

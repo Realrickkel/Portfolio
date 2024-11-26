@@ -2,14 +2,16 @@
 import { useGSAP } from "@gsap/react"
 import { CONTENTSTRATEGIEIMG, CROSSIMG, CSSIMG, DYNAMISCHIMG, HTMLIMG, INTERACTIESIMG, JSIMG, KLEURIMG, MOBILEIMG, RIVLMEDIABANNERIMG, RIVLMEDIALOGOIMG, RIVLMEDIASEOIMG, STRAKIMG } from "../utils"
 import gsap from "gsap"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 
 import { ScrollTrigger } from "gsap/all";
 import { animateWithGsap } from "../utils/Animations";
+import { Context } from "../context/Context"
 gsap.registerPlugin(ScrollTrigger)
 
 const RIVLMediaComponent = () => {
+    const {loadedProjects, setLoadedProjects} = useContext(Context)
     const[animate, setAnimate] = useState(false)
     const[animateOut, setAnimateOut] = useState(false)
     let [isOpen, setIsOpen] = useState(false)
@@ -36,8 +38,15 @@ const RIVLMediaComponent = () => {
          if(!window.location.hash) {
             window.location = window.location + '#loaded';
             window.location.reload();
+            } else {
+                const img = new Image();
+                img.onload = () => {
+                // when it finishes loading, update the component state
+                setLoadedProjects(true);
+                }
+                img.src = RIVLMEDIABANNERIMG; // by setting an src, you trigger browser download
             }
-                
+
         window.scrollTo({
             top: 0,
             left: 0,

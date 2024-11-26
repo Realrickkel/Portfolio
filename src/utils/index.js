@@ -24,11 +24,14 @@ import InteractiesMOCKUPimg from "/assets/images/Geoptimaliseerde_interacties.we
 import MobileMOCKUPimg from "/assets/images/Mobile_First.webp";
 import ContentstrategieMOCKUPimg from "/assets/images/Gerichte_contentstrategie.webp";
 import RIVLMediaLogoimg from "/assets/images/Final_logo_RIVLMEDIA_RondWEBP.webp";
+import PFAangepastimg from "/assets/images/Rick_Zwitserland_v3_WEBP.webp";
+
 import Hyoimg from "/assets/images/Hyo.jpg";
 import YooAhimg from "/assets/images/YooAh.webp";
 import Joyimg from "/assets/images/Joy.jpg";
 import Boraimg from "/assets/images/Bora.jpg";
 import Itzyimg from "/assets/images/Itzy.jpg";
+import Chaeinimg from "/assets/images/Chaein.jpeg";
 
 export const CSSIMG = CSSimg;
 export const HTMLIMG = HTMLimg;
@@ -56,8 +59,10 @@ export const INTERACTIESIMG = InteractiesMOCKUPimg;
 export const MOBILEIMG = MobileMOCKUPimg;
 export const CONTENTSTRATEGIEIMG = ContentstrategieMOCKUPimg;
 export const RIVLMEDIALOGOIMG = RIVLMediaLogoimg;
+export const PFAANGEPASTIMG = PFAangepastimg;
 export const HYOIMG = Hyoimg;
 export const YOOAHIMG = YooAhimg;
 export const JOYIMG = Joyimg;
 export const BORAIMG = Boraimg;
 export const ITZYIMG = Itzyimg;
+export const CHAEINIMG = Chaeinimg;

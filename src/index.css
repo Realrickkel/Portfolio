@@ -38,6 +38,13 @@ body {
   max-width: 1120px;
 }
 
+.screen-max-width-about {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  position: relative;
+  max-width: 670px;
+}
+
 .title-max-width {
   margin-inline-start: auto;
   margin-inline-end: auto;
