@@ -1,15 +1,26 @@
 import gsap from "gsap";
 import { PFAANGEPASTIMG, PFIMG } from "../utils"
 import { useGSAP } from "@gsap/react";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TextPlugin } from "gsap/all";
 import { animateTextWithGsap } from "../utils/Animations";
+import { Context } from "../context/Context";
 
 gsap.registerPlugin(TextPlugin)
 
 const Aboutme = () => {
+  const {loadedAbout, setLoadedAbout} = useContext(Context)
   const[animateImg, setAnimateImg] = useState(false)
   const[animateOutImg, setAnimateOutImg] = useState(false)
+
+  useEffect(() => {
+    if(!window.location.hash) {
+      window.location = window.location + '#loaded';
+      window.location.reload();
+    }
+    setLoadedAbout(true);
+  }, [])
+  
 
   useGSAP(() => {
     if(mediaQuery.matches) {

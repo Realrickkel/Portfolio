@@ -24,7 +24,6 @@ const Projects = () => {
   img.onload = () => {
     // when it finishes loading, update the component state
     setLoaded(true);
-    console.log('true')
   }
   img.src = RIVLMEDIAMOCKUPIMG; // by setting an src, you trigger browser download
   }, [])
