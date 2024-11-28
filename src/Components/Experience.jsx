@@ -40,9 +40,11 @@ const Experience = () => {
           opacity: 1,
           x: '0',
           duration: 0.5,
+          delay:0.1,
           scrollTrigger: {
               trigger: slide,
-              start: 'top 90%',
+              start: 'top 110%',
+              toggleActions: "play none none reset",
           },
           ease: 'power2.inOut'
       })

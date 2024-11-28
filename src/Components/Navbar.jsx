@@ -142,7 +142,7 @@ const Navbar = () => {
                     </div>
                     <div id="menuLinks" className="flex mt-14 lg:mt-0 justify-center w-screen lg:w-fit h-max px-4 lg:px-0 closed">
                         <div className="flex glass-view-nav px-3 flex-col w-full h-max">
-                            <Link id="HomeNav" className='px-3 my-3 lg:my-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' to="/" activestyle={{ color:'red' }}>
+                            <Link id="HomeNav" className='px-3 my-3 lg:my-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' onClick={() => {window.scrollTo(0, 0)}} to="/">
                                 Home
                             </Link>
 
@@ -155,7 +155,7 @@ const Navbar = () => {
                             ))}
                             </div>
 
-                            <Link id="AboutNav" className='px-3 mb-3 lg:mb-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' to="/about" activestyle={{ color:'red' }}>
+                            <Link id="AboutNav" className='px-3 mb-3 lg:mb-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' to="/about">
                                 About
                             </Link>
                         </div>
