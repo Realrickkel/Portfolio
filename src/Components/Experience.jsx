@@ -1,16 +1,30 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react'
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { animateHoverWithGsap, animateUnHoverWithGsap } from "../utils/Animations";
 
 import { ScrollTrigger } from "gsap/all";
+import { Context } from "../context/Context";
 gsap.registerPlugin(ScrollTrigger)
 
 const Experience = () => {
+  const {classChangeExperience,setClassChangeExperience} = useContext(Context)
   const [hover, setHover] = useState(false)
   const [hover2, setHover2] = useState(false)
   const [hover3, setHover3] = useState(false)
+
+  const attrObserver = new MutationObserver(() => {
+      var myElement = document.getElementById("Experience");
+      if (myElement.classList.contains("active")) {
+        setClassChangeExperience(true)
+      }else{
+          setClassChangeExperience(false)
+        }
+  });
+  
+  const ELS_test = document.querySelectorAll("#Experience");
+  ELS_test.forEach(el => attrObserver.observe(el, {attributes: true}));
   
 
   useGSAP(() => {
@@ -47,6 +61,15 @@ const Experience = () => {
         },
         ease: 'power2.Out'
     })
+})
+
+gsap.to('#Experience',{
+  scrollTrigger: {
+    trigger: '#Experience',
+    toggleClass: 'active',
+    start: 'top 40%',
+    end: 'bottom 50%'
+  }
 })
 
 

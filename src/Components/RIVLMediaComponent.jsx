@@ -172,7 +172,8 @@ const RIVLMediaComponent = () => {
             </div>
 
             <div className="">
-                <div className="w-[90vw] flex justify-between title-max-width m-4 border-t-2 p-2 px-4 lg:px-2">
+
+                <div className="w-[90vw] flex justify-between title-max-width mt-[3.75rem] lg:mt-4 m-0 border-t-2 p-2 px-4 lg:px-2">
                     <h2 className="text-lg border-solid border-l-neutral-900">//RIVL media</h2>
                     <div className="flex mt-1 items-center">
                       <img src={HTMLIMG} alt="HTML image" className="tech-used !ml-0"/>

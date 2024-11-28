@@ -12,12 +12,25 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Projects = () => {
   const {loaded, setLoaded} = useContext(Context)
+  const {classChangeProject,setClassChangeProject} = useContext(Context)
   const [hover, setHover] = useState(false)
   const [hover2, setHover2] = useState(false)
   const [hover3, setHover3] = useState(false)
   const [hover4, setHover4] = useState(false)
   const [hover5, setHover5] = useState(false)
   const scrollRef = useRef();
+
+  const attrObserver = new MutationObserver(() => {
+      var myElement = document.getElementById("Projects");
+      if (myElement.classList.contains("active")) {
+        setClassChangeProject(true)
+      }else{
+          setClassChangeProject(false)
+        }
+  });
+  
+  const ELS_test = document.querySelectorAll("#Projects");
+  ELS_test.forEach(el => attrObserver.observe(el, {attributes: true}));
 
   useEffect(() => {
     const img = new Image();
@@ -45,6 +58,16 @@ const Projects = () => {
           ease: 'power2.Out'
       })
   })
+  
+  gsap.to('#Projects',{
+    scrollTrigger: {
+      trigger: '#Projects',
+      toggleClass: 'active',
+      start: 'top 40%',
+      end: 'bottom 50%'
+    }
+  })
+
   },[])
   
   
@@ -58,10 +81,11 @@ const Projects = () => {
         opacity: 1,
         y: 0,
         duration: 1.5,
+        delay:0.1,
         scrollTrigger: {
           trigger: box,
-          start: 'top 80%',
-          toggleActions: "play none play none",
+          start: 'top 110%',
+          toggleActions: "play none none reset",
         },
         ease: 'power2.Out'
       })
@@ -110,8 +134,6 @@ const Projects = () => {
       animateUnHoverExperienceWithGsap('#experience-img5', {})
     }
   },[hover5])
-  
-  
   
   return (
     <section id="Projects" className="text-gray flex flex-col justify-center items-center common-padding">

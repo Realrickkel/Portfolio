@@ -3,11 +3,26 @@ import { CSSIMG, GSAPIMG, HTMLIMG, JSIMG, REACTIMG, WORDIMG } from "../utils"
 
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 gsap.registerPlugin(ScrollTrigger)
 
 
 
 const Hero = () => {
+  const {classChangeHero,setClassChangeHero} = useContext(Context)
+
+  const attrObserver = new MutationObserver(() => {
+      var myElement = document.getElementById("Hero");
+      if (myElement.classList.contains("active")) {
+        setClassChangeHero(true)
+      }else{
+          setClassChangeHero(false)
+        }
+  });
+  
+  const ELS_test = document.querySelectorAll("#Hero");
+  ELS_test.forEach(el => attrObserver.observe(el, {attributes: true}));
 
   useGSAP(() => {
 
@@ -22,6 +37,7 @@ const Hero = () => {
       },{
           opacity: 1,
           duration: 3,
+          delay: 0.1,
           scrollTrigger: {
               trigger: fade,
               start: 'top 90%',
@@ -80,8 +96,17 @@ const Hero = () => {
         ease: 'power2.inOut'
     })
   })
-  
+
+  gsap.to('#Hero',{
+    scrollTrigger: {
+      trigger: '#Hero',
+      toggleClass: 'active',
+      start: 'top 40%',
+      end: 'bottom 50%'
+    }
   })
+  
+  },[])
 
   return (
     <section id='Hero' className="flex w-screen items-center justify-center overflow-hidden h-screen relative">

@@ -7,6 +7,9 @@ const ContextProvider = (props) =>{
     
     const [loaded, setLoaded] = useState(false);
     const [loadedProjects, setLoadedProjects] = useState(false);
+    const [classChangeProject, setClassChangeProject] = useState(false);
+    const [classChangeExperience, setClassChangeExperience] = useState(false);
+    const [classChangeHero, setClassChangeHero] = useState(false);
     const [loadedAbout, setLoadedAbout] = useState(false);
     const [scroll, setScroll] = useState(false);
     
@@ -19,7 +22,13 @@ const ContextProvider = (props) =>{
         loadedAbout,
         setLoadedAbout,
         scroll,
-        setScroll
+        setScroll,
+        classChangeProject,
+        setClassChangeProject,
+        classChangeExperience,
+        setClassChangeExperience,
+        classChangeHero,
+        setClassChangeHero
     }
     
     return(

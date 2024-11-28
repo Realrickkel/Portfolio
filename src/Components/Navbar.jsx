@@ -1,12 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { navLists } from "../Constants";
 import { Nav, NavLink, NavMenu } from "./NavBarElements";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../context/Context";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Navbar = () => {
     const {loadedProjects, setLoadedProjects} = useContext(Context)
     const {loadedAbout, setLoadedAbout} = useContext(Context)
+    const {classChangeProject,setClassChangeProject} = useContext(Context)
+    const {classChangeExperience,setClassChangeExperience} = useContext(Context)
+    const {classChangeHero,setClassChangeHero} = useContext(Context)
     const [menuOpen, setMenuOpen] = useState(false)
     const {scroll, setScroll} = useContext(Context)
     const [listen, setListen] = useState (false)
@@ -47,16 +52,39 @@ const Navbar = () => {
     },[windowWidth])
 
     useEffect(() => {
-        if(loadedProjects == true){
-            var element = document.getElementById('ProjectsNav')
+        var element = document.getElementById('ProjectsNav')
+        if(loadedProjects == true || classChangeProject == true){
             element.classList.add("active");
+        }else{
+            element.classList.remove("active");
         }
-    },[loadedProjects])
+    },[loadedProjects, classChangeProject])
 
     useEffect(() => {
-        if(loadedAbout == true){
-            var element = document.getElementById('AboutNav')
+        var element = document.getElementById('HomeNav')
+        if(classChangeHero == true){
             element.classList.add("active");
+        }else{
+            element.classList.remove("active");
+        }
+    },[classChangeHero])
+
+    useEffect(() => {
+        var element = document.getElementById('ExperienceNav')
+        if(classChangeExperience == true){
+            element.classList.add("active");
+        }else{
+            element.classList.remove("active");
+        }
+    },[classChangeExperience])
+
+    useEffect(() => {
+        var element = document.getElementById('AboutNav')
+        if(loadedAbout == true){
+            element.classList.add("active");
+        }
+        else{
+            element.classList.remove("active");
         }
     },[loadedAbout])
 
@@ -98,10 +126,11 @@ const Navbar = () => {
     var mediaQueryNav = window.matchMedia("(min-width: 1024px)");
     
 
+
     const navigate = useNavigate(); // From react-router v6
     return (
         <>
-            <Nav className="fixed w-screen lg:w-fit lg:h-screen z-10 flex ">
+            <Nav className="fixed top-0 w-screen lg:w-fit lg:h-screen z-10 flex ">
                 <NavMenu className="mt-auto mb-auto navigationId">
                     <div onClick={() => setMenuOpen(!menuOpen)} className="absolute top-4 right-4 flex lg:hidden flex-row justify-center items-center py-1 px-2 glass-view-nav">
                         <div className="flex flex-row">
@@ -113,9 +142,9 @@ const Navbar = () => {
                     </div>
                     <div id="menuLinks" className="flex mt-14 lg:mt-0 justify-center w-screen lg:w-fit h-max px-4 lg:px-0 closed">
                         <div className="flex glass-view-nav px-3 flex-col w-full h-max">
-                            <NavLink id="HomeNav" className='px-3 my-3 lg:my-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' to="/" activestyle={{ color:'red' }}>
+                            <Link id="HomeNav" className='px-3 my-3 lg:my-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' to="/" activestyle={{ color:'red' }}>
                                 Home
-                            </NavLink>
+                            </Link>
 
                             <div className="">
                             {navLists.map((nav) => (
@@ -126,9 +155,9 @@ const Navbar = () => {
                             ))}
                             </div>
 
-                            <NavLink id="AboutNav" className='px-3 mb-3 lg:mb-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' to="/about" activestyle={{ color:'red' }}>
+                            <Link id="AboutNav" className='px-3 mb-3 lg:mb-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' to="/about" activestyle={{ color:'red' }}>
                                 About
-                            </NavLink>
+                            </Link>
                         </div>
                     </div>
                 </NavMenu>
