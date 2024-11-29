@@ -9,6 +9,7 @@ import APPLEMOCKUPimg from "/assets/images/Apple_MockupWEBP.webp";
 import OnlineIDMOCKUPimg from "/assets/images/OnlineID_Mockupv2WEBP.webp";
 import JavascriptMOCKUPimg from "/assets/images/Javascript_Gamev3WEBP.webp";
 import FILMREVIEWMOCKUPimg from "/assets/images/FilmReview_MockupWEBP.webp";
+import FILMREVIEWStandimg from "/assets/images/FilmReview_standaard_webp.webp";
 import PFimg from "/assets/images/Rick_Zwitserland.png";
 import RIVLMediaBanner from "/assets/images/HomeScreen_RIVL_Media_v2.png";
 import RIVLMediaSEO from "/assets/images/RIVLMedia_SEO_Score_Crop.png";
@@ -24,8 +25,27 @@ import InteractiesMOCKUPimg from "/assets/images/Geoptimaliseerde_interacties.we
 import MobileMOCKUPimg from "/assets/images/Mobile_First.webp";
 import ContentstrategieMOCKUPimg from "/assets/images/Gerichte_contentstrategie.webp";
 import RIVLMediaLogoimg from "/assets/images/Final_logo_RIVLMEDIA_RondWEBP.webp";
-import PFAangepastimg from "/assets/images/Rick_Zwitserland_v3_WEBP.webp";
 
+import FilmReviewDatabaseimg from "/assets/images/FilmReviewDatabaseWEBP.webp";
+import FilmReviewLOGOimg from "/assets/images/FILMREVIEWRONDWEBP.webp";
+import FilmReviewRecensieimg from "/assets/images/FilmReviewDeRecensieWEBP.webp";
+import FilmReviewKoptitelimg from "/assets/images/FilmReviewDynamischeKoptitelWEBP.webp";
+import FilmReviewZoekfunctieimg from "/assets/images/FilmReviewDynamischeZoekfunctieWEBP.webp";
+import FilmReviewLaadschermimg from "/assets/images/FilmReviewLaadschermWEBP.webp";
+import FilmReviewResultaatimg from "/assets/images/FilmReviewResultaatWEBP.webp";
+
+import NinjaGameV from "/assets/videos/NinjaGame_GameplayWEBM.webm";
+import NinjaGameStandaardimg from "/assets/images/NinjaGameStandaardWEBP.webp";
+import GameRoundimg from "/assets/images/GameKarakterWEBPRound.webp";
+import GameEnemyimg from "/assets/images/GameEnemyWEBP.webp";
+import GameKarakterimg from "/assets/images/GameKarakterWEBP.webp";
+import GameNPCimg from "/assets/images/GameNPCWEBP.webp";
+import GameWereldimg from "/assets/images/GameWereldWEBP.webp";
+import GameWinimg from "/assets/images/GameWinWEBP.webp";
+
+import ONLINEStandaardimg from "/assets/images/OnlineIDWEBP.webp";
+
+import PFAangepastimg from "/assets/images/Rick_Zwitserland_v3_WEBP.webp";
 import Hyoimg from "/assets/images/Hyo.jpg";
 import YooAhimg from "/assets/images/YooAh.webp";
 import Joyimg from "/assets/images/Joy.jpg";
@@ -43,6 +63,7 @@ export const RIVLMEDIAMOCKUPIMG = RIVLMEDIAMOCKUPimg;
 export const APPLEMOCKUPIMG = APPLEMOCKUPimg;
 export const JAVASCRIPTMOCKUPIMG = JavascriptMOCKUPimg;
 export const FILMREVIEWMOCKUPIMG = FILMREVIEWMOCKUPimg;
+export const FILMREVIEWSTANDAARDIMG = FILMREVIEWStandimg;
 export const ONLINEIDMOCKUPIMG = OnlineIDMOCKUPimg;
 export const PFIMG = PFimg;
 export const RIVLMEDIABANNERIMG = RIVLMediaBanner;
@@ -58,6 +79,26 @@ export const STRAKIMG = StrakMOCKUPimg;
 export const INTERACTIESIMG = InteractiesMOCKUPimg;
 export const MOBILEIMG = MobileMOCKUPimg;
 export const CONTENTSTRATEGIEIMG = ContentstrategieMOCKUPimg;
+
+export const FILMREVIEWDATABASEIMG = FilmReviewDatabaseimg;
+export const FILMREVIEWLOGOIMG = FilmReviewLOGOimg;
+export const FILMREVIEWRECENSIEIMG = FilmReviewRecensieimg;
+export const FILMREVIEWKOPTITELIMG = FilmReviewKoptitelimg;
+export const FILMREVIEWZOEKFUNCTIEIMG = FilmReviewZoekfunctieimg;
+export const FILMREVIEWLAADSCHERMIMG = FilmReviewLaadschermimg;
+export const FILMREVIEWRESULTAATIMG = FilmReviewResultaatimg;
+
+export const NINJAGAMESTANDAARDIMG = NinjaGameStandaardimg;
+export const GAMEROUNDIMG = GameRoundimg;
+export const NINJAGAMEVID = NinjaGameV;
+export const GAMEENEMYIMG = GameEnemyimg;
+export const GAMEKARAKTERIMG = GameKarakterimg;
+export const GAMENPCIMG = GameNPCimg;
+export const GAMEWERELDIMG = GameWereldimg;
+export const GAMEWINIMG = GameWinimg;
+
+export const ONLINESTANDAARDIMG = ONLINEStandaardimg;
+
 export const RIVLMEDIALOGOIMG = RIVLMediaLogoimg;
 export const PFAANGEPASTIMG = PFAangepastimg;
 export const HYOIMG = Hyoimg;

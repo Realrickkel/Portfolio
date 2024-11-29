@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { useGSAP } from "@gsap/react"
-import { CONTENTSTRATEGIEIMG, CROSSIMG, CSSIMG, DYNAMISCHIMG, HTMLIMG, INTERACTIESIMG, JSIMG, KLEURIMG, MOBILEIMG, RIVLMEDIABANNERIMG, RIVLMEDIALOGOIMG, RIVLMEDIASEOIMG, STRAKIMG } from "../utils"
+import { CONTENTSTRATEGIEIMG, CROSSIMG, CSSIMG, DYNAMISCHIMG, HTMLIMG, INTERACTIESIMG, JSIMG, KLEURIMG, MOBILEIMG, ONLINESTANDAARDIMG, RIVLMEDIABANNERIMG, RIVLMEDIALOGOIMG, RIVLMEDIASEOIMG, STRAKIMG, WORDIMG } from "../utils"
 import gsap from "gsap"
 import { useContext, useEffect, useState } from "react"
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
@@ -44,7 +44,7 @@ const OnlineIDComponent = () => {
                 // when it finishes loading, update the component state
                 setLoadedProjects(true);
                 }
-                img.src = RIVLMEDIABANNERIMG; // by setting an src, you trigger browser download
+                img.src = ONLINESTANDAARDIMG; // by setting an src, you trigger browser download
             }
 
         window.scrollTo({
@@ -156,7 +156,7 @@ const OnlineIDComponent = () => {
 
 
     return (
-        <section id='RIVLMediaID' className="">
+        <section id='OnlineIDID' className="">
 
             <div className="">
                 <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
@@ -173,26 +173,26 @@ const OnlineIDComponent = () => {
 
             <div className="">
 
-                <div className="w-[90vw] flex justify-between title-max-width mt-[3.75rem] lg:mt-4 m-0 border-t-2 p-2 px-4 lg:px-2">
-                    <h2 className="text-lg border-solid border-l-neutral-900">//RIVL media</h2>
+                <div className="w-[90vw] items-center flex justify-between title-max-width mt-[3.75rem] lg:mt-4 m-0 border-t-2 p-2 pb-[0.7rem] px-2 lg:px-2">
+                    <h2 className="text-lg border-solid border-l-neutral-900">//Online ID</h2>
                     <div className="flex mt-1 items-center">
                       <img src={HTMLIMG} alt="HTML image" className="tech-used !ml-0"/>
                       <img src={CSSIMG} alt="CSS image" className="tech-used"/>
-                      <img src={JSIMG} alt="Javascript image" className="tech-used"/>
+                      <img src={WORDIMG} alt="Wordpress image" className="tech-used"/>
                     </div>
                 </div>
                     <div className="screen-max-width flex flex-col">
                         <div className="flex lg:max-w-[70vw] xl:max-w-[78vw] m-auto justify-center items-center lg:h-[80vh] h-max lg:py-10 py-52 xl:mt-10 mt-0 my-24 bg-slate-100 lg:rounded-2xl px-10 lg:px-24 xl:px-12">
-                            <img src={RIVLMEDIABANNERIMG} name="RIVLMEDIABANNERIMG" onClick={searchStart} alt="HTML image" className="flex rounded-2xl cursor-pointer"/>
+                            <img src={ONLINESTANDAARDIMG} name="ONLINESTANDAARDIMG" onClick={searchStart} alt="HTML image" className="flex rounded-2xl cursor-pointer"/>
                         </div>
                         <div>
-                            <h1 className="text-4xl font-bold text-center t_slide">Een Website designen!</h1>
+                            <h1 className="text-4xl font-bold text-center t_slide">Website onderhouden</h1>
                         </div>
 
                         <div className="common-padding !px-0 flex flex-1 lg:flex-row flex-col lg:max-w-[70vw] xl:max-w-[78vw] m-auto gap-10 overflow-hidden h-full t_slide_up">
                             <div id="" className="lg:max-w-[51vw] xl:max-w-[65%] max-w-[90vw] mx-auto flex flex-col justify-between">
                                 <div className="flex flex-col gap-2">
-                                    <h2 className="text-2xl font-bold text-gray-500">Aanpak van de website van <span className="text-gray-950">RIVL Media:</span> Design, UX/UI en SEO verbeteringen</h2> 
+                                    <h2 className="text-2xl font-bold text-gray-500">Website van <span className="text-gray-950">Online ID</span> onderhouden</h2> 
                                     <p>De website van RIVL Media heeft onlangs een uitgebreide herziening ondergaan met als doel een modernere uitstraling, betere gebruikservaring en verbeterde zichtbaarheid online.</p>
                                     <p>Met deze verbeteringen is de website van RIVL Media niet alleen een stuk gebruiksvriendelijker geworden, maar ook een krachtig instrument om nieuwe klanten aan te trekken en bestaande relaties te versterken. De nieuwe site weerspiegelt nu de professionele en innovatieve aanpak die RIVL Media kenmerkt.</p>
                                 </div>
@@ -200,7 +200,7 @@ const OnlineIDComponent = () => {
                                     <div className="flex flex-row lg:justify-between justify-start flex-wrap">
                                         <div className="lg:flex hidden flex-row flex-wrap md:justify-normal justify-center mt-5 gap-8">
                                             <div className="me-3">
-                                                <h3 className="font-semibold">Verbeterpunten</h3>
+                                                <h3 className="font-semibold">Focuspunten</h3>
                                                 <ul className="mt-2">
                                                     <li>Design,</li>
                                                     <li>UX/UI,</li>
@@ -229,7 +229,7 @@ const OnlineIDComponent = () => {
                                                     <ul className="mt-2 flex flex-row">
                                                         <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
-                                                        <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
+                                                        <li><img src={WORDIMG} alt="Wordpress image" className="tech-used"/></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -240,7 +240,7 @@ const OnlineIDComponent = () => {
                                                 <ul className="mt-2 flex flex-row mx-auto justify-center">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
-                                                    <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
+                                                    <li><img src={WORDIMG} alt="Wordpress image" className="tech-used"/></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -249,7 +249,7 @@ const OnlineIDComponent = () => {
                                     <div className="lg:hidden justify-center">
                                         <div className="grid grid-cols-2 mt-5 gap-8">
                                             <div className="me-3">
-                                                <h3 className="font-semibold">Verbeterpunten</h3>
+                                                <h3 className="font-semibold">Focuspunten</h3>
                                                 <ul className="mt-2">
                                                     <li>Design,</li>
                                                     <li>UX/UI,</li>
@@ -266,18 +266,18 @@ const OnlineIDComponent = () => {
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Link</h3>
-                                                <ul className="mt-2 relative">
-                                                    <li><a href="https://www.rivlmedia.nl" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>rivlmedia.nl</a></li>
+                                                <ul className="mt-2 relative w-fit">
+                                                    <li><a href="https://online-id.nl/" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>online-id.nl</a></li>
                                                     <span id="linkUnderline" className="w-0 absolute"></span>
                                                 </ul>
                                             </div>
 
                                             <div className="lg:hidden flex flex-col">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-row">
+                                                <ul className="mt-2 flex flex-row w-fit">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
-                                                    <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
+                                                    <li><img src={WORDIMG} alt="Wordpress image" className="tech-used"/></li>
                                                 </ul>
                                             </div>
                                             

@@ -173,7 +173,7 @@ const RIVLMediaComponent = () => {
 
             <div className="">
 
-                <div className="w-[90vw] flex justify-between title-max-width mt-[3.75rem] lg:mt-4 m-0 border-t-2 p-2 px-4 lg:px-2">
+                <div className="w-[90vw] items-center flex justify-between title-max-width mt-[3.75rem] lg:mt-4 m-0 border-t-2 p-2 pb-[0.7rem] px-2 lg:px-2">
                     <h2 className="text-lg border-solid border-l-neutral-900">//RIVL media</h2>
                     <div className="flex mt-1 items-center">
                       <img src={HTMLIMG} alt="HTML image" className="tech-used !ml-0"/>
@@ -266,7 +266,7 @@ const RIVLMediaComponent = () => {
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Link</h3>
-                                                <ul className="mt-2 relative">
+                                                <ul className="mt-2 relative w-fit">
                                                     <li><a href="https://www.rivlmedia.nl" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>rivlmedia.nl</a></li>
                                                     <span id="linkUnderline" className="w-0 absolute"></span>
                                                 </ul>
