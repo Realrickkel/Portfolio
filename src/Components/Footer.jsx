@@ -2,8 +2,6 @@ import { footerLinks } from '../Constants'
 
 const Footer = () => {
 
-    //Het enige spannende hier is de self-closing div, die maakt alleen een lijn als afscheiding
-    //Daarnaast mappen we de footerLinks uit constants helemaal onderaan, het footerLinks.length dingetje betekent dat als we niet de laatste item uit die lijst hebben we een | erachter plaatsen om een divider te creeeren tussen alle onderdelen
   return (
     <footer className='py-5 sm:px-10 px-5'>
         <div className='screen-max-width'>

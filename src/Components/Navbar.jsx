@@ -86,9 +86,6 @@ const Navbar = () => {
 
     useEffect(() => {
         var navEl = document.getElementById('menuLinks')
-        /*if(mediaQueryNav.matches){
-            navEl.classList.remove("closed");
-        }*/
         if(menuOpen === true){
             navEl.classList.remove("closed")
             setListen(true)
@@ -120,7 +117,7 @@ const Navbar = () => {
     
 
 
-    const navigate = useNavigate(); // From react-router v6
+    const navigate = useNavigate();
     return (
         <>
             <Nav className="fixed top-0 w-screen lg:w-fit lg:h-screen z-10 flex ">

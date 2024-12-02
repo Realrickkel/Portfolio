@@ -13,8 +13,6 @@ const Home = () => {
   const {loadedAbout, setLoadedAbout} = useContext(Context)
   const [hashTrue, setHashTrue] = useState(false)
   const [scroll, setScroll] = useState(false)
-  //const [el, setEL] = useState()
-  var el = useRef()
   var ql = localStorage.getItem("someVarKey");
 
   const { state } = useLocation();
@@ -29,7 +27,6 @@ const Home = () => {
     if(!window.location.hash) {
       const bl = document.getElementById(targetId);
       setHashTrue(false)
-      //setEL(bl)
       if(bl){
         cl = bl.id
         localStorage.setItem("someVarKey", cl);
@@ -42,12 +39,11 @@ const Home = () => {
     
   },[])
 
-  // when the page loads the el Const with the information which button is clicked gets loaded and scrolled towards otherwise do nothing. This is used this way because of we just scroll towards the section without loading the page first the images will load to slow and we won't go to the section we want to see fully
+  // when the page loads the ql Const with the information which button is clicked gets loaded and scrolled towards otherwise do nothing. This is used this way because of we just scroll towards the section without loading the page first the images will load to slow and we won't go to the section we want to see fully
   useEffect(() => {
     if(hashTrue == true) {
       if (ql) {
         var el = document.getElementById(ql)
-        //var el = document.getElementById('Projects')
         if(loaded == true){
           //om een of andere reden doet scrollintoview het alleen als je een delay toevoegt, vraag me niet waarom https://stackoverflow.com/questions/71181018/scrollintoview-doesnt-scroll-anywhere
           setTimeout(function () {

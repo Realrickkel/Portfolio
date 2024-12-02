@@ -54,7 +54,6 @@ const AppleComponent = () => {
         window.scrollTo({
             top: 0,
             left: 0,
-            //Check of dit ook in andere browsers werkt
             behavior: "instant",
           })
       }, [])
@@ -67,7 +66,6 @@ const AppleComponent = () => {
     const slidersUp = gsap.utils.toArray(".t_slide_up");
     const images = gsap.utils.toArray(".i_fade");
     images.forEach((img) => {
-        // deze is wel vervelend misschien toch ook een y verandering aanbrengen zodat niet al de foto inlaadt terwijl de tekst nog aan het animeren is opzich met de 0.5 als duration gaat het wel wat netter
         animateWithGsap(img,{
             opacity: 1,
             duration: 1,

@@ -64,7 +64,6 @@ body {
 }
 
 .experience-class{
-  /*column-count: 3;*/
   columns: 300px;
 }
 
@@ -87,7 +86,6 @@ body {
 }
 
 .noise {
-  /* ... */
   width: 100%;
   height: 100%;
   background:
@@ -192,13 +190,6 @@ body {
 .experience-block{
   @apply w-[100%] md:w-[80%]
 }
-
-/*
-.experience-div:hover {
-  color: #FF9A00;
-  @apply flex flex-row gap-5 mb-10 max-w-[40vw] p-5 justify-between border-2 border-solid rounded-2xl shadow-xl
-}
-*/
 
 .experience-tags {
   background: #FF9A00;

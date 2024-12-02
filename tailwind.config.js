@@ -42,7 +42,6 @@ export default {
         },
       },
       animation: {
-        //dze misschien een eigen animatie maken
         blob: "blob 35s -10s infinite ease-in-out",
         "blob-reverse":
           "blob 50s infinite ease-in-out reverse"

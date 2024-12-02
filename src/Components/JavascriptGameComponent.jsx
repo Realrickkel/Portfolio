@@ -52,7 +52,6 @@ const JavascriptGameComponent = () => {
         window.scrollTo({
             top: 0,
             left: 0,
-            //Check of dit ook in andere browsers werkt
             behavior: "instant",
           })
       }, [])
@@ -65,7 +64,6 @@ const JavascriptGameComponent = () => {
     const slidersUp = gsap.utils.toArray(".t_slide_up");
     const images = gsap.utils.toArray(".i_fade");
     images.forEach((img) => {
-        // deze is wel vervelend misschien toch ook een y verandering aanbrengen zodat niet al de foto inlaadt terwijl de tekst nog aan het animeren is opzich met de 0.5 als duration gaat het wel wat netter
         animateWithGsap(img,{
             opacity: 1,
             duration: 1,
@@ -135,9 +133,7 @@ const JavascriptGameComponent = () => {
     gsap.to('#NinjaGameVideo', {
         scrollTrigger: {
             trigger: '#NinjaGameVideo',
-            //dit handelt de verschillende manieren hoe een blokje in beeld komt af, 1: First enter, 2: leave 3: enter back 4: leave back
             toggleActions: 'play none none none',
-            //startpositie van de animatie
             start: '-10% bottom',
         },
         onComplete: () => {
