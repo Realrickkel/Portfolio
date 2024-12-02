@@ -8,6 +8,7 @@ import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react
 import { ScrollTrigger } from "gsap/all";
 import { animateWithGsap } from "../utils/Animations";
 import { Context } from "../context/Context"
+import { useNavigate } from "react-router-dom"
 gsap.registerPlugin(ScrollTrigger)
 
 const AppleComponent = () => {
@@ -21,6 +22,7 @@ const AppleComponent = () => {
     let [targetValue, setTargetValue] = useState("")
     let [openMod, setOpenMod] = useState(false)
     let targetSRC
+    const navigate = useNavigate();
 
     function searchStart (e) {
         targetSRC = e.target.src
@@ -40,15 +42,16 @@ const AppleComponent = () => {
         //reload page once to reset all scrolltriggers
          if(!window.location.hash) {
             window.location = window.location + '#loaded';
-            window.location.reload();
+            navigate(0)
+            //window.location.reload();
             } else {
                 const img = new Image();
                 img.onload = () => {
                 // when it finishes loading, update the component state
                 setLoadedProjects(true);
                 }
-                img.src = RIVLMEDIABANNERIMG; // by setting an src, you trigger browser download
-                history.back()
+                img.src = APPLEHOMESCREENIMG; // by setting an src, you trigger browser download
+                //history.back()
             }
 
         window.scrollTo({

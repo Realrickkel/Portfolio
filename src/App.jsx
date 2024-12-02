@@ -1,6 +1,6 @@
 import Navbar from "./Components/Navbar";
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Routes,
     Route,
 } from "react-router-dom";
@@ -21,8 +21,8 @@ const App = () => {
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/#Projects" element={<Projects />} />
-                <Route path="/#Experience" element={<Experience />} />
+                <Route path="/Projects" element={<Projects />} />
+                <Route path="/Experience" element={<Experience />} />
                 <Route path="/rivlmedia" element={<RIVLMedia />} />
                 <Route path="/apple" element={<Apple />} />
                 <Route path="/onlineid" element={<OnlineID />} />

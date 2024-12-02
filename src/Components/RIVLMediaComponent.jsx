@@ -8,6 +8,7 @@ import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react
 import { ScrollTrigger } from "gsap/all";
 import { animateWithGsap } from "../utils/Animations";
 import { Context } from "../context/Context"
+import { useNavigate } from "react-router-dom"
 gsap.registerPlugin(ScrollTrigger)
 
 const RIVLMediaComponent = () => {
@@ -18,6 +19,8 @@ const RIVLMediaComponent = () => {
     let [targetValue, setTargetValue] = useState("")
     let [openMod, setOpenMod] = useState(false)
     let targetSRC
+    var componentLoaded = localStorage.getItem("RIVLMEDIAComponentLoaded");
+    const navigate = useNavigate();
 
     function searchStart (e) {
         targetSRC = e.target.src
@@ -35,17 +38,22 @@ const RIVLMediaComponent = () => {
 
     useEffect(() => {
         //reload page once to reset all scrolltriggers
-         if(!window.location.hash) {
-            window.location = window.location + '#loaded';
-            window.location.reload();
+        console.log(componentLoaded)
+         if(componentLoaded === "false") {
+            localStorage.setItem("RIVLMEDIAComponentLoaded", true)
+            //navigate(0)
+            location.reload()
+            console.log('reloading page')
             } else {
+                console.log('why')
                 const img = new Image();
                 img.onload = () => {
                 // when it finishes loading, update the component state
                 setLoadedProjects(true);
                 }
                 img.src = RIVLMEDIABANNERIMG; // by setting an src, you trigger browser download
-                history.back()
+                //history.back()
+                localStorage.setItem("RIVLMEDIAComponentLoaded", false);
             }
 
         window.scrollTo({
