@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react"
-import { CSSIMG, GSAPIMG, HTMLIMG, JSIMG, REACTIMG, WORDIMG } from "../utils"
+import { CSSIMG, GSAPIMG, HTMLIMG, JSIMG, REACTIMG, THREEIMG, WORDIMG } from "../utils"
 
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
@@ -125,7 +125,7 @@ const Hero = () => {
 
       
 
-        <div className="screen-max-width flex p-10"> 
+        <div className="w-[90vw] md:w-[76vw] flex overflow-hidden"> 
             <div className="flex flex-col m-auto">
                 <div className="flex flex-col items-center">
                   <p className="text-gray-500 t_slide_down">web developer</p>
@@ -138,6 +138,7 @@ const Hero = () => {
                   <img src={REACTIMG} alt="React image" className="expert-class"/>
                   <img src={GSAPIMG} alt="GSAP image" className="expert-class"/>
                   <img src={WORDIMG} alt="GSAP image" className="expert-class"/>
+                  <img src={THREEIMG} alt="Three.js image" className="expert-class"/>
                 </div>
             </div>
         </div>

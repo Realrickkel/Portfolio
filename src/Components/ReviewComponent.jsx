@@ -44,6 +44,7 @@ const ReviewComponent = () => {
                 setLoadedProjects(true);
                 }
                 img.src = FILMREVIEWSTANDAARDIMG; // by setting an src, you trigger browser download
+                history.back()
             }
 
         window.scrollTo({
@@ -195,7 +196,7 @@ const ReviewComponent = () => {
                                     <h2 className="text-2xl font-bold text-gray-500">Hoe zou een brabantse <span className="text-gray-950">film recensie</span> er uit zien?</h2> 
                                     <p>Een innovatieve website die filmliefhebbers en seriekijkers helpt bij het ontdekken van hun volgende favoriete titels. Deze webapp maakt gebruik van de kracht van de IMDB API en de Gemini API om uitgebreide informatie en grappige beoordelingen te genereren.</p>
 
-                                    <p>De app is ontworpen om op een grappige manier films en series in het brabants te beoordelen. Het doel van het bouwen van deze site was om meer te leren over het gebruik van API&#8217;s en de REACT library.</p>
+                                    <p>De app is ontworpen om op een grappige manier films en series in het brabants te beoordelen. Het doel van het bouwen van deze site was om meer te leren over het gebruik van API&#39;s en de REACT library.</p>
                                 </div>
                                 <div className="">
                                     <div className="flex flex-row lg:justify-between justify-start flex-wrap">
@@ -355,7 +356,7 @@ const ReviewComponent = () => {
 
                             <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 ">
                                 <div className="md:text-4xl text-xl font-bold md:leading-[3rem] leading-[1.6rem] italic">
-                                    <p className="t_slide">"De koppeling tussen de OMDB API en Gemini API was de lastigste klus. Het was niet zo'n ingewikkeld proces om ze apart werkend te krijgen. Het was alleen een uitdaging om uit te vogelen hoe dynamische info van de een naar de ander gestuurd kan worden."</p>
+                                    <p className="t_slide">&ldquo;De koppeling tussen de OMDB API en Gemini API was de lastigste klus. Het was niet zo&#39;n ingewikkeld proces om ze apart werkend te krijgen. Het was alleen een uitdaging om uit te vogelen hoe dynamische info van de een naar de ander gestuurd kan worden.&ldquo;</p>
                                 </div>
                             </div>
 
@@ -423,12 +424,12 @@ const ReviewComponent = () => {
                             <div className="">
                                 <div className="px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 t_slide">
                                     <div className="flex-1 flex text-sm">
-                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">"Een unieke manier om te kijken of een film iets voor jou is"</p>
+                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">&ldquo;Een unieke manier om te kijken of een film iets voor jou is&ldquo;</p>
                                     </div>
                                 </div>
                                 <div className="flex md:flex-row flex-col gap-3 mt-2 md:px-28">
                                     <div className="flex flex-col flex-1 t_slide_up">
-                                        <p className="text-sm ">Al met al was dit een mooi experiment om te bouwen. Het gebruik van API&#8217;s kan soms wel ingewikkeld zijn maar door vooral veel te testen en proberen is een oplossing altijd binnen handbereik.</p>
+                                        <p className="text-sm ">Al met al was dit een mooi experiment om te bouwen. Het gebruik van API&#39;s kan soms wel ingewikkeld zijn maar door vooral veel te testen en proberen is een oplossing altijd binnen handbereik.</p>
                                     </div>
                                     <div className="flex flex-col flex-1 t_slide_up">
                                         <p className="text-sm ">Er zijn echter nog zeker verbeterpunten aan deze website. Zo is de website nu niet responsive wat vanuit technisch oogpunt nog een goede verbetering kan zijn. Daarnaast zou een toevoeging van spraak erg gewild zijn. Hier zou een Text-to-Speech AI voor geïmplementeerd kunnen worden.</p>

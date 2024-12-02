@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { useGSAP } from "@gsap/react"
-import { CONTENTSTRATEGIEIMG, CROSSIMG, CSSIMG, DYNAMISCHIMG, HTMLIMG, INTERACTIESIMG, JSIMG, KLEURIMG, MOBILEIMG, ONLINESTANDAARDIMG, RIVLMEDIABANNERIMG, RIVLMEDIALOGOIMG, RIVLMEDIASEOIMG, STRAKIMG, WORDIMG } from "../utils"
+import { CROSSIMG, CSSIMG, HTMLIMG, ONLINECONTACTIMG, ONLINEDESIGNIMG, ONLINESTANDAARDIMG, ONLINEVACATUREIMG, RIVLMEDIALOGOIMG, WORDIMG } from "../utils"
 import gsap from "gsap"
 import { useContext, useEffect, useState } from "react"
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
@@ -45,6 +45,7 @@ const OnlineIDComponent = () => {
                 setLoadedProjects(true);
                 }
                 img.src = ONLINESTANDAARDIMG; // by setting an src, you trigger browser download
+                history.back()
             }
 
         window.scrollTo({
@@ -193,8 +194,7 @@ const OnlineIDComponent = () => {
                             <div id="" className="lg:max-w-[51vw] xl:max-w-[65%] max-w-[90vw] mx-auto flex flex-col justify-between">
                                 <div className="flex flex-col gap-2">
                                     <h2 className="text-2xl font-bold text-gray-500">Website van <span className="text-gray-950">Online ID</span> onderhouden</h2> 
-                                    <p>De website van RIVL Media heeft onlangs een uitgebreide herziening ondergaan met als doel een modernere uitstraling, betere gebruikservaring en verbeterde zichtbaarheid online.</p>
-                                    <p>Met deze verbeteringen is de website van RIVL Media niet alleen een stuk gebruiksvriendelijker geworden, maar ook een krachtig instrument om nieuwe klanten aan te trekken en bestaande relaties te versterken. De nieuwe site weerspiegelt nu de professionele en innovatieve aanpak die RIVL Media kenmerkt.</p>
+                                    <p>Tijdens mijn werk bij Online ID was ik verantwoordelijk voor het onderhouden en optimaliseren van de website. Dit omvatte een breed scala aan taken die essentieel waren voor het up-to-date houden van de site en het verbeteren van de gebruikerservaring.</p>
                                 </div>
                                 <div className="">
                                     <div className="flex flex-row lg:justify-between justify-start flex-wrap">
@@ -202,16 +202,16 @@ const OnlineIDComponent = () => {
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Focuspunten</h3>
                                                 <ul className="mt-2">
-                                                    <li>Design,</li>
-                                                    <li>UX/UI,</li>
-                                                    <li>SEO</li>
+                                                    <li>Vacatures</li>
+                                                    <li>Design</li>
+                                                    <li>Bugs</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
                                                 <ul className="mt-2">
-                                                    <li>2024</li>
+                                                    <li>2023-2024</li>
                                                 </ul>
                                             </div>
 
@@ -219,7 +219,7 @@ const OnlineIDComponent = () => {
                                                 <div className="me-3">
                                                     <h3 className="font-semibold">Link</h3>
                                                     <ul className="mt-2 relative">
-                                                        <li><a href="https://www.rivlmedia.nl" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>rivlmedia.nl</a></li>
+                                                        <li><a href="https://online-id.nl/" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>online-id.nl</a></li>
                                                         <span id="linkUnderline" className="w-0 absolute"></span>
                                                     </ul>
                                                 </div>
@@ -251,16 +251,16 @@ const OnlineIDComponent = () => {
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Focuspunten</h3>
                                                 <ul className="mt-2">
+                                                    <li>Vacatures,</li>
                                                     <li>Design,</li>
-                                                    <li>UX/UI,</li>
-                                                    <li>SEO</li>
+                                                    <li>Bugs</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
                                                 <ul className="mt-2">
-                                                    <li>2024</li>
+                                                    <li>2023-2024</li>
                                                 </ul>
                                             </div>
 
@@ -298,47 +298,21 @@ const OnlineIDComponent = () => {
                         <div className="lg:max-w-[70vw] xl:max-w-[78vw] max-w-[95vw] m-auto sm:max-w-[90vw] p-1 sm:p-0 h-full">
                             <div id="Design" className="common-padding !px-0 flex flex-row justify-between items-start h-100%">
                                 <div id="" className="max-w-[15%] sticky top-2">
-                                    <div className="relative md:rotate-0 md:translate-y-0 -rotate-90 sm:translate-y-24 translate-y-20">
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">Design</h2>
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">Design</h2>
+                                    <div className="relative md:rotate-0 md:translate-y-0 -rotate-90 sm:translate-y-24 translate-y-24">
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">Vacatures</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">Vacatures</h2>
                                     </div>
                                 </div>
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="my-4">
-                                        <img src={KLEURIMG} name="KLEURIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
+                                        <img src={ONLINEVACATUREIMG} name="ONLINEVACATUREIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold">Kleurenschema en Typografie: </h2>
-                                                <p className="text-sm ">Er is een harmonieus kleurenpalet ontwikkeld dat de merkidentiteit van RIVL Media versterkt.</p>
+                                                <h2 className="text-xl font-semibold">Plaatsen van vacatures: </h2>
+                                                <p className="text-sm ">Ik hield in de eerste plaats bezig met het plaatsen van vacatures. Ik zorgde ervoor dat nieuwe vacatures tijdig werden gepubliceerd, correct waren opgemaakt en goed vindbaar waren voor bezoekers.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">De gekozen typografie straalt moderniteit en toegankelijkheid uit, wat het leesgemak vergroot.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="my-4">
-                                        <img src={DYNAMISCHIMG} name="DYNAMISCHIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">Dynamische Elementen: </h2>
-                                                <p className="text-sm">Het gebruik van hoogwaardige afbeeldingen, subtiele animaties en video’s maakt de website levendig en engaging.</p>
-                                            </div>
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Hierdoor voelen bezoekers zich sneller vertrouwd met de website, wat de kans vergroot dat ze terugkeren of overgaan tot actie.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="mt-4">
-                                        <img src={STRAKIMG} name="STRAKIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">Strak en Gecontroleerd: </h2>
-                                                <p className="text-sm">Overbodige elementen zijn verwijderd om een heldere en overzichtelijke lay-out te creëren. Hierdoor komen de belangrijkste boodschappen beter naar voren.</p>
-                                            </div>
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Deze benadering zorgt ervoor dat bezoekers niet worden afgeleid, wat de navigatie vereenvoudigt en de gebruikerservaring aanzienlijk versterkt.</p>
+                                                <p className="text-sm mt-1">Over het algemeen was dat vrij simpel doordat je blokken kon kopiëren, hier en daar was er wat technische kennis vereist over hoe je bijvoorbeeld de juiste afbeeldingen linkt.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -348,40 +322,27 @@ const OnlineIDComponent = () => {
 
                             <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 ">
                                 <div className="md:text-4xl text-xl font-bold md:leading-[3rem] leading-[1.6rem] italic">
-                                    <p className="t_slide">"Het design van de website speelt een cruciale rol in hoe bezoekers RIVL Media ervaren. Bij het herontwerpen is er gefocust op het creëren van een visueel aantrekkelijke en professionele uitstraling die naadloos aansluit bij de missie en waarden van het bedrijf."</p>
+                                    <p className="t_slide">&ldquo;Het ontwerp van de website is van essentieel belang voor de manier waarop bezoekers Online ID ervaren. Bij het onderhoud lag de focus op het ontwikkelen van een visueel aantrekkelijke en professionele uitstraling die perfect aansluit bij de missie en kernwaarden van het bedrijf.&ldquo;</p>
                                 </div>
                             </div>
 
                             <div id="UX/UI" className="common-padding !px-0 flex flex-row justify-between items-start h-100%">
                                 <div id="" className="max-w-[15%] sticky top-2">
                                     <div className="relative md:rotate-0 md:translate-y-0 -rotate-90 sm:translate-y-24 translate-y-20">
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">UX/UI</h2>
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">UX/UI</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">Design</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">Design</h2>
                                     </div>
                                 </div>
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="my-4" >
-                                        <img src={INTERACTIESIMG} name="INTERACTIESIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
+                                        <img src={ONLINEDESIGNIMG} name="ONLINEDESIGNIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">Geoptimaliseerde Interacties: </h2>
-                                                <p className="text-sm">Call-to-actions, zoals knoppen en formulieren, zijn strategisch geplaatst en duidelijk zichtbaar. Dit verhoogt de conversieratio en stimuleert interactie met bezoekers.</p>
+                                                <h2 className="text-xl font-semibold ">Visuele Vernieuwing: </h2>
+                                                <p className="text-sm">Ik vernieuwde regelmatig afbeeldingen op de website om een frisse en aantrekkelijke uitstraling te behouden.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Door gebruik te maken van visuele hiërarchie en voldoende witruimte, worden bezoekers subtiel maar effectief geleid naar de gewenste acties.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="my-4">
-                                        <img src={MOBILEIMG} name="MOBILEIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">Mobile-first Design: </h2>
-                                                <p className="text-sm">De website is volledig responsief en biedt een naadloze ervaring op alle apparaten. Of je nu op een desktop, tablet of smartphone kijkt, de website past zich moeiteloos aan.</p>
-                                            </div>
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Dit is essentieel in een tijd waarin een groot deel van je bezoekers de website op een telefoon of tablet bekijkt.</p>
+                                                <p className="text-sm mt-1">Om de website nog dynamischer te maken, heb ik ook enkele originele GIFs ontworpen en toegevoegd.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -392,21 +353,20 @@ const OnlineIDComponent = () => {
                             <div id="SEO" className="common-padding !px-0 flex flex-row justify-between items-start h-100%">
                                 <div id="" className="max-w-[15%] sticky top-2">
                                     <div className="relative md:rotate-0 md:translate-y-0 -rotate-90 sm:translate-y-24 translate-y-20">
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">SEO</h2>
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">SEO</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">Bugs</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">Bugs</h2>
                                     </div>
                                 </div>
                                 <div  className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="mt-4">
-                                        <img src={RIVLMEDIASEOIMG} name="RIVLMEDIABANNERIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
+                                        <img src={ONLINECONTACTIMG} name="ONLINECONTACTIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                    <h2 className="text-xl font-semibold">Technische Optimalisaties: </h2>
-                                                    <p className="text-sm ">De laadsnelheid is verhoogd door bestanden te comprimeren, caching toe te passen en onnodige scripts te verwijderen. Ook is de site-structuur verbeterd, wat niet alleen gebruikers maar ook zoekmachines helpt om de inhoud beter te begrijpen.</p>
+                                                    <h2 className="text-xl font-semibold">Bugs oplossen: </h2>
+                                                    <p className="text-sm ">Hier en daar zaten er wat kleine bugs in de website zoals linkjes die verkeerd linkten, of verkeerd ingeladen afbeeldingen. Dat was allemaal vrij simpel op te lossen. De grootste bug die de website had was dat het contactformulier niet werkte. </p>
                                                 </div>
                                                 <div className="flex flex-col flex-1 t_slide_up">
-                                                    <h2 className="text-xl font-semibold">Gerichte Contentstrategie:</h2>
-                                                    <p className="text-sm ">Door uitgebreid zoekwoordonderzoek is bepaald welke termen de doelgroep van RIVL Media gebruikt. Vervolgens zijn deze geïntegreerd in de tekst, meta-titels, en beschrijvingen zonder afbreuk te doen aan de leesbaarheid en kwaliteit van de content.</p>
+                                                    <p className="text-sm ">Dit heb ik uiteindelijk met een klein stukje extra Javascript code kunnen oplossen. Het probleem zat hem in het feit dat alle mails die werden verstuurd van de site een koppeling hadden naar een vacature. Echter waren dit vacatures die allang niet meer bestonden dus het systeem begreep niet wat het dan met de mails aan moest.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -416,15 +376,15 @@ const OnlineIDComponent = () => {
                             <div className="">
                                 <div className="px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 t_slide">
                                     <div className="flex-1 flex text-sm">
-                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">"De website van RIVL Media is een krachtig instrument geworden om nieuwe klanten aan te trekken en bestaande relaties te versterken."</p>
+                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">&ldquo;De website van Online ID is niet alleen geoptimaliseerd voor gebruikers maar ook voor zoekmachines&ldquo;</p>
                                     </div>
                                 </div>
                                 <div className="flex md:flex-row flex-col gap-3 mt-2 md:px-28">
                                     <div className="flex flex-col flex-1 t_slide_up">
-                                        <p className="text-sm ">Met een slimme combinatie van visueel aantrekkelijk design en strategische content biedt de website een optimale gebruikerservaring die bezoekers inspireert en overtuigt. Door heldere navigatie en boeiende call-to-actions wordt het voor potentiële klanten eenvoudig om de diensten van RIVL Media te ontdekken en contact op te nemen.</p>
+                                        <p className="text-sm ">Ik heb hier naast het onderhouden van een website ook veel over SEO geleerd. Hoe je een webpagina kan laten voldoen aan alle eisen zodat een search engine je website goed oppakt. </p>
                                     </div>
                                     <div className="flex flex-col flex-1 t_slide_up">
-                                        <p className="text-sm ">De website fungeert als een overtuigend visitekaartje dat direct vertrouwen wekt. Dankzij duidelijke informatie over diensten, succesverhalen en een professioneel design krijgen bezoekers een helder beeld van de waarde die RIVL Media kan bieden, waardoor ze worden aangemoedigd om de eerste stap te zetten naar een samenwerking.</p>
+                                        <p className="text-sm ">Zo is het belangrijk dat je pagina&#39;s zo klein mogelijk zijn zodat ze snel inladen. Interne links zijn belangrijk maar ook de structuur zoals het juiste gebruik van koppen en voetteksten is belangrijk.</p>
                                     </div>
                                 </div>
                             </div>

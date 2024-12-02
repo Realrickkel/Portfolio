@@ -46,6 +46,7 @@ const JavascriptGameComponent = () => {
                 setLoadedProjects(true);
                 }
                 img.src = NINJAGAMESTANDAARDIMG; // by setting an src, you trigger browser download
+                history.back()
             }
 
         window.scrollTo({
@@ -208,7 +209,8 @@ const JavascriptGameComponent = () => {
                                 <div className="flex flex-col gap-2">
                                     <h2 className="text-2xl font-bold text-gray-500">Een game in de <span className="text-gray-950">browser,</span> hoe maak je zo iets?</h2> 
                                     <p>Een game maken is altijd al iets wat ik interresant heb gevonden. Om mezelf uit te dagen wilde ik kijken of ik een game kon maken die in de browser speelbaar is. Gelukkig zijn er een hoop tutorials te vinden die uitleggen waar je moet beginnen. Zo heb ik zelf <a id="link" target="blank" className="link" href="https://www.youtube.com/watch?v=zogxGGDJ2Ok">deze tutorial</a> gevolgd om te leren waar ik moet beginnen.</p>
-                                    <p>Vervolgens heb ik met mijn opgedane kennis de game verder uitgebreid met o.a. een win en verlies condition, interactieve NPC&#8217;s, een vernieuwd collision systeem en meer! </p>
+                                    <p>Vervolgens heb ik met mijn opgedane kennis de game verder uitgebreid met o.a. een win en verlies condition, interactieve NPC&#39;s, een vernieuwd collision systeem en meer!</p>
+                                    <p>Ter info: De game is alleen speelbaar op een laptop of desktop</p>
                                 </div>
                                 <div className="">
                                     <div className="flex flex-row lg:justify-between justify-start flex-wrap">
@@ -217,7 +219,7 @@ const JavascriptGameComponent = () => {
                                                 <h3 className="font-semibold">Focuspunten</h3>
                                                 <ul className="mt-2">
                                                     <li>Basics van Game Design,</li>
-                                                    <li>NPC&#8217;s,</li>
+                                                    <li>NPC&#39;s,</li>
                                                     <li>Details</li>
                                                 </ul>
                                             </div>
@@ -266,7 +268,7 @@ const JavascriptGameComponent = () => {
                                                 <h3 className="font-semibold">Focuspunten</h3>
                                                 <ul className="mt-2">
                                                     <li>Basics van Game Design,,</li>
-                                                    <li>NPC&#8217;s,</li>
+                                                    <li>NPC&#39;s,</li>
                                                     <li>Details</li>
                                                 </ul>
                                             </div>
@@ -323,7 +325,7 @@ const JavascriptGameComponent = () => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold">Wereld: </h2>
-                                                <p className="text-sm ">De wereld heb ik vanuit <a id="link" target="blank" className="link" href="https://www.youtube.com/watch?v=zogxGGDJ2Ok">mappermate</a> geïmporteerd. Hierbij kan je in een grid sprites plaatsen en deze exporteren zodat, standaard onderdelen al meteen geïmporteerd worden. </p>
+                                                <p className="text-sm ">De wereld heb ik vanuit <a id="link" target="blank" className="link" href="https://mappermate.com/">mappermate</a> geïmporteerd. Hierbij kan je in een grid sprites plaatsen en deze exporteren zodat, standaard onderdelen al meteen geïmporteerd worden. </p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <p className="text-sm mt-1">Denk aan player controls, collision detection systeem en uiteraard de sprites die in een grid zijn geplaatst.</p>
@@ -377,15 +379,15 @@ const JavascriptGameComponent = () => {
 
                             <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 ">
                                 <div className="md:text-4xl text-xl font-bold md:leading-[3rem] leading-[1.6rem] italic">
-                                    <p className="t_slide">"Nu de basis is gelegd voor de game is het tijd om extra dingen toe te voegen te beginnen met NPC&#8217;s en daarna nog de laatste details om de gameplay ervaring te complementeren!"</p>
+                                    <p className="t_slide">&ldquo;Nu de basis is gelegd voor de game is het tijd om extra dingen toe te voegen te beginnen met NPC&#39;s en daarna nog de laatste details om de gameplay ervaring te complementeren!&ldquo;</p>
                                 </div>
                             </div>
 
                             <div id="UX/UI" className="common-padding !px-0 flex flex-row justify-between items-start h-100%">
                                 <div id="" className="max-w-[15%] sticky top-2">
                                     <div className="relative md:rotate-0 md:translate-y-0 -rotate-90 sm:translate-y-24 translate-y-20">
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">NPC&#8217;s</h2>
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">NPC&#8217;s</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">NPC&#39;s</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">NPC&#39;s</h2>
                                     </div>
                                 </div>
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
@@ -393,8 +395,8 @@ const JavascriptGameComponent = () => {
                                         <img src={GAMENPCIMG} name="GAMENPCIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">NPC&#8217;s met Pathfinding toevoegen:</h2>
-                                                <p className="text-sm">Het toevoegen van NPC&#8217;s werkt vrijwel hetzelfde als de enemies. Er is een standaar NPC bestand waar elke NPC met zijn eigen parameters aan refereert waardoor het toevoegen erg simpel is. De pathfinding van de NPC&#8217;s werkt echter iets anders dan die van de enemies. Ze lopen op een vooraf bedacht pad en herhalen deze steeds. Een beetje zoals je in de klassieke RPG&#8217;s ook ziet. Deze paden zijn ook makkelijk voor elke NPC met parameters aan te geven waardoor iedereen toch anders loopt.</p>
+                                                <h2 className="text-xl font-semibold ">NPC&#39;s met Pathfinding toevoegen:</h2>
+                                                <p className="text-sm">Het toevoegen van NPC&#39;s werkt vrijwel hetzelfde als de enemies. Er is een standaar NPC bestand waar elke NPC met zijn eigen parameters aan refereert waardoor het toevoegen erg simpel is. De pathfinding van de NPC&#39;s werkt echter iets anders dan die van de enemies. Ze lopen op een vooraf bedacht pad en herhalen deze steeds. Een beetje zoals je in de klassieke RPG&#39;s ook ziet. Deze paden zijn ook makkelijk voor elke NPC met parameters aan te geven waardoor iedereen toch anders loopt.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold ">Interactie:</h2>
@@ -433,7 +435,7 @@ const JavascriptGameComponent = () => {
                             <div className="">
                                 <div className="px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 t_slide">
                                     <div className="flex-1 flex text-sm">
-                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">"Dus zo maak je een game die speelbaar is in de browser"</p>
+                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">&ldquo;Dus zo maak je een game die speelbaar is in de browser&ldquo;</p>
                                     </div>
                                 </div>
                                 <div className="flex md:flex-row flex-col gap-3 mt-2 md:px-28">

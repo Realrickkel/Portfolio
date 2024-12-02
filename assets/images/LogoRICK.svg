@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1084.5 1080">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: #e82525;
+        stroke-miterlimit: 10;
+        stroke-width: 3.9px;
+      }
+
+      .st1 {
+        display: none;
+      }
+
+      .st2 {
+        fill: #ff9a00;
+      }
+    </style>
+  </defs>
+  <g id="Logo_20">
+    <g>
+      <path class="st2" d="M542.2,258.9v563.2c0,9.8,9.7,16,17.7,11.4l503-281.5c8.6-4.9,8.5-18.2-.2-22.9l-503-281.7c-8-4.4-17.5,1.9-17.5,11.5Z"/>
+      <rect class="st2" x="15.1" y="531.1" width="400.4" height="18.9" rx="9.1" ry="9.1"/>
+      <path class="st2" d="M487.2,122L216.6,391.9c-3.2,3.2-8.1,3.1-11.2-.2l-113.3-119.9c-4.2-4.5-2.7-12.1,2.9-14.3L478.9,107.5c8.3-3.2,14.8,8.1,8.3,14.5Z"/>
+      <path class="st2" d="M486,958l-270.6-269.9c-3.2-3.2-8.1-3.1-11.2.2l-113.3,119.9c-4.2,4.5-2.7,12.1,2.9,14.3l384,150.1c8.3,3.2,14.8-8.1,8.3-14.5Z"/>
+    </g>
+  </g>
+  <g id="Welke_spreken_het_meest" class="st1">
+    <ellipse class="st0" cx="-917.5" cy="1516.9" rx="165.9" ry="126.1"/>
+    <ellipse class="st0" cx="-431.9" cy="2321.6" rx="165.9" ry="126.1"/>
+    <ellipse class="st0" cx="-1403.3" cy="2321.6" rx="165.9" ry="126.1"/>
+  </g>
+</svg>

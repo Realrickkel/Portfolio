@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react'
-import { APPLEMOCKUPIMG, CSSIMG, FILMREVIEWMOCKUPIMG, GSAPIMG, HTMLIMG, JAVASCRIPTMOCKUPIMG, JSIMG, ONLINEIDMOCKUPIMG, REACTIMG, RIVLMEDIAMOCKUPIMG, WORDIMG } from "../utils"
+import { APPLEMOCKUPIMG, CSSIMG, FILMREVIEWMOCKUPIMG, GSAPIMG, HTMLIMG, JAVASCRIPTMOCKUPIMG, JSIMG, ONLINEIDMOCKUPIMG, REACTIMG, RIVLMEDIAMOCKUPIMG, THREEIMG, WORDIMG } from "../utils"
 
 import { ScrollTrigger } from "gsap/all";
 import { useContext, useEffect, useRef, useState } from "react";
@@ -138,7 +138,7 @@ const Projects = () => {
   return (
     <section id="Projects" className="text-gray flex flex-col justify-center items-center common-padding">
         <div className="w-[90vw] md:w-[76vw] fade_in_title_pro">
-          <h2 className="flex justify-between title-max-width m-4 border-t-2 p-2 px-4 lg:px-2">// Projects</h2>
+          <h2 className="flex justify-between title-max-width m-4 border-t-2 p-2 px-4 lg:px-2">// Projecten</h2>
         </div>
       
       <div className="max-w-[90vw] md:max-w-[76vw]">
@@ -176,7 +176,8 @@ const Projects = () => {
                       <img src={CSSIMG} alt="CSS image" className="tech-used"/>
                       <img src={JSIMG} alt="Javascript image" className="tech-used"/>
                       <img src={REACTIMG} alt="React image" className="tech-used"/>
-                      <img src={GSAPIMG} alt="React image" className="tech-used"/>
+                      <img src={GSAPIMG} alt="GSAP image" className="tech-used"/>
+                      <img src={THREEIMG} alt="Three.js image" className="tech-used"/>
                     </div>
                   </div>
                   <div className="flex flex-col text-right">

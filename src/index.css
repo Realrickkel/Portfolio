@@ -59,7 +59,7 @@ body {
 .experience-img{
   color: #000;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   break-inside: avoid;
 }
 
@@ -173,7 +173,7 @@ body {
 }
 
 .tech-used {
-  @apply w-6 mx-1 opacity-60
+  @apply max-w-6 mx-1 opacity-60
 } 
 
 .footer-img-used {

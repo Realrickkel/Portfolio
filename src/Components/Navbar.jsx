@@ -1,10 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { navLists } from "../Constants";
 import { Nav, NavLink, NavMenu } from "./NavBarElements";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../context/Context";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 
 const Navbar = () => {
     const {loadedProjects, setLoadedProjects} = useContext(Context)
@@ -13,7 +11,6 @@ const Navbar = () => {
     const {classChangeExperience,setClassChangeExperience} = useContext(Context)
     const {classChangeHero,setClassChangeHero} = useContext(Context)
     const [menuOpen, setMenuOpen] = useState(false)
-    const {scroll, setScroll} = useContext(Context)
     const [listen, setListen] = useState (false)
     let [windowWidth, setWindowWidth] = useState()
     let [windowWidthChange, setWindowWidthChange] = useState()
@@ -37,15 +34,14 @@ const Navbar = () => {
         var windowWidthMin = windowWidth -1
         if(windowWidth >= 1024){
             navEl.classList.remove("closed")
-        }else if(windowWidth <= 1024 && windowWidth >= 1004 ){
+            setMenuOpen(true)
+        }else if(windowWidth <= 1024 ){
             navEl.classList.add("closed")
             setMenuOpen(false)
         }else{
             if(windowWidthMax < windowWidthChange || windowWidthMin > windowWidthChange){
-                console.log('hoi')
                 navEl.classList.add("closed")
                 setMenuOpen(false)
-                console.log(windowWidthChange)
                 setWindowWidthChange(document.body.clientWidth)
             }
         }
@@ -94,12 +90,10 @@ const Navbar = () => {
             navEl.classList.remove("closed");
         }*/
         if(menuOpen === true){
-            console.log('menu is open')
             navEl.classList.remove("closed")
             setListen(true)
         } else {
             if(!mediaQueryNav.matches){
-            console.log('menu is dicht')
             navEl.classList.add("closed")
             setListen(false)
             } else { 
@@ -118,7 +112,6 @@ const Navbar = () => {
 
     const handleClick = (event) => {
         if(listen == true) {
-        console.log('Clicked!');
         setMenuOpen(false)
         }
       };
@@ -132,7 +125,7 @@ const Navbar = () => {
         <>
             <Nav className="fixed top-0 w-screen lg:w-fit lg:h-screen z-10 flex ">
                 <NavMenu className="mt-auto mb-auto navigationId">
-                    <div onClick={() => setMenuOpen(!menuOpen)} className="absolute top-4 right-4 flex lg:hidden flex-row justify-center items-center py-1 px-2 glass-view-nav">
+                    <div onClick={() => setMenuOpen(!menuOpen)} className="absolute top-4 right-4 flex lg:hidden flex-row justify-center items-center py-1 px-2 glass-view-nav cursor-pointer">
                         <div className="flex flex-row">
                             <p className="text-sm whitespace-nowrap ">Menu</p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className=" mt-1 size-3.5">
@@ -156,7 +149,7 @@ const Navbar = () => {
                             </div>
 
                             <Link id="AboutNav" className='px-3 mb-3 lg:mb-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' to="/about">
-                                About
+                                Over mij
                             </Link>
                         </div>
                     </div>

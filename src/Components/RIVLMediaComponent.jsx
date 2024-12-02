@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { useGSAP } from "@gsap/react"
-import { CONTENTSTRATEGIEIMG, CROSSIMG, CSSIMG, DYNAMISCHIMG, HTMLIMG, INTERACTIESIMG, JSIMG, KLEURIMG, MOBILEIMG, RIVLMEDIABANNERIMG, RIVLMEDIALOGOIMG, RIVLMEDIASEOIMG, STRAKIMG } from "../utils"
+import { CROSSIMG, CSSIMG, DYNAMISCHIMG, HTMLIMG, INTERACTIESIMG, JSIMG, KLEURIMG, MOBILEIMG, RIVLMEDIABANNERIMG, RIVLMEDIALOGOIMG, RIVLMEDIASEOIMG, STRAKIMG } from "../utils"
 import gsap from "gsap"
 import { useContext, useEffect, useState } from "react"
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
@@ -45,6 +45,8 @@ const RIVLMediaComponent = () => {
                 setLoadedProjects(true);
                 }
                 img.src = RIVLMEDIABANNERIMG; // by setting an src, you trigger browser download
+                history.back()
+                //history.pushState( {} , 'foo', '/rivlmedia' );
             }
 
         window.scrollTo({
@@ -348,7 +350,7 @@ const RIVLMediaComponent = () => {
 
                             <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 ">
                                 <div className="md:text-4xl text-xl font-bold md:leading-[3rem] leading-[1.6rem] italic">
-                                    <p className="t_slide">"Het design van de website speelt een cruciale rol in hoe bezoekers RIVL Media ervaren. Bij het herontwerpen is er gefocust op het creëren van een visueel aantrekkelijke en professionele uitstraling die naadloos aansluit bij de missie en waarden van het bedrijf."</p>
+                                    <p className="t_slide">&ldquo;Het design van de website speelt een cruciale rol in hoe bezoekers RIVL Media ervaren. Bij het herontwerpen is er gefocust op het creëren van een visueel aantrekkelijke en professionele uitstraling die naadloos aansluit bij de missie en waarden van het bedrijf.&ldquo;</p>
                                 </div>
                             </div>
 
@@ -416,7 +418,7 @@ const RIVLMediaComponent = () => {
                             <div className="">
                                 <div className="px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 t_slide">
                                     <div className="flex-1 flex text-sm">
-                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">"De website van RIVL Media is een krachtig instrument geworden om nieuwe klanten aan te trekken en bestaande relaties te versterken."</p>
+                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">&ldquo;De website van RIVL Media is een krachtig instrument geworden om nieuwe klanten aan te trekken en bestaande relaties te versterken.&ldquo;</p>
                                     </div>
                                 </div>
                                 <div className="flex md:flex-row flex-col gap-3 mt-2 md:px-28">

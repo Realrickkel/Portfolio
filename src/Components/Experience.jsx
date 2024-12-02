@@ -106,7 +106,7 @@ gsap.to('#Experience',{
 
     <section id="Experience" className="text-gray flex flex-col justify-center items-center common-padding">
       <div className="w-[90vw] md:w-[76vw] fade_in_title_exp">
-          <h2 className="flex justify-between title-max-width m-4 border-t-2 p-2 px-4 lg:px-2">// Experience</h2>
+          <h2 className="flex justify-between title-max-width m-4 border-t-2 p-2 px-4 lg:px-2">// Ervaring</h2>
         </div>
 
       <div className="lg:max-w-[70vw] xl:max-w-[76vw]">
