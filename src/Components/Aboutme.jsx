@@ -10,16 +10,44 @@ gsap.registerPlugin(TextPlugin)
 
 const Aboutme = () => {
   const {loadedAbout, setLoadedAbout} = useContext(Context)
+  const[scrollt, setScrollt] = useState(false)
   const[animateImg, setAnimateImg] = useState(false)
   const[animateOutImg, setAnimateOutImg] = useState(false)
+  const {classChangeProject,setClassChangeProject} = useContext(Context)
+  const {classChangeExperience,setClassChangeExperience} = useContext(Context)
+  const {classChangeHero,setClassChangeHero} = useContext(Context)
+  const {loadedProjects, setLoadedProjects} = useContext(Context)
 
   useEffect(() => {
-    if(!window.location.hash) {
-      window.location = window.location + '#loaded';
-      window.location.reload();
-    }
-    setLoadedAbout(true);
-  }, [])
+    setClassChangeExperience(false)
+    setClassChangeHero(false)
+    setClassChangeProject(false)
+    setLoadedProjects(false)
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant",
+    })
+        const img = new Image();
+        img.onload = () => {
+        // when it finishes loading, update the component state
+        setLoadedAbout(true);
+        }
+        img.src = PFIMG; // by setting an src, you trigger browser download            
+}, [])
+
+useEffect(() => {
+  if(loadedAbout === true){
+      //laat alles inladen
+      setTimeout(function () {
+          setScrollt(true)
+          }, 100); 
+  }
+},[loadedAbout])
+
+useEffect(() => {
+
+},[scrollt])
   
 
   useGSAP(() => {
@@ -112,10 +140,6 @@ const Aboutme = () => {
           opacity: 1,
           x: '0',
           duration: 0.5,
-          scrollTrigger: {
-              trigger: slideAbout,
-              start: 'top 90%',
-          },
           ease: 'power2.inOut'
       })
     })
@@ -128,10 +152,6 @@ const Aboutme = () => {
           opacity: 1,
           x: '0',
           duration: 0.5,
-          scrollTrigger: {
-              trigger: slideAboutLeft,
-              start: 'top 90%',
-          },
           ease: 'power2.inOut'
       })
     })
@@ -144,15 +164,11 @@ const Aboutme = () => {
           opacity: 1,
           y: '0',
           duration: 0.5,
-          scrollTrigger: {
-              trigger: slideAboutUp,
-              start: 'top 90%',
-          },
           ease: 'power2.inOut'
       })
     })
 
-    animateTextWithGsap('#artist', 'TWICE', 'TripleS', 'Weeekly', 'aespa', 'Taeyeon')
+    animateTextWithGsap('#artist', 'TWICE', 'TripleS', 'NMIXX', 'aespa', 'Taeyeon')
 
   },[])
 

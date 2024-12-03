@@ -6,7 +6,8 @@ import { Context } from "../context/Context"
 const OnlineID = () => {
   const {loadedProjects, setLoadedProjects} = useContext(Context)
   return (
-    <main style={{display: loadedProjects ? 'block' : 'none'}}>
+    <main>
+      <div className="z-10 w-screen h-screen bg-white fixed top-0 left-0" style={{display: loadedProjects ? 'none' : 'block'}}></div>
         <OnlineIDComponent/>
         <Footer/>
     </main>

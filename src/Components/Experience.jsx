@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react'
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { animateHoverWithGsap, animateUnHoverWithGsap } from "../utils/Animations";
 
 import { ScrollTrigger } from "gsap/all";
@@ -9,6 +9,8 @@ import { Context } from "../context/Context";
 gsap.registerPlugin(ScrollTrigger)
 
 const Experience = () => {
+  const {loaded, setLoaded} = useContext(Context)
+  const[scrollt, setScrollt] = useState(false)
   const {classChangeExperience,setClassChangeExperience} = useContext(Context)
   const [hover, setHover] = useState(false)
   const [hover2, setHover2] = useState(false)
@@ -22,6 +24,20 @@ const Experience = () => {
           setClassChangeExperience(false)
         }
   });
+
+  useEffect(() => {
+    if(loaded === true){
+        //laat alles inladen
+        setTimeout(function () {
+            setScrollt(true)
+            }, 100); 
+    }
+  },[loaded])
+
+  useEffect(() => {
+      ScrollTrigger.refresh()
+      console.log('refresht scrolltrigger')
+  },[scrollt])
   
   const ELS_test = document.querySelectorAll("#Experience");
   ELS_test.forEach(el => attrObserver.observe(el, {attributes: true}));
@@ -40,10 +56,9 @@ const Experience = () => {
           opacity: 1,
           x: '0',
           duration: 0.5,
-          delay:0.1,
           scrollTrigger: {
               trigger: slide,
-              start: 'top 110%',
+              start: 'top 90%',
               toggleActions: "play none none reset",
           },
           ease: 'power2.inOut'

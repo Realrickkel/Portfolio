@@ -3,6 +3,7 @@ import { navLists } from "../Constants";
 import { Nav, NavLink, NavMenu } from "./NavBarElements";
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../context/Context";
+import { ABOUTIMG, CSSIMG, HOMEIMG } from "../utils";
 
 const Navbar = () => {
     const {loadedProjects, setLoadedProjects} = useContext(Context)
@@ -10,6 +11,7 @@ const Navbar = () => {
     const {classChangeProject,setClassChangeProject} = useContext(Context)
     const {classChangeExperience,setClassChangeExperience} = useContext(Context)
     const {classChangeHero,setClassChangeHero} = useContext(Context)
+    const {scroll,setScroll} = useContext(Context)
     const [menuOpen, setMenuOpen] = useState(false)
     const [listen, setListen] = useState (false)
     let [windowWidth, setWindowWidth] = useState()
@@ -114,10 +116,10 @@ const Navbar = () => {
       };
     
     var mediaQueryNav = window.matchMedia("(min-width: 1024px)");
-    
-
 
     const navigate = useNavigate();
+
+    
     return (
         <>
             <Nav className="fixed top-0 w-screen lg:w-fit lg:h-screen z-10 flex ">
@@ -130,23 +132,29 @@ const Navbar = () => {
                             </svg>
                         </div>
                     </div>
-                    <div id="menuLinks" className="flex mt-14 lg:mt-0 justify-center w-screen lg:w-fit h-max px-4 lg:px-0 closed">
-                        <div className="flex glass-view-nav px-3 flex-col w-full h-max">
-                            <Link id="HomeNav" className='px-3 my-3 lg:my-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' onClick={() => {window.scrollTo(0, 0)}} to="/">
+                    <div id="menuLinks" className="flex mt-14 lg:mt-0 justify-center sm:justify-end lg:justify-center w-screen lg:w-fit h-max px-4 lg:px-0 closed">
+                        <div className="flex glass-view-nav px-3 flex-col w-full h-max max-w-[450px]">
+                            <Link id="HomeNav" className='px-3 my-3 lg:my-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-row hover:text-neutral-900 hover:underline navstuff justify-between items-center' onClick={() => {window.scrollTo(0, 0)}} to="/">
                                 Home
+                                <img src={HOMEIMG} alt="CSS image" className="nav-used"/>
                             </Link>
 
                             <div className="">
                             {navLists.map((nav) => (
-                            <a key={nav.name} id={nav.targetName} className='px-3 mb-3 lg:mb-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' href={nav.link} onClick={() => {
-                                navigate("/", { state: { targetId: nav.targetid } });}}>
+                            <a key={nav.name} id={nav.targetName} className='px-3 mb-3 lg:mb-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-row hover:text-neutral-900 hover:underline navstuff justify-between items-center' onClick={() => {
+                                navigate("/", { state: { targetId: nav.targetid } });
+                                setScroll(true);
+                                }}>
                                 {nav.name}
+                                <img src={nav.image} alt="CSS image" className="nav-used"/>
                             </a>
                             ))}
+                            
                             </div>
 
-                            <Link id="AboutNav" className='px-3 mb-3 lg:mb-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-col hover:text-neutral-900 hover:underline navstuff' to="/about">
+                            <Link id="AboutNav" className='px-3 mb-3 lg:mb-2 lg:py-1 p-5 text-sm cursor-pointer glass-view-nav-item lg:text-gray flex flex-row hover:text-neutral-900 hover:underline navstuff justify-between items-center' to="/about">
                                 Over mij
+                                <img src={ABOUTIMG} alt="CSS image" className="nav-used"/>
                             </Link>
                         </div>
                     </div>

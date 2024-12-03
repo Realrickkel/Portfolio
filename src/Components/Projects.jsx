@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger)
 const Projects = () => {
   const {loaded, setLoaded} = useContext(Context)
   const {classChangeProject,setClassChangeProject} = useContext(Context)
+  const[scrollt, setScrollt] = useState(false)
   const [hover, setHover] = useState(false)
   const [hover2, setHover2] = useState(false)
   const [hover3, setHover3] = useState(false)
@@ -40,6 +41,21 @@ const Projects = () => {
   }
   img.src = RIVLMEDIAMOCKUPIMG; // by setting an src, you trigger browser download
   }, [])
+
+
+  useEffect(() => {
+    if(loaded === true){
+        //laat alles inladen
+        setTimeout(function () {
+            setScrollt(true)
+            }, 100); 
+    }
+  },[loaded])
+
+  useEffect(() => {
+      ScrollTrigger.refresh()
+      console.log('refresht scrolltrigger')
+  },[scrollt])
 
   useGSAP(() => {
 
@@ -159,7 +175,7 @@ const Projects = () => {
                   </div>
                   <div className="flex flex-col text-right">
                     <h3 className="text-sm font-semibold text-black">2024</h3>
-                    <h5 className="text-xs text-gray">Professional</h5>
+                    <h5 className="text-xs text-gray">Zakelijk</h5>
                   </div>
                 </div>
                 </NavLink>
@@ -182,7 +198,7 @@ const Projects = () => {
                   </div>
                   <div className="flex flex-col text-right">
                     <h3 className="text-sm font-semibold text-black">2024</h3>
-                    <h5 className="text-xs text-gray">Personal</h5>
+                    <h5 className="text-xs text-gray">Persoonlijk</h5>
                   </div>
                 </div>
                 </NavLink>
@@ -202,7 +218,7 @@ const Projects = () => {
                   </div>
                   <div className="flex flex-col text-right">
                     <h3 className="text-sm font-semibold text-black">2024</h3>
-                    <h5 className="text-xs text-gray">Professional</h5>
+                    <h5 className="text-xs text-gray">Zakelijk</h5>
                   </div>
                 </div>
                 </NavLink>
@@ -222,7 +238,7 @@ const Projects = () => {
                   </div>
                   <div className="flex flex-col text-right">
                     <h3 className="text-sm font-semibold text-black">2024</h3>
-                    <h5 className="text-xs text-gray">Personal</h5>
+                    <h5 className="text-xs text-gray">Persoonlijk</h5>
                   </div>
                 </div>
                 </NavLink>
@@ -243,7 +259,7 @@ const Projects = () => {
                   </div>
                   <div className="flex flex-col text-right">
                     <h3 className="text-sm font-semibold text-black">2024</h3>
-                    <h5 className="text-xs text-gray">Personal</h5>
+                    <h5 className="text-xs text-gray">Persoonlijk</h5>
                   </div>
                 </div>
                 </NavLink>

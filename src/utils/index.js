@@ -6,6 +6,11 @@ import Wordpressimg from "/assets/images/B_W_Wordpress.png";
 import GSAPimg from "/assets/images/B_W_GSAP.png";
 import THREEimg from "/assets/images/B_W_Three_WEBP.webp";
 
+import Homeimg from "/assets/images/Icons-Home.svg";
+import Projectsimg from "/assets/images/Icons-Projects.svg";
+import Experienceimg from "/assets/images/Icons-Experience.svg";
+import Aboutimg from "/assets/images/Icons-About.svg";
+
 import RIVLMEDIAMOCKUPimg from "/assets/images/RIVLMEDIA_Mockupv2WEBP.webp";
 import APPLEMOCKUPimg from "/assets/images/Apple_MockupWEBP.webp";
 import OnlineIDMOCKUPimg from "/assets/images/OnlineID_Mockupv2WEBP.webp";
@@ -70,6 +75,11 @@ export const REACTIMG = REACTimg;
 export const WORDIMG = Wordpressimg;
 export const GSAPIMG = GSAPimg;
 export const THREEIMG = THREEimg;
+
+export const HOMEIMG = Homeimg;
+export const PROJECTIMG = Projectsimg;
+export const EXPERIENCEIMG = Experienceimg;
+export const ABOUTIMG = Aboutimg;
 
 export const RIVLMEDIAMOCKUPIMG = RIVLMEDIAMOCKUPimg;
 export const APPLEMOCKUPIMG = APPLEMOCKUPimg;

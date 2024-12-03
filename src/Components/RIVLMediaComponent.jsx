@@ -2,7 +2,7 @@
 import { useGSAP } from "@gsap/react"
 import { CROSSIMG, CSSIMG, DYNAMISCHIMG, HTMLIMG, INTERACTIESIMG, JSIMG, KLEURIMG, MOBILEIMG, RIVLMEDIABANNERIMG, RIVLMEDIALOGOIMG, RIVLMEDIASEOIMG, STRAKIMG } from "../utils"
 import gsap from "gsap"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 
 import { ScrollTrigger } from "gsap/all";
@@ -13,13 +13,16 @@ gsap.registerPlugin(ScrollTrigger)
 
 const RIVLMediaComponent = () => {
     const {loadedProjects, setLoadedProjects} = useContext(Context)
+    const {classChangeHero, setClassChangeHero} = useContext(Context)
+    const {classChangeExperience,setClassChangeExperience} = useContext(Context)
     const[animate, setAnimate] = useState(false)
     const[animateOut, setAnimateOut] = useState(false)
+    const[scrollt, setScrollt] = useState(false)
     let [isOpen, setIsOpen] = useState(false)
     let [targetValue, setTargetValue] = useState("")
     let [openMod, setOpenMod] = useState(false)
+    const scrollRef = useRef();
     let targetSRC
-    var componentLoaded = localStorage.getItem("RIVLMEDIAComponentLoaded");
     const navigate = useNavigate();
 
     function searchStart (e) {
@@ -36,40 +39,43 @@ const RIVLMediaComponent = () => {
         }
     },[openMod])
 
-    useEffect(() => {
-        //reload page once to reset all scrolltriggers
-        console.log(componentLoaded)
-         if(componentLoaded === "false") {
-            localStorage.setItem("RIVLMEDIAComponentLoaded", true)
-            //navigate(0)
-            location.reload()
-            console.log('reloading page')
-            } else {
-                console.log('why')
+      useEffect(() => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant",
+            })
                 const img = new Image();
                 img.onload = () => {
                 // when it finishes loading, update the component state
                 setLoadedProjects(true);
                 }
                 img.src = RIVLMEDIABANNERIMG; // by setting an src, you trigger browser download
-                //history.back()
-                localStorage.setItem("RIVLMEDIAComponentLoaded", false);
-            }
-
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "instant",
-          })
+                setClassChangeHero(false)
+                setClassChangeExperience(false)      
       }, [])
 
-    useGSAP(() => {
+      useEffect(() => {
+        if(loadedProjects === true){
+            //laat alles inladen
+            setTimeout(function () {
+                setScrollt(true)
+                }, 100); 
+        }
+      },[loadedProjects])
 
+    useEffect(() => {
+        ScrollTrigger.refresh()
+        console.log('refresht scrolltrigger')
+    },[scrollt])
+
+    useGSAP(() => {
     const titleSlideLight = gsap.utils.toArray(".text_light");
     const titleSlideDark = gsap.utils.toArray(".text_dark");
     const sliders = gsap.utils.toArray(".t_slide");
     const slidersUp = gsap.utils.toArray(".t_slide_up");
     const images = gsap.utils.toArray(".i_fade");
+    
     images.forEach((img) => {
         animateWithGsap(img,{
             opacity: 1,
@@ -77,9 +83,10 @@ const RIVLMediaComponent = () => {
             scrollTrigger: {
                 trigger: img,
               },
+              
               ease: 'power2.Out'
         })
-    }),
+    })
 
     titleSlideLight.forEach((title) => {
         gsap.to(title, {
@@ -136,8 +143,7 @@ const RIVLMediaComponent = () => {
             ease: 'power2.Out'
         })
     })
-
-    },[])
+    },{scope: scrollRef})
     
     useGSAP(() => {
         if(animate === true){
@@ -163,7 +169,7 @@ const RIVLMediaComponent = () => {
 
 
     return (
-        <section id='RIVLMediaID' className="">
+        <section id='RIVLMediaID' className="" ref = {scrollRef}>
 
             <div className="">
                 <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">

@@ -13,11 +13,15 @@ gsap.registerPlugin(ScrollTrigger)
 const JavascriptGameComponent = () => {
     const videoRef = useRef();
     const {loadedProjects, setLoadedProjects} = useContext(Context)
+    const {classChangeHero, setClassChangeHero} = useContext(Context)
+    const {classChangeExperience,setClassChangeExperience} = useContext(Context)
+    const[scrollt, setScrollt] = useState(false)
     const[animate, setAnimate] = useState(false)
     const[animateOut, setAnimateOut] = useState(false)
     let [isOpen, setIsOpen] = useState(false)
     let [targetValue, setTargetValue] = useState("")
     let [openMod, setOpenMod] = useState(false)
+    var componentLoadedJSGame = localStorage.getItem("JSGameComponentLoaded");
     let targetSRC
 
     function searchStart (e) {
@@ -35,26 +39,34 @@ const JavascriptGameComponent = () => {
     },[openMod])
 
     useEffect(() => {
-        //reload page once to reset all scrolltriggers
-         if(!window.location.hash) {
-            window.location = window.location + '#loaded';
-            window.location.reload();
-            } else {
-                const img = new Image();
-                img.onload = () => {
-                // when it finishes loading, update the component state
-                setLoadedProjects(true);
-                }
-                img.src = NINJAGAMESTANDAARDIMG; // by setting an src, you trigger browser download
-                history.back()
-            }
-
         window.scrollTo({
             top: 0,
             left: 0,
             behavior: "instant",
-          })
-      }, [])
+        })
+            const img = new Image();
+            img.onload = () => {
+            // when it finishes loading, update the component state
+            setLoadedProjects(true);
+            }
+            img.src = NINJAGAMESTANDAARDIMG; // by setting an src, you trigger browser download
+            setClassChangeHero(false)
+            setClassChangeExperience(false)            
+  }, [])
+
+  useEffect(() => {
+    if(loadedProjects === true){
+        //laat alles inladen
+        setTimeout(function () {
+            setScrollt(true)
+            }, 100); 
+    }
+  },[loadedProjects])
+
+useEffect(() => {
+    ScrollTrigger.refresh()
+    console.log('refresht scrolltrigger')
+},[scrollt])
 
     useGSAP(() => {
 
