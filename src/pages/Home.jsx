@@ -62,6 +62,7 @@ const Home = () => {
           setTimeout(function () {
           setLoadedHomePage(true)
           }, 100);
+          localStorage.setItem("someVarKey", 'Hero');
           setScroll(false)
         } else if(scrollt === true && loadedHomePage === true) {
           console.log(el)
@@ -71,6 +72,7 @@ const Home = () => {
           }, 100);
           setScrollt(false)
           setScroll(false)
+          localStorage.setItem("someVarKey", 'Hero');
         }
   },[loaded,scrollt,scroll])
 
