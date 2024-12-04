@@ -34,26 +34,28 @@ const Home = () => {
       left: 0,
       behavior: "instant",
   })
+    localStorage.setItem("someVarKey", 'Hero');
+    setScrollt(true)
   },[])
 
   useEffect(() => {
     var cl
-    const bl = document.getElementById(targetId);
-    console.log(bl)
-    if(bl){
-      cl = bl.id
-      localStorage.setItem("someVarKey", cl);
-    } else {
+    if(scroll){
+      const bl = document.getElementById(targetId);
+      if(bl) {
+        cl = bl.id
+        localStorage.setItem("someVarKey", cl);
+      } else {
       localStorage.setItem("someVarKey", 'Hero');
+      }
+      setScrollt(true)
     }
-    setScrollt(true)
   }, [scroll])
 
   // when the page loads the ql Const with the information which button is clicked gets loaded and scrolled towards otherwise do nothing. This is used this way because of we just scroll towards the section without loading the page first the images will load to slow and we won't go to the section we want to see fully
   useEffect(() => {
         var el = document.getElementById(ql)
         if(scrollt === true && loadedHomePage === false){
-          console.log(el)
           //om een of andere reden doet scrollintoview het alleen als je een delay toevoegt, vraag me niet waarom https://stackoverflow.com/questions/71181018/scrollintoview-doesnt-scroll-anywhere
           setTimeout(function () {
           el.scrollIntoView({behavior: "instant", block: "start"}) 
@@ -65,16 +67,15 @@ const Home = () => {
           localStorage.setItem("someVarKey", 'Hero');
           setScroll(false)
         } else if(scrollt === true && loadedHomePage === true) {
-          console.log(el)
           //om een of andere reden doet scrollintoview het alleen als je een delay toevoegt, vraag me niet waarom https://stackoverflow.com/questions/71181018/scrollintoview-doesnt-scroll-anywhere
           setTimeout(function () {
           el.scrollIntoView({behavior: "smooth", block: "start"}) 
           }, 100);
           setScrollt(false)
-          setScroll(false)
           localStorage.setItem("someVarKey", 'Hero');
+          setScroll(false)
         }
-  },[loaded,scrollt,scroll])
+  },[scrollt])
 
 
     return (

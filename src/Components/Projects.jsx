@@ -21,17 +21,19 @@ const Projects = () => {
   const [hover5, setHover5] = useState(false)
   const scrollRef = useRef();
 
-  const attrObserver = new MutationObserver(() => {
-      var myElement = document.getElementById("Projects");
-      if (myElement.classList.contains("active")) {
-        setClassChangeProject(true)
-      }else{
-          setClassChangeProject(false)
-        }
-  });
+    const attrObserver = new MutationObserver(() => {
+          var myElement = document.getElementById("Projects");
+          if(myElement){
+            if (myElement.classList.contains("active")) {
+              setClassChangeProject(true)
+            }else{
+                setClassChangeProject(false)
+              }
+          }
+    });
+    const ELS_test = document.querySelectorAll("#Projects");
+    ELS_test.forEach(el => attrObserver.observe(el, {attributes: true}));
   
-  const ELS_test = document.querySelectorAll("#Projects");
-  ELS_test.forEach(el => attrObserver.observe(el, {attributes: true}));
 
   useEffect(() => {
     const img = new Image();
@@ -54,7 +56,6 @@ const Projects = () => {
 
   useEffect(() => {
       ScrollTrigger.refresh()
-      console.log('refresht scrolltrigger')
   },[scrollt])
 
   useGSAP(() => {

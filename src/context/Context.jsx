@@ -28,7 +28,7 @@ const ContextProvider = (props) =>{
         classChangeExperience,
         setClassChangeExperience,
         classChangeHero,
-        setClassChangeHero
+        setClassChangeHero,
     }
     
     return(

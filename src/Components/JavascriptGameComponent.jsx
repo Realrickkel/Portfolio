@@ -27,7 +27,6 @@ const JavascriptGameComponent = () => {
     function searchStart (e) {
         targetSRC = e.target.src
         setTargetValue(targetSRC)
-        console.log(targetSRC)
         setOpenMod(true)
     }
 
@@ -65,7 +64,6 @@ const JavascriptGameComponent = () => {
 
 useEffect(() => {
     ScrollTrigger.refresh()
-    console.log('refresht scrolltrigger')
 },[scrollt])
 
     useGSAP(() => {
@@ -368,7 +366,7 @@ useEffect(() => {
                                     </div>
 
                                     <div className="mt-4">
-                                        <video playsInline id='NinjaGameVideo' className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef}>
+                                        <video playsinline id='NinjaGameVideo' className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef}>
                                             <source src={NINJAGAMEVID} type='video/mp4'/>
                                         </video>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">

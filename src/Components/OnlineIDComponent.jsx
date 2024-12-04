@@ -26,7 +26,6 @@ const OnlineIDComponent = () => {
     function searchStart (e) {
         targetSRC = e.target.src
         setTargetValue(targetSRC)
-        console.log(targetSRC)
         setOpenMod(true)
     }
 
@@ -64,7 +63,6 @@ const OnlineIDComponent = () => {
 
 useEffect(() => {
     ScrollTrigger.refresh()
-    console.log('refresht scrolltrigger')
 },[scrollt])
 
     useGSAP(() => {
@@ -309,8 +307,8 @@ useEffect(() => {
                             <div id="Design" className="common-padding !px-0 flex flex-row justify-between items-start h-100%">
                                 <div id="" className="max-w-[15%] sticky top-2">
                                     <div className="relative md:rotate-0 md:translate-y-0 -rotate-90 sm:translate-y-24 translate-y-24">
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">Vacatures</h2>
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">Vacatures</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">Updates</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">Updates</h2>
                                     </div>
                                 </div>
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">

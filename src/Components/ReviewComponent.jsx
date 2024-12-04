@@ -64,7 +64,6 @@ const ReviewComponent = () => {
 
 useEffect(() => {
     ScrollTrigger.refresh()
-    console.log('refresht scrolltrigger')
 },[scrollt])
 
     useGSAP(() => {

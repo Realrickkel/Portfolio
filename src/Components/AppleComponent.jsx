@@ -31,7 +31,6 @@ const AppleComponent = () => {
     function searchStart (e) {
         targetSRC = e.target.src
         setTargetValue(targetSRC)
-        console.log(targetSRC)
         setOpenMod(true)
     }
 
@@ -69,7 +68,6 @@ const AppleComponent = () => {
 
 useEffect(() => {
     ScrollTrigger.refresh()
-    console.log('refresht scrolltrigger')
 },[scrollt])
 
     useGSAP(() => {
@@ -367,7 +365,7 @@ useEffect(() => {
                                 </div>
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="mt-4">
-                                        <video playsInline id='APPLEGSAPVID' className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef2}>
+                                        <video playsinline id='APPLEGSAPVID' className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef2}>
                                             <source src={APPLEGSAPVID} type='video/mp4'/>
                                         </video>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
@@ -429,7 +427,7 @@ useEffect(() => {
                                 </div>
                                 <div  className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="my-4">
-                                        <video playsInline id='APPLEHIGHLIGHTSIMG' className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef3}>
+                                        <video playsinline id='APPLEHIGHLIGHTSIMG' className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef3}>
                                             <source src={APPLEHIGHLIGHTSIMG} type='video/mp4'/>
                                         </video>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">

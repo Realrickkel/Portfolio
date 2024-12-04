@@ -36,7 +36,6 @@ const Experience = () => {
 
   useEffect(() => {
       ScrollTrigger.refresh()
-      console.log('refresht scrolltrigger')
   },[scrollt])
   
   const ELS_test = document.querySelectorAll("#Experience");
