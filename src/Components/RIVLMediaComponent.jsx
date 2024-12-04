@@ -15,7 +15,6 @@ const RIVLMediaComponent = () => {
     const {loadedProjects, setLoadedProjects} = useContext(Context)
     const {classChangeHero, setClassChangeHero} = useContext(Context)
     const {classChangeExperience,setClassChangeExperience} = useContext(Context)
-    const {weAreHome,setWeAreHome} = useContext(Context)
     const[animate, setAnimate] = useState(false)
     const[animateOut, setAnimateOut] = useState(false)
     const[scrollt, setScrollt] = useState(false)
@@ -52,8 +51,7 @@ const RIVLMediaComponent = () => {
                 }
                 img.src = RIVLMEDIABANNERIMG; // by setting an src, you trigger browser download
                 setClassChangeHero(false)
-                setClassChangeExperience(false)   
-                setWeAreHome(false)   
+                setClassChangeExperience(false)     
       }, [])
 
       useEffect(() => {

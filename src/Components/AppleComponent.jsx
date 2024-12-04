@@ -150,9 +150,6 @@ useEffect(() => {
             toggleActions: 'play none none none',
             start: '-10% bottom',
         },
-        onComplete: () => {
-            videoRef.current.play();
-        }
     })
 
     gsap.to('#APPLEHIGHLIGHTSIMG', {
@@ -161,9 +158,6 @@ useEffect(() => {
             toggleActions: 'play none none none',
             start: '-10% bottom',
         },
-        onComplete: () => {
-            videoRef.current.play();
-        }
     })
 
     },[])
@@ -365,8 +359,8 @@ useEffect(() => {
                                 </div>
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="mt-4">
-                                        <video playsinline id='APPLEGSAPVID' className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef2}>
-                                            <source src={APPLEGSAPVID} type='video/mp4'/>
+                                        <video playsInline id='APPLEGSAPVID' src={APPLEGSAPVID} className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef2}>
+                                            {/*<source src={APPLEGSAPVID} type='video/mp4'/>*/}
                                         </video>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
@@ -427,8 +421,8 @@ useEffect(() => {
                                 </div>
                                 <div  className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="my-4">
-                                        <video playsinline id='APPLEHIGHLIGHTSIMG' className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef3}>
-                                            <source src={APPLEHIGHLIGHTSIMG} type='video/mp4'/>
+                                        <video playsInline id='APPLEHIGHLIGHTSIMG' src={APPLEHIGHLIGHTSIMG} className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef3}>
+                                            {/*<source src={APPLEHIGHLIGHTSIMG} type='video/mp4'/>*/}
                                         </video>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">

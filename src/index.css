@@ -63,10 +63,20 @@ body {
   break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  transform: translateZ(0);
 }
 
 .experience-class{
   columns: 300px;
+}
+
+.mac .experience-class{
+  columns: 1;
+}
+
+.ipad .experience-class{
+  columns: 1;
 }
 
 .link{

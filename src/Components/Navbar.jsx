@@ -34,10 +34,12 @@ const Navbar = () => {
         var navEl = document.getElementById('menuLinks')
         var windowWidthMax = windowWidth +1
         var windowWidthMin = windowWidth -1
+        console.log(windowWidth)
+        console.log(windowWidthChange)
         if(windowWidth >= 1024){
             navEl.classList.remove("closed")
             setMenuOpen(true)
-        }else if(windowWidth <= 1024 ){
+        }else if(windowWidth <= 1024){
             navEl.classList.add("closed")
             setMenuOpen(false)
         }else{

@@ -265,6 +265,7 @@ const Projects = () => {
                 </div>
                 </NavLink>
               </div>
+              
             </div>
         </div>
       </div>

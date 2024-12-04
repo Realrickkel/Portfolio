@@ -366,8 +366,8 @@ useEffect(() => {
                                     </div>
 
                                     <div className="mt-4">
-                                        <video playsinline id='NinjaGameVideo' className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef}>
-                                            <source src={NINJAGAMEVID} type='video/mp4'/>
+                                        <video playsInline id='NinjaGameVideo' src={NINJAGAMEVID} className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef}>
+                                            {/*<source src={NINJAGAMEVID} type='video/mp4'/>*/}
                                         </video>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
