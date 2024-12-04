@@ -154,7 +154,7 @@ gsap.to('#Experience',{
                 <div className="experience-block">
                   <h3 className="font-semibold text-xl">Websites onderhouden</h3>
                   <h4 className="font-semibold text-base text-black">Online ID</h4>
-                  <p className="text-black">Bij Online ID beheerde en onderhoudde ik websites om optimale prestaties, veiligheid en gebruiksvriendelijkheid te garanderen. Ik was verantwoordelijk voor contentupdates, technische implementaties, bugfixes en het naleven van webstandaarden en SEO-richtlijnen. Door proactieve verbeteringen en een nauwe samenwerken met andere teamleaden droeg ik bij aan een stabiele online aanwezigheid en een betere gebruikerservaring.</p>
+                  <p className="text-black">Bij Online ID beheerde en onderhield ik websites om optimale prestaties, veiligheid en gebruiksvriendelijkheid te garanderen. Ik was verantwoordelijk voor contentupdates, technische implementaties, bugfixes en het naleven van webstandaarden en SEO-richtlijnen. Door proactieve verbeteringen en een nauwe samenwerking met andere teamleaden droeg ik bij aan een stabiele online aanwezigheid en een betere gebruikerservaring.</p>
                   <div className="text-sm flex flex-row flex-wrap gap-2 mt-2 text-black">
                     <p className="experience-tags">HTML</p>
                     <p className="experience-tags">CSS</p>
