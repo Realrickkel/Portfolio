@@ -42,14 +42,15 @@ const ReviewComponent = () => {
             left: 0,
             behavior: "instant",
         })
-            const img = new Image();
-            img.onload = () => {
-            // when it finishes loading, update the component state
+        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
             setLoadedProjects(true);
-            }
-            img.src = FILMREVIEWSTANDAARDIMG; // by setting an src, you trigger browser download
+        });
             setClassChangeHero(false)
             setClassChangeExperience(false)  
+            //disable scroll until page is loaded
+            window.onscroll = function () {
+                window.scrollTo(0, 0);
+            };  
                         
   }, [])
 
@@ -58,7 +59,8 @@ const ReviewComponent = () => {
         //laat alles inladen
         setTimeout(function () {
             setScrollt(true)
-            }, 100); 
+            }, 100);
+            window.onscroll = function () { }; 
     }
   },[loadedProjects])
 
@@ -204,7 +206,7 @@ useEffect(() => {
                             <div id="" className="lg:max-w-[51vw] xl:max-w-[65%] max-w-[90vw] mx-auto flex flex-col justify-between">
                                 <div className="flex flex-col gap-2">
                                     <h2 className="text-2xl font-bold text-gray-500">Hoe zou een brabantse <span className="text-gray-950">film recensie</span> er uit zien?</h2> 
-                                    <p>Een innovatieve website die filmliefhebbers en seriekijkers helpt bij het ontdekken van hun volgende favoriete titels. Deze webapp maakt gebruik van de kracht van de IMDB API en de Gemini API om uitgebreide informatie en grappige beoordelingen te genereren.</p>
+                                    <p>Een innovatieve website die filmliefhebbers en seriekijkers helpt bij het ontdekken van hun volgende favoriete titels. Deze webapp maakt gebruik van de kracht van de OMDB API en de Gemini API om uitgebreide informatie en grappige beoordelingen te genereren.</p>
 
                                     <p>De app is ontworpen om op een grappige manier films en series in het brabants te beoordelen. Het doel van het bouwen van deze site was om meer te leren over het gebruik van API&#39;s en de REACT library.</p>
                                 </div>
@@ -213,15 +215,15 @@ useEffect(() => {
                                         <div className="lg:flex hidden flex-row flex-wrap md:justify-normal justify-center mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Focuspunten</h3>
-                                                <ul className="mt-2">
-                                                    <li>IMDB API,</li>
+                                                <ul className="mt-0">
+                                                    <li>OMDB API,</li>
                                                     <li>Gemini API</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2024</li>
                                                 </ul>
                                             </div>
@@ -229,7 +231,7 @@ useEffect(() => {
                                             <div className="flex flex-row gap-8 mb-3">
                                                 <div className="me-3">
                                                     <h3 className="font-semibold">Link</h3>
-                                                    <ul className="mt-2 relative">
+                                                    <ul className="mt-0 relative">
                                                         <li><a href="https://istwa.netlify.app/" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>De Filmrecensent</a></li>
                                                         <span id="linkUnderline" className="w-0 absolute"></span>
                                                     </ul>
@@ -237,7 +239,7 @@ useEffect(() => {
 
                                                 <div className="lg:hidden flex flex-col">
                                                     <h3 className="font-semibold">Gebruikte tools</h3>
-                                                    <ul className="mt-2 flex flex-row">
+                                                    <ul className="mt-0 flex flex-row">
                                                         <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                         <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
@@ -248,7 +250,7 @@ useEffect(() => {
                                         <div className="hidden lg:flex flex-row mt-5 gap-8 ms-3 lg:ms-0">
                                             <div className="ms-3">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-row mx-auto justify-center">
+                                                <ul className="mt-0 flex flex-row mx-auto justify-center">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                     <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
@@ -262,22 +264,22 @@ useEffect(() => {
                                         <div className="grid grid-cols-2 mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Focuspunten</h3>
-                                                <ul className="mt-2">
-                                                    <li>IMDB API,</li>
+                                                <ul className="mt-0">
+                                                    <li>OMDB API,</li>
                                                     <li>Gemini API</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2024</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Link</h3>
-                                                <ul className="mt-2 relative w-fit">
+                                                <ul className="mt-0 relative w-fit">
                                                     <li className=""><a href="https://istwa.netlify.app/" id="link" target="blank" className="link relative w-fit" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>De Filmrecensent</a></li>
                                                     <span id="linkUnderline" className="w-0 absolute"></span>
                                                 </ul>
@@ -285,7 +287,7 @@ useEffect(() => {
 
                                             <div className="lg:hidden flex flex-col">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-row">
+                                                <ul className="mt-0 flex flex-row">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                     <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
@@ -297,7 +299,7 @@ useEffect(() => {
                                         
                                     </div>
                                     <div className="mt-5">
-                                        <p>Bekijk hieronder hoe de website is ontworpen</p>
+                                        <p>Bekijk hieronder hoe de webapp is ontworpen.</p>
                                     </div>
                                 </div>
                             </div>
@@ -320,7 +322,7 @@ useEffect(() => {
                                         <img src={FILMREVIEWDATABASEIMG} name="FILMREVIEWDATABASEIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold">Filmdatabase: </h2>
+                                                <h2 className="text-xl font-semibold">Film database: </h2>
                                                 <p className="text-sm ">Er is geen bekendere database over films dan IMDB. De films en worden dan ook via de OMDB API aangeroepen.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
@@ -347,7 +349,7 @@ useEffect(() => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold ">Dynamische Koptitel: </h2>
-                                                <p className="text-sm">Op basis van de score op IMDB genereert de website zonder tussenkomst van de Gemini API al een koptitel</p>
+                                                <p className="text-sm">Op basis van de score op IMDB genereert de website zonder tussenkomst van de Gemini API al een koptitel.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <p className="text-sm mt-1">Van goed naar slecht zijn dit de opties:</p>
@@ -383,10 +385,10 @@ useEffect(() => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold ">De Recensie: </h2>
-                                                <p className="text-sm">De benodigde informatie, zoals het plot en score van de film of, worden middels een geheim prompt naar de Gemini API gestuurd.</p>
+                                                <p className="text-sm">De benodigde informatie, zoals het plot en score van de film, worden middels een geheim prompt naar de Gemini API gestuurd.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Deze creeërt geheel zelf een recensie die accuraat is voor de film en bijvoorbeeld een slechte film ook slecht beoordeeld.</p>
+                                                <p className="text-sm mt-1">Deze creeërt geheel zelf een recensie die accuraat is voor de film. Een slechte film wordt dan ook slecht beoordeeld en een goede film goed.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -396,10 +398,10 @@ useEffect(() => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold ">Laadscherm: </h2>
-                                                <p className="text-sm">Aangezien het altijd even duurt voordat je een volledig antwoord krijgt van een AI Chatbot is er gekozen om een laadscherm in te bouwen</p>
+                                                <p className="text-sm">Aangezien het altijd even duurt voordat je een volledig antwoord krijgt van een AI Chatbot is er gekozen om een laadscherm in te bouwen.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Deze kan zo uitgebreid zijn als we willen maar het beste is om de gebruiker op de hoogte te stellen van wat er op het moment gebeurd.</p>
+                                                <p className="text-sm mt-1">Deze kan zo uitgebreid zijn als je wil maar het beste is om de gebruiker op de hoogte te stellen van wat er op het moment gebeurd.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -423,8 +425,8 @@ useEffect(() => {
                                                     <p className="text-sm ">Het resulteert altijd in een grappige recensie waar ik zelf af en toe om moet gniffelen. Daarnaast is het ook heel bruikbaar want je weet meteen of de film of serie iets voor jou is!</p>
                                                 </div>
                                                 <div className="flex flex-col flex-1 t_slide_up">
-                                                    <h2 className="text-xl font-semibold">Gerichte Contentstrategie:</h2>
-                                                    <p className="text-sm ">Door uitgebreid zoekwoordonderzoek is bepaald welke termen de doelgroep van RIVL Media gebruikt. Vervolgens zijn deze geïntegreerd in de tekst, meta-titels, en beschrijvingen zonder afbreuk te doen aan de leesbaarheid en kwaliteit van de content.</p>
+                                                    <h2 className="text-xl font-semibold"></h2>
+                                                    <p className="text-sm "></p>
                                             </div>
                                         </div>
                                     </div>

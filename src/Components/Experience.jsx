@@ -18,11 +18,13 @@ const Experience = () => {
 
   const attrObserver = new MutationObserver(() => {
       var myElement = document.getElementById("Experience");
+      if(myElement){
       if (myElement.classList.contains("active")) {
         setClassChangeExperience(true)
       }else{
           setClassChangeExperience(false)
         }
+      }
   });
 
   useEffect(() => {
@@ -171,7 +173,7 @@ gsap.to('#Experience',{
                 <div className="experience-block">
                   <h3 className="font-semibold text-xl">CMS en E-learnings Ontwikkelen/Onderhouden</h3>
                   <h4 className="font-semibold text-base text-black">Instructiefilm.nl</h4>
-                  <p className="text-black">Bij Instructiefilm.nl ontwikkelde en beheerde ik CMS&apos;en en interactieve e-learnings met focus op maatwerk en gebruiksvriendelijkheid. Ik implementeerde nieuwe functies, loste technische problemen op en optimaliseerde modules. Daarnaast beheerde ik databases en verbeterde daarin workflows, wat bijdroeg aan een schaalbare en betrouwbare technische infrastructuur voor gebruikers.</p>
+                  <p className="text-black">Bij Instructiefilm.nl ontwikkelde en beheerde ik CMS&apos;en en interactieve e-learnings met focus op maatwerk en gebruiksvriendelijkheid. Ik implementeerde nieuwe functies, loste technische problemen op en optimaliseerde modules. Daarnaast beheerde ik databases en verbeterde daarin workflows. Dit droeg bij aan een schaalbare en betrouwbare technische infrastructuur voor gebruikers.</p>
                   <div className="text-sm flex flex-row flex-wrap gap-2 mt-2 text-black">
                     <p className="experience-tags">HTML</p>
                     <p className="experience-tags">CSS</p>

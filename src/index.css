@@ -213,3 +213,31 @@ body {
   font-weight: 500;
   @apply py-1 px-3
 }
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  flex: 1;
+}
+
+.loader i
+{
+  opacity: 0.2;
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin{
+  from {
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}

@@ -15,13 +15,14 @@ const JavascriptGameComponent = () => {
     const {loadedProjects, setLoadedProjects} = useContext(Context)
     const {classChangeHero, setClassChangeHero} = useContext(Context)
     const {classChangeExperience,setClassChangeExperience} = useContext(Context)
+    const [loadedImages, setLoadedImages] = useState(false)
+    const [loadedVideos, setLoadedVideos] = useState(false)
     const[scrollt, setScrollt] = useState(false)
     const[animate, setAnimate] = useState(false)
     const[animateOut, setAnimateOut] = useState(false)
     let [isOpen, setIsOpen] = useState(false)
     let [targetValue, setTargetValue] = useState("")
     let [openMod, setOpenMod] = useState(false)
-    var componentLoadedJSGame = localStorage.getItem("JSGameComponentLoaded");
     let targetSRC
 
     function searchStart (e) {
@@ -43,22 +44,31 @@ const JavascriptGameComponent = () => {
             left: 0,
             behavior: "instant",
         })
-            const img = new Image();
-            img.onload = () => {
-            // when it finishes loading, update the component state
-            setLoadedProjects(true);
-            }
-            img.src = NINJAGAMESTANDAARDIMG; // by setting an src, you trigger browser download
+        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+            setLoadedImages(true)
+        });
+
             setClassChangeHero(false)
-            setClassChangeExperience(false)            
+            setClassChangeExperience(false)     
+            
+            window.onscroll = function () {
+                window.scrollTo(0, 0);
+            };  
   }, [])
+
+  useEffect(() => {
+    if(loadedImages && loadedVideos){
+        setLoadedProjects(true);
+    }
+  },[loadedImages, loadedVideos])
 
   useEffect(() => {
     if(loadedProjects === true){
         //laat alles inladen
         setTimeout(function () {
             setScrollt(true)
-            }, 100); 
+            }, 100);
+            window.onscroll = function () { }; 
     }
   },[loadedProjects])
 
@@ -207,7 +217,7 @@ useEffect(() => {
                             <img src={NINJAGAMESTANDAARDIMG} name="NINJAGAMESTANDAARDIMG" onClick={searchStart} alt="HTML image" className="flex rounded-2xl cursor-pointer"/>
                         </div>
                         <div>
-                            <h1 className="text-4xl font-bold text-center t_slide">Een Game in de browser maken!</h1>
+                            <h1 className="text-4xl font-bold text-center mx-4 t_slide">Een Game in de browser maken!</h1>
                         </div>
 
                         <div className="common-padding !px-0 flex flex-1 lg:flex-row flex-col lg:max-w-[70vw] xl:max-w-[78vw] m-auto gap-10 overflow-hidden h-full t_slide_up">
@@ -223,7 +233,7 @@ useEffect(() => {
                                         <div className="lg:flex hidden flex-row flex-wrap md:justify-normal justify-center mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Focuspunten</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>Basics van Game Design,</li>
                                                     <li>NPC&#39;s,</li>
                                                     <li>Details</li>
@@ -232,7 +242,7 @@ useEffect(() => {
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2024</li>
                                                 </ul>
                                             </div>
@@ -240,7 +250,7 @@ useEffect(() => {
                                             <div className="flex flex-row gap-8 mb-3">
                                                 <div className="me-3">
                                                     <h3 className="font-semibold">Link</h3>
-                                                    <ul className="mt-2 relative">
+                                                    <ul className="mt-0 relative">
                                                         <li><a href="https://ninjajavascriptgamerick.netlify.app/" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>Speel de game hier!</a></li>
                                                         <span id="linkUnderline" className="w-0 absolute"></span>
                                                     </ul>
@@ -248,7 +258,7 @@ useEffect(() => {
 
                                                 <div className="lg:hidden flex flex-col">
                                                     <h3 className="font-semibold">Gebruikte tools</h3>
-                                                    <ul className="mt-2 flex flex-row">
+                                                    <ul className="mt-0 flex flex-row">
                                                         <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                         <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
@@ -259,7 +269,7 @@ useEffect(() => {
                                         <div className="hidden lg:flex flex-row mt-5 gap-8 ms-3 lg:ms-0">
                                             <div className="ms-3">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-row mx-auto justify-center">
+                                                <ul className="mt-0 flex flex-row mx-auto justify-center">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                     <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
@@ -272,8 +282,8 @@ useEffect(() => {
                                         <div className="grid grid-cols-2 mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Focuspunten</h3>
-                                                <ul className="mt-2">
-                                                    <li>Basics van Game Design,,</li>
+                                                <ul className="mt-0">
+                                                    <li>Basics van Game Design,</li>
                                                     <li>NPC&#39;s,</li>
                                                     <li>Details</li>
                                                 </ul>
@@ -281,14 +291,14 @@ useEffect(() => {
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2024</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Link</h3>
-                                                <ul className="mt-2 relative w-fit">
+                                                <ul className="mt-0 relative w-fit">
                                                     <li><a href="https://ninjajavascriptgamerick.netlify.app/" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>Speel de game hier!</a></li>
                                                     <span id="linkUnderline" className="w-0 absolute"></span>
                                                 </ul>
@@ -296,7 +306,7 @@ useEffect(() => {
 
                                             <div className="lg:hidden flex flex-col">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-row">
+                                                <ul className="mt-0 flex flex-row">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                     <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
@@ -307,7 +317,7 @@ useEffect(() => {
                                         
                                     </div>
                                     <div className="mt-5">
-                                        <p>Bekijk hieronder hoe de game is gemaakt</p>
+                                        <p>Bekijk hieronder hoe de game is gemaakt.</p>
                                     </div>
                                 </div>
                             </div>
@@ -331,10 +341,10 @@ useEffect(() => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold">Wereld: </h2>
-                                                <p className="text-sm ">De wereld heb ik vanuit <a id="link" target="blank" className="link" href="https://mappermate.com/">mappermate</a> geïmporteerd. Hierbij kan je in een grid sprites plaatsen en deze exporteren zodat, standaard onderdelen al meteen geïmporteerd worden. </p>
+                                                <p className="text-sm ">De wereld heb ik vanuit <a id="link" target="blank" className="link" href="https://mappermate.com/">mappermate</a> geïmporteerd. Hierbij kan je in een grid sprites plaatsen en deze exporteren zodat de basis onderdelen van je game al meteen in code worden omgezet. </p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Denk aan player controls, collision detection systeem en uiteraard de sprites die in een grid zijn geplaatst.</p>
+                                                <p className="text-sm mt-1">Denk aan de basis player controls, collision detection systeem en uiteraard de sprites die in het grid zijn geplaatst.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -344,10 +354,10 @@ useEffect(() => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold ">Karakter:</h2>
-                                                <p className="text-sm">De basisonderdelen van het karakter zij al met mappermate geïmporteerd. Het enige wat je nog moet toevoegen is de sprites die horen bij welke richting je oploopt en of je wordt geraakt door een enemy.</p>
+                                                <p className="text-sm">De basisonderdelen van het karakter zij al met mappermate geïmporteerd. Het enige wat je nog moet toevoegen is de sprites die horen bij welke actie je karakter uitvoert, vecht animaties en of je wordt geraakt door een vijand.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Ook heeft het karakter een aanval. Door op spatiebalk te klikken kan je met je speer slaan.</p>
+                                                <p className="text-sm mt-1">Een van de onderdelen die je toevoegt is het aanvallen van een vijand. Door op spatiebalk te klikken kan je met je speer slaan en de vijand raken.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -356,23 +366,23 @@ useEffect(() => {
                                         <img src={GAMEENEMYIMG} name="GAMEENEMYIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">Enemies:</h2>
-                                                <p className="text-sm">In de tutorial leer je hoe je een enemy maakt. De enemy krijgt een pathfinding AI en doet damage op het moment dat je als speler met de enemy in aanraking komt. Daarnaast kan je ook damage doen door de enemy met de speer te slaan. Ik heb zelf de overige enemies toegevoegd en ze een knockback gegeven op het moment. </p>
+                                                <h2 className="text-xl font-semibold ">Vijanden:</h2>
+                                                <p className="text-sm">In de tutorial leer je hoe je een vijand maakt. De vijand krijgt een pathfinding AI en doet damage op het moment dat je als speler met de vijand in aanraking komt. Daarnaast kan je ook damage doen door de vijand met de speer te slaan. Ik heb zelf de overige vijanden toegevoegd en ze een knockback gegeven op het moment dat ze worden geraakt. </p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Het is heel simpel een enemy toe te voegen. Elke enemy refereert aan het Enemy.js bestand en door een paar parameters aan te passen kan je heel simpel nieuwe enemies toevoegen zonder voor elk karakter de hele code opnieuw te schrijven. Dit is het laatste onderdeel wat je leert in de tutorial. Vanaf hier is alles wat ik in de game doe zelf bedacht.</p>
+                                                <p className="text-sm mt-1">Het is heel simpel een vijand toe te voegen. Elke vijand refereert aan het Enemy.js bestand en door een paar parameters aan te passen kan je heel simpel nieuwe vijanden toevoegen zonder voor elke vijand de hele code opnieuw te schrijven. Dit is het laatste onderdeel wat je leert in de tutorial. Vanaf hier is alles wat ik in de game maak zelf bedacht.</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="mt-4">
-                                        <video playsInline id='NinjaGameVideo' src={NINJAGAMEVID} className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef}>
+                                        <video playsInline id='NinjaGameVideo' src={NINJAGAMEVID} onLoadedData={() => setLoadedVideos(true)} className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef}>
                                             {/*<source src={NINJAGAMEVID} type='video/mp4'/>*/}
                                         </video>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold ">Collision systeem: </h2>
-                                                <p className="text-sm">Het collision systeem uit de tutorial werkt niet zoals het hoort. Het grootste issue was dat het keek naar de richting in de Y en X assen en als het dan in contact komt met een collision blok werd het karakter teruggezet in de tegengestelde richting. Wat er kon gebeuren was dat als de detectie net iets te langzaam was kon het karakter bijvoorbeeld al 2 frames in de collision blok zitten. Wanneer de game je dan in tegengestelde richting eruit wil duwen detecteert de colliosion detectie dat je nu weer in een collision blok zit en de andere kant op gestuurd moet worden. Hierdoor ontstond een infinite loop waarbij het karakter vast zat in de muur.</p>
+                                                <p className="text-sm">Het collision systeem uit de tutorial werkt niet zoals het hoort. Het grootste issue was dat het keek naar de richting in de Y en X assen en als het dan een karakter in contact komt met een collision blok werd het karakter teruggezet in de tegengestelde richting. Wat er kon gebeuren was dat als de detectie net iets te langzaam was het karakter bijvoorbeeld al 2 frames in de collision blok kon zitten. Wanneer de game je dan in tegengestelde richting eruit wil duwen detecteert de colliosion detectie dat je nu weer in een collision blok zit en de andere kant op gestuurd moet worden. Hierdoor ontstond een infinite loop waarbij het karakter vast zat in de muur.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <p className="text-sm mt-1">In het nieuwe collision systeem wordt er gekeken naar wat de richting was op het moment van impact tussen twee objecten. Zelfs als de collision nu te laat wordt gedetecteerd kan hij nu niet in een infinite loop vallen</p>
@@ -385,7 +395,7 @@ useEffect(() => {
 
                             <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 ">
                                 <div className="md:text-4xl text-xl font-bold md:leading-[3rem] leading-[1.6rem] italic">
-                                    <p className="t_slide">&ldquo;Nu de basis is gelegd voor de game is het tijd om extra dingen toe te voegen te beginnen met NPC&#39;s en daarna nog de laatste details om de gameplay ervaring te complementeren!&ldquo;</p>
+                                    <p className="t_slide">&ldquo;Nu de basis is gelegd voor de game is het tijd om extra dingen toe te voegen, te beginnen met NPC&#39;s. Daarna nog de laatste details toevoegen om de gameplay ervaring te complementeren!&ldquo;</p>
                                 </div>
                             </div>
 
@@ -402,11 +412,11 @@ useEffect(() => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold ">NPC&#39;s met Pathfinding toevoegen:</h2>
-                                                <p className="text-sm">Het toevoegen van NPC&#39;s werkt vrijwel hetzelfde als de enemies. Er is een standaar NPC bestand waar elke NPC met zijn eigen parameters aan refereert waardoor het toevoegen erg simpel is. De pathfinding van de NPC&#39;s werkt echter iets anders dan die van de enemies. Ze lopen op een vooraf bedacht pad en herhalen deze steeds. Een beetje zoals je in de klassieke RPG&#39;s ook ziet. Deze paden zijn ook makkelijk voor elke NPC met parameters aan te geven waardoor iedereen toch anders loopt.</p>
+                                                <p className="text-sm">Het toevoegen van NPC&#39;s werkt vrijwel hetzelfde als de vijanden. Er is een standaard NPC bestand waar elke NPC met zijn eigen parameters aan refereert waardoor het toevoegen erg simpel is. De pathfinding van de NPC&#39;s werkt echter iets anders dan die van de vijanden. Ze lopen op een vooraf bedacht pad en herhalen deze steeds. Een beetje zoals je in de klassieke RPG&#39;s ook ziet. Deze paden zijn ook makkelijk voor elke NPC met parameters aan te geven waardoor iedereen toch anders loopt.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold ">Interactie:</h2>
-                                                <p className="text-sm mt-1">Daarnaast heb ik interactie toegevoegd. Elke NPC heeft zijn eigen tekst die zichtbaar wordt als je dichtbij genoeg bent en op Z klikt op je toetsenbord. Dit was nog best een uitdaging omdat Canvas waarin de game wordt gerenderd het niet zo leuk vindt als je teksten in beeld en weer uit beeld laat komen. Ik heb het opgelost door een afbeelding te maken die naar de juiste tekst scrollt als je met een NPC praat. Als je niet met iemand praat is deze tekst onzichtbaar tot je hem weer activeert.</p>
+                                                <p className="text-sm mt-1">Daarnaast heb ik interactie toegevoegd. Elke NPC heeft zijn eigen tekst die zichtbaar wordt als je dichtbij genoeg bent en op Z klikt op je toetsenbord. Dit was nog best een uitdaging omdat Canvas waarin de game wordt gerenderd het niet zo leuk vindt als je teksten in beeld en weer uit beeld laat gaan. Ik heb het opgelost door een afbeelding te maken die naar de juiste tekst scrollt als je met een NPC praat. Als je niet met iemand praat is deze tekst onzichtbaar tot je hem weer activeert.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -427,11 +437,11 @@ useEffect(() => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                     <h2 className="text-xl font-semibold">Win/Verlies: </h2>
-                                                    <p className="text-sm ">Natuurlijk kan je de game winnen en ook verliezen. Als je alle enemies weet te verslaan win je. Lukt dat niet en ga je zelf dood dan ben je af en moet je opnieuw beginnen.</p>
+                                                    <p className="text-sm ">Natuurlijk kan je de game winnen en ook verliezen. Als je alle vijanden weet te verslaan win je. Lukt dat niet en ga je zelf dood dan ben je af en moet je opnieuw beginnen.</p>
                                                 </div>
                                                 <div className="flex flex-col flex-1 t_slide_up">
                                                     <h2 className="text-xl font-semibold">Geluid:</h2>
-                                                    <p className="text-sm ">Als laatst voegen we geluid toe om de game af te maken. Er speelt een muziekje als je de game opstart en verschillende geluidseffecten spelen af wanneer je in de game bepaalde acties uitvoert.</p>
+                                                    <p className="text-sm ">Als laatst heb ik geluid toegevoegd om de game af te maken. Er speelt een muziekje als je de game opstart en verschillende geluidseffecten spelen af wanneer je in de game bepaalde acties uitvoert.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -446,7 +456,7 @@ useEffect(() => {
                                 </div>
                                 <div className="flex md:flex-row flex-col gap-3 mt-2 md:px-28">
                                     <div className="flex flex-col flex-1 t_slide_up">
-                                        <p className="text-sm ">Dit was een erg leuk project om te maken. Het programmeren van de game vraagt een heel andere manier van programmeren doordat je veel bezig bent met het uitvogelen hoe de browser jouw code interpreteert, en deze vertaald naar het scherm.</p>
+                                        <p className="text-sm ">Dit was een erg leuk project om te maken. Het programmeren van de game vraagt een heel andere manier van programmeren doordat je veel bezig bent met het uitvogelen hoe de browser jouw acties interpreteert, en deze vertaald naar het scherm.</p>
                                     </div>
                                     <div className="flex flex-col flex-1 t_slide_up">
                                         <p className="text-sm ">Qua eindproduct is het natuurlijk geen volledige game, maar dit als losstaand level is wel een complete gameplay ervaring. Kwalitatief zit het dan ook erg goed in elkaar.</p>

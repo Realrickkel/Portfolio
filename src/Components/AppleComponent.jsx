@@ -18,6 +18,10 @@ const AppleComponent = () => {
     const {loadedProjects, setLoadedProjects} = useContext(Context)
     const {classChangeHero, setClassChangeHero} = useContext(Context)
     const {classChangeExperience,setClassChangeExperience} = useContext(Context)
+    const [loadedImages, setLoadedImages] = useState(false)
+    const [loadedVideo1, setLoadedVideo1] = useState(false)
+    const [loadedVideo2, setLoadedVideo2] = useState(false)
+    const [loadedVideos, setLoadedVideos] = useState(false)
     const[scrollt, setScrollt] = useState(false)
     const[animate, setAnimate] = useState(false)
     const[animateOut, setAnimateOut] = useState(false)
@@ -25,7 +29,6 @@ const AppleComponent = () => {
     let [targetValue, setTargetValue] = useState("")
     let [openMod, setOpenMod] = useState(false)
     let targetSRC
-    var componentLoadedApple = localStorage.getItem("AppleComponentLoaded");
     const navigate = useNavigate();
 
     function searchStart (e) {
@@ -47,15 +50,28 @@ const AppleComponent = () => {
             left: 0,
             behavior: "instant",
         })
-            const img = new Image();
-            img.onload = () => {
-            // when it finishes loading, update the component state
-            setLoadedProjects(true);
-            }
-            img.src = APPLEHOMESCREENIMG; // by setting an src, you trigger browser download
+        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+            setLoadedImages(true)
+        });
             setClassChangeHero(false)
-            setClassChangeExperience(false)             
+            setClassChangeExperience(false)   
+            
+            window.onscroll = function () {
+                window.scrollTo(0, 0);
+            };         
   }, [])
+
+  useEffect(() => {
+    if(loadedVideo1 && loadedVideo2){
+        setLoadedVideos(true);
+    }
+  },[loadedVideo1, loadedVideo2])
+
+  useEffect(() => {
+    if(loadedImages && loadedVideos){
+        setLoadedProjects(true);
+    }
+  },[loadedImages, loadedVideos])
 
   useEffect(() => {
     if(loadedProjects === true){
@@ -63,7 +79,9 @@ const AppleComponent = () => {
         setTimeout(function () {
             setScrollt(true)
             }, 100); 
+        window.onscroll = function () { };
     }
+
   },[loadedProjects])
 
 useEffect(() => {
@@ -226,15 +244,15 @@ useEffect(() => {
                             <div id="" className="lg:max-w-[51vw] xl:max-w-[65%] max-w-[90vw] mx-auto flex flex-col justify-between">
                                 <div className="flex flex-col gap-2">
                                     <h2 className="text-2xl font-bold text-gray-500">Een dynamische website zoals die van <span className="text-gray-950">Apple.</span> Hoe maak je dat?</h2> 
-                                    <p>Omdat ik meer wilde weten over GSAP ben ik gaan zoeken naar enkele tutorials. Zo kwam ik <a id="link" target="blank" className="link" href="https://www.youtube.com/watch?v=kRQbRAJ4-Fs&t=3891s">deze</a> tegen. </p>
-                                    <p>In deze tutorial leer je de basis van GSAP en Threejs onder de knie te krijgen door middel van het nabouwen van de Apple website. Na de tutorial heb ik om mezelf uit te dagen de website verder geoptimaliseerd door meer effecten die Apple ook gebruikt toe te voegen en om</p>
+                                    <p>Omdat ik meer wilde weten over GSAP, een tool om animaties naadloos in je website te verwerken, ben ik gaan zoeken naar enkele tutorials. Zo kwam ik <a id="link" target="blank" className="link" href="https://www.youtube.com/watch?v=kRQbRAJ4-Fs">deze</a> tegen.</p>
+                                    <p>In deze tutorial leer je de basis van GSAP en Three.js, een tool om 3D modellen in je website te verwerken, onder de knie te krijgen door middel van het nabouwen van de Apple website. Na de tutorial heb ik om mezelf uit te dagen de website verder geoptimaliseerd door meer effecten die Apple ook gebruikt toe te voegen en om te kijken wat er allemaal mogelijk is met GSAP en Three.js.</p>
                                 </div>
                                 <div className="">
                                     <div className="flex flex-row lg:justify-between justify-start flex-wrap">
                                         <div className="lg:flex hidden flex-row flex-wrap md:justify-normal justify-center mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Focuspunten</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>GSAP,</li>
                                                     <li>Three.js,</li>
                                                     <li>Extra</li>
@@ -243,7 +261,7 @@ useEffect(() => {
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2024</li>
                                                 </ul>
                                             </div>
@@ -251,7 +269,7 @@ useEffect(() => {
                                             <div className="flex flex-row gap-8 mb-3">
                                                 <div className="me-3">
                                                     <h3 className="font-semibold">Link</h3>
-                                                    <ul className="mt-2 relative">
+                                                    <ul className="mt-0 relative">
                                                         <li><a href="https://rick-webclone-enhanced.netlify.app/"id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>Apple Clone</a></li>
                                                         <span id="linkUnderline" className="w-0 absolute"></span>
                                                     </ul>
@@ -259,7 +277,7 @@ useEffect(() => {
 
                                                 <div className="lg:hidden flex flex-col">
                                                     <h3 className="font-semibold">Gebruikte tools</h3>
-                                                    <ul className="mt-2 flex flex-row">
+                                                    <ul className="mt-0 flex flex-row">
                                                     <div className="flex flex-row">
                                                         <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
@@ -277,13 +295,13 @@ useEffect(() => {
                                         <div className="hidden lg:flex flex-row mt-5 gap-8 ms-3 lg:ms-0">
                                             <div className="ms-3">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-col mx-auto justify-center">
+                                                <ul className="mt-0 flex flex-col mx-auto justify-center">
                                                 <div className="flex flex-row">
                                                         <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                         <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
                                                     </div>
-                                                    <div className="flex flex-row mt-2">
+                                                    <div className="flex flex-row mt-0">
                                                         <li><img src={REACTIMG} alt="React image" className="tech-used !ms-0"/></li>
                                                         <li><img src={GSAPIMG} alt="GSAP image" className="tech-used"/></li>
                                                         <li><img src={THREEIMG} alt="Three.js image" className="tech-used"/></li>
@@ -297,7 +315,7 @@ useEffect(() => {
                                         <div className="grid grid-cols-2 mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Verbeterpunten</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>GSAP,</li>
                                                     <li>Three.js,</li>
                                                     <li>Extra</li>
@@ -306,14 +324,14 @@ useEffect(() => {
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2024</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Link</h3>
-                                                <ul className="mt-2 relative w-fit">
+                                                <ul className="mt-0 relative w-fit">
                                                     <li><a href="https://rick-webclone-enhanced.netlify.app/" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>Apple Clone</a></li>
                                                     <span id="linkUnderline" className="w-0 absolute"></span>
                                                 </ul>
@@ -321,13 +339,13 @@ useEffect(() => {
 
                                             <div className="lg:hidden flex flex-col">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-col">
+                                                <ul className="mt-0 flex flex-col">
                                                     <div className="flex flex-row">
                                                         <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                         <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
                                                     </div>
-                                                    <div className="flex flex-row mt-2">
+                                                    <div className="flex flex-row mt-0">
                                                         <li><img src={REACTIMG} alt="React image" className="tech-used !ms-0"/></li>
                                                         <li><img src={GSAPIMG} alt="GSAP image" className="tech-used"/></li>
                                                         <li><img src={THREEIMG} alt="Three.js image" className="tech-used"/></li>
@@ -339,7 +357,7 @@ useEffect(() => {
                                         
                                     </div>
                                     <div className="mt-5">
-                                        <p>Bekijk hieronder hoe de verbeteringen zijn toegepast</p>
+                                        <p>Bekijk hieronder hoe de website is opgebouwd.</p>
                                     </div>
                                 </div>
                             </div>
@@ -359,7 +377,7 @@ useEffect(() => {
                                 </div>
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="mt-4">
-                                        <video playsInline id='APPLEGSAPVID' src={APPLEGSAPVID} className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef2}>
+                                        <video playsInline id='APPLEGSAPVID' src={APPLEGSAPVID} onLoadedData={() => setLoadedVideo1(true)} className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef2}>
                                             {/*<source src={APPLEGSAPVID} type='video/mp4'/>*/}
                                         </video>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
@@ -398,7 +416,7 @@ useEffect(() => {
                                                 <p className="text-sm">Met Three.js kan je 3D modellen in je website inladen die je vervolgens kan manipuleren door te klikken of swipen.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Het is heel makkelijk om dit fout te doen. Door de instellingen te begrijpen en de juiste toe te passen zorg je ervoor dat dit een professioneel ogend element is. Als je dit verkeerd implementeerd krijg je het tegenovergestelde effect en voelt het goedkoop aan.</p>
+                                                <p className="text-sm mt-1">Het is heel makkelijk om dit fout te doen. Door de instellingen te begrijpen en de juiste toe te passen zorg je ervoor dat dit een professioneel ogend element is. Als je dit verkeerd implementeert krijg je het tegenovergestelde effect en voelt het goedkoop aan.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -408,7 +426,7 @@ useEffect(() => {
 
                             <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 ">
                                 <div className="md:text-4xl text-xl font-bold md:leading-[3rem] leading-[1.6rem] italic">
-                                    <p className="t_slide">&ldquo;Na de tutorial te hebben gevolgd wilde ik nog een paar extra elementen toevoegen die in de apple website zitten maar niet in de tutorial worden benoemd. Hierdoor lijkt de pagina nog meer op het origineel van Apple zelf.&ldquo;</p>
+                                    <p className="t_slide">&ldquo;Na de tutorial te hebben gevolgd wilde ik nog een paar extra elementen toevoegen die in de Apple website zitten maar niet in de tutorial worden benoemd. Hierdoor lijkt de pagina nog meer op het origineel van Apple zelf.&ldquo;</p>
                                 </div>
                             </div>
                             
@@ -421,16 +439,16 @@ useEffect(() => {
                                 </div>
                                 <div  className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="my-4">
-                                        <video playsInline id='APPLEHIGHLIGHTSIMG' src={APPLEHIGHLIGHTSIMG} className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef3}>
+                                        <video playsInline id='APPLEHIGHLIGHTSIMG' src={APPLEHIGHLIGHTSIMG} onLoadedData={() => setLoadedVideo2(true)} className='rounded-2xl i_fade' preload='none' muted autoPlay loop ref={videoRef3}>
                                             {/*<source src={APPLEHIGHLIGHTSIMG} type='video/mp4'/>*/}
                                         </video>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                     <h2 className="text-xl font-semibold">Werkende highlights sectie: </h2>
-                                                    <p className="text-sm ">De highlights sectie is een in het oog springend onderdeel. In de tutorial leer je hoe je deze moet vormgeven maar deze is buiten de pauzeer en speel knop niet interactief. Ik heb deze zelf verder uitgebouwd zodat hij volledig interactief is net als op de website van Apple.</p>
+                                                    <p className="text-sm ">De highlights sectie is een in het oog springend onderdeel. In de tutorial leer je hoe je deze moet vormgeven maar deze is buiten de &ldquo;pause&ldquo; en &ldquo;play button&ldquo; niet interactief. Ik heb deze zelf verder uitgebouwd zodat hij volledig interactief is net als op de website van Apple.</p>
                                                 </div>
                                                 <div className="flex flex-col flex-1 t_slide_up">
-                                                    <p className="text-sm ">Om deze sectie volledig interactief te krijgen heb ik de gehele GSAP code moeten veranderen. De originele code uit de tutorial kon je namelijk niet makkelijk op gebruikersinteractie laten reageren. Ik heb bijvoorbeeld het timeline balkje zo gemaakt dat, wanneer je op een ander onderdeel klikt, reset. Dit door het toevoegen van extra code om te weten waar er is geklikt en om te checken wat de vorige timeline was zodat de correcte timeline wordt gestopt.</p>
+                                                    <p className="text-sm ">Om deze sectie volledig interactief te krijgen heb ik de gehele GSAP code moeten veranderen. De originele code uit de tutorial kon je namelijk niet makkelijk op gebruikersinteractie laten reageren. Ik heb bijvoorbeeld het timeline balkje zo gemaakt dat, wanneer je op een ander onderdeel klikt, deze reset en weer doorgaat bij het nieuwe onderdeel. Dit door het toevoegen van extra code om te weten waar er is geklikt en om te checken wat de vorige timeline was zodat de correcte timeline wordt gestopt. Klinkt als een vrij simpele oplossing maar door de vele elementen waar je rekening mee moet houden was dit nog best een uitdaging.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -456,7 +474,7 @@ useEffect(() => {
                                                     <p className="text-sm ">Als laatst heb ik nog wat kleine dingetjes toegevoegd zoals schaduwen en kleine aanpassingen aan de layout om het meer op apple te laten lijken.</p>
                                                 </div>
                                                 <div className="flex flex-col flex-1 t_slide_up">
-                                                    <p className="text-sm "></p>
+                                                    <p className="text-sm ">Daarnaast zaten er nog een paar kleine bugs in de website. Deze heb ik allemaal opgelost.</p>
                                             </div>
                                         </div>
                                     </div>

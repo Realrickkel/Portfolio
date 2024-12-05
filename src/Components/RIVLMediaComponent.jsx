@@ -44,14 +44,15 @@ const RIVLMediaComponent = () => {
                 left: 0,
                 behavior: "instant",
             })
-                const img = new Image();
-                img.onload = () => {
-                // when it finishes loading, update the component state
+            Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
                 setLoadedProjects(true);
-                }
-                img.src = RIVLMEDIABANNERIMG; // by setting an src, you trigger browser download
+            });
                 setClassChangeHero(false)
-                setClassChangeExperience(false)     
+                setClassChangeExperience(false)
+                //disable scroll until page is loaded
+                window.onscroll = function () {
+                window.scrollTo(0, 0);
+            };       
       }, [])
 
       useEffect(() => {
@@ -60,6 +61,8 @@ const RIVLMediaComponent = () => {
             setTimeout(function () {
                 setScrollt(true)
                 }, 100); 
+                window.onscroll = function () { };
+                
         }
       },[loadedProjects])
 
@@ -204,7 +207,7 @@ const RIVLMediaComponent = () => {
                             <div id="" className="lg:max-w-[51vw] xl:max-w-[65%] max-w-[90vw] mx-auto flex flex-col justify-between">
                                 <div className="flex flex-col gap-2">
                                     <h2 className="text-2xl font-bold text-gray-500">Aanpak van de website van <span className="text-gray-950">RIVL Media:</span> Design, UX/UI en SEO verbeteringen</h2> 
-                                    <p>De website van RIVL Media heeft onlangs een uitgebreide herziening ondergaan met als doel een modernere uitstraling, betere gebruikservaring en verbeterde zichtbaarheid online.</p>
+                                    <p>De website van RIVL Media heeft onlangs een uitgebreide vernieuwing ondergaan met als doel een modernere uitstraling, betere gebruikservaring en verbeterde zichtbaarheid online.</p>
                                     <p>Met deze verbeteringen is de website van RIVL Media niet alleen een stuk gebruiksvriendelijker geworden, maar ook een krachtig instrument om nieuwe klanten aan te trekken en bestaande relaties te versterken. De nieuwe site weerspiegelt nu de professionele en innovatieve aanpak die RIVL Media kenmerkt.</p>
                                 </div>
                                 <div className="">
@@ -212,7 +215,7 @@ const RIVLMediaComponent = () => {
                                         <div className="lg:flex hidden flex-row flex-wrap md:justify-normal justify-center mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Verbeterpunten</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>Design,</li>
                                                     <li>UX/UI,</li>
                                                     <li>SEO</li>
@@ -221,7 +224,7 @@ const RIVLMediaComponent = () => {
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2024</li>
                                                 </ul>
                                             </div>
@@ -229,7 +232,7 @@ const RIVLMediaComponent = () => {
                                             <div className="flex flex-row gap-8 mb-3">
                                                 <div className="me-3">
                                                     <h3 className="font-semibold">Link</h3>
-                                                    <ul className="mt-2 relative">
+                                                    <ul className="mt-0 relative">
                                                         <li><a href="https://www.rivlmedia.nl" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>rivlmedia.nl</a></li>
                                                         <span id="linkUnderline" className="w-0 absolute"></span>
                                                     </ul>
@@ -237,7 +240,7 @@ const RIVLMediaComponent = () => {
 
                                                 <div className="lg:hidden flex flex-col">
                                                     <h3 className="font-semibold">Gebruikte tools</h3>
-                                                    <ul className="mt-2 flex flex-row">
+                                                    <ul className="mt-0 flex flex-row">
                                                         <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                         <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
@@ -248,7 +251,7 @@ const RIVLMediaComponent = () => {
                                         <div className="hidden lg:flex flex-row mt-5 gap-8 ms-3 lg:ms-0">
                                             <div className="ms-3">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-row mx-auto justify-center">
+                                                <ul className="mt-0 flex flex-row mx-auto justify-center">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                     <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
@@ -261,7 +264,7 @@ const RIVLMediaComponent = () => {
                                         <div className="grid grid-cols-2 mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Verbeterpunten</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>Design,</li>
                                                     <li>UX/UI,</li>
                                                     <li>SEO</li>
@@ -270,14 +273,14 @@ const RIVLMediaComponent = () => {
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2024</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Link</h3>
-                                                <ul className="mt-2 relative w-fit">
+                                                <ul className="mt-0 relative w-fit">
                                                     <li><a href="https://www.rivlmedia.nl" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>rivlmedia.nl</a></li>
                                                     <span id="linkUnderline" className="w-0 absolute"></span>
                                                 </ul>
@@ -285,7 +288,7 @@ const RIVLMediaComponent = () => {
 
                                             <div className="lg:hidden flex flex-col">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-row">
+                                                <ul className="mt-0 flex flex-row">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                     <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>

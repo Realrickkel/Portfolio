@@ -181,9 +181,9 @@ useEffect(() => {
                   <h1 className="text-3xl font-bold">Wie ben <span className="font-bold" style={{color: '#FF9A00'}}>ik?</span></h1>
                   <p className="mt-4">Het is bijna onmogelijk om alles op te noemen waar ik in geïnteresseerd ben, toch ga ik mijn best doen. Mijn grootste talent is superscherp analyseren hoe Formule 1 coureurs uit de bocht vliegen… Zelf kan ik dat natuurlijk ook… maar dan wel in een virtuele race.</p>
                   
-                  <p>Naast professioneel “sportkijker,” ben ik ook behoorlijk geïnteresseerd in kunstmatige intelligentie. En dan bedoel ik niet de AI die me ooit een keer met 4-0 versloeg in schaken. Maar van die slimme algoritmes die data omtoveren tot inzichten, en daar ben ik eigenlijk net zo goed als in het sport kijken.</p> 
+                  <p>Naast professioneel “sportkijker,” ben ik ook behoorlijk geïnteresseerd in kunstmatige intelligentie. En dan bedoel ik niet de AI die me ooit een keer met 4-0 versloeg in schaken. Maar van die slimme algoritmes die data omtoveren tot inzichten, en daar ben ik eigenlijk net zo goed in als in het sport kijken.</p> 
                   
-                  <p>Dus, of het nu gaat om het ontdekken van het geheim achter een slimme AI, juichen voor een recordronde in de F1, of een marathon gamen zonder afleiding, ben ik van de partij.</p>
+                  <p>Dus, of het nu gaat om het ontdekken van het geheim achter een slimme AI, juichen voor een recordronde in de F1, of een marathon gamen zonder afleiding, ik ben van de partij.</p>
                   
                 </div>
                 <div className="flex md:flex-col flex-row-reverse flex-1 md:px-0 md:gap-0 gap-5 max-w-full text-sm md:justify-start justify-center md:items-start items-center relative md:mx-0 mx-0">

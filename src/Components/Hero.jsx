@@ -14,11 +14,13 @@ const Hero = () => {
 
   const attrObserver = new MutationObserver(() => {
       var myElement = document.getElementById("Hero");
+      if(myElement){
       if (myElement.classList.contains("active")) {
         setClassChangeHero(true)
       }else{
           setClassChangeHero(false)
         }
+      }
   });
   
   const ELS_test = document.querySelectorAll("#Hero");

@@ -42,14 +42,15 @@ const OnlineIDComponent = () => {
             left: 0,
             behavior: "instant",
         })
-            const img = new Image();
-            img.onload = () => {
-            // when it finishes loading, update the component state
+        Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
             setLoadedProjects(true);
-            }
-            img.src = ONLINESTANDAARDIMG; // by setting an src, you trigger browser download
+        });
             setClassChangeHero(false)
-            setClassChangeExperience(false)              
+            setClassChangeExperience(false)    
+            
+            window.onscroll = function () {
+                window.scrollTo(0, 0);
+            };  
   }, [])
 
   useEffect(() => {
@@ -57,7 +58,8 @@ const OnlineIDComponent = () => {
         //laat alles inladen
         setTimeout(function () {
             setScrollt(true)
-            }, 100); 
+            }, 100);
+            window.onscroll = function () { }; 
     }
   },[loadedProjects])
 
@@ -209,16 +211,16 @@ useEffect(() => {
                                         <div className="lg:flex hidden flex-row flex-wrap md:justify-normal justify-center mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Focuspunten</h3>
-                                                <ul className="mt-2">
-                                                    <li>Vacatures</li>
-                                                    <li>Design</li>
+                                                <ul className="mt-0">
+                                                    <li>Updates,</li>
+                                                    <li>Design,</li>
                                                     <li>Bugs</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2023-2024</li>
                                                 </ul>
                                             </div>
@@ -226,7 +228,7 @@ useEffect(() => {
                                             <div className="flex flex-row gap-8 mb-3">
                                                 <div className="me-3">
                                                     <h3 className="font-semibold">Link</h3>
-                                                    <ul className="mt-2 relative">
+                                                    <ul className="mt-0 relative">
                                                         <li><a href="https://online-id.nl/" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>online-id.nl</a></li>
                                                         <span id="linkUnderline" className="w-0 absolute"></span>
                                                     </ul>
@@ -234,7 +236,7 @@ useEffect(() => {
 
                                                 <div className="lg:hidden flex flex-col">
                                                     <h3 className="font-semibold">Gebruikte tools</h3>
-                                                    <ul className="mt-2 flex flex-row">
+                                                    <ul className="mt-0 flex flex-row">
                                                         <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                         <li><img src={WORDIMG} alt="Wordpress image" className="tech-used"/></li>
@@ -245,7 +247,7 @@ useEffect(() => {
                                         <div className="hidden lg:flex flex-row mt-5 gap-8 ms-3 lg:ms-0">
                                             <div className="ms-3">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-row mx-auto justify-center">
+                                                <ul className="mt-0 flex flex-row mx-auto justify-center">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                     <li><img src={WORDIMG} alt="Wordpress image" className="tech-used"/></li>
@@ -258,8 +260,8 @@ useEffect(() => {
                                         <div className="grid grid-cols-2 mt-5 gap-8">
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Focuspunten</h3>
-                                                <ul className="mt-2">
-                                                    <li>Vacatures,</li>
+                                                <ul className="mt-0">
+                                                    <li>Updates,</li>
                                                     <li>Design,</li>
                                                     <li>Bugs</li>
                                                 </ul>
@@ -267,14 +269,14 @@ useEffect(() => {
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-2">
+                                                <ul className="mt-0">
                                                     <li>2023-2024</li>
                                                 </ul>
                                             </div>
 
                                             <div className="me-3">
                                                 <h3 className="font-semibold">Link</h3>
-                                                <ul className="mt-2 relative w-fit">
+                                                <ul className="mt-0 relative w-fit">
                                                     <li><a href="https://online-id.nl/" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>online-id.nl</a></li>
                                                     <span id="linkUnderline" className="w-0 absolute"></span>
                                                 </ul>
@@ -282,7 +284,7 @@ useEffect(() => {
 
                                             <div className="lg:hidden flex flex-col">
                                                 <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-2 flex flex-row w-fit">
+                                                <ul className="mt-0 flex flex-row w-fit">
                                                     <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
                                                     <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                     <li><img src={WORDIMG} alt="Wordpress image" className="tech-used"/></li>
@@ -293,7 +295,7 @@ useEffect(() => {
                                         
                                     </div>
                                     <div className="mt-5">
-                                        <p>Bekijk hieronder hoe de verbeteringen zijn toegepast</p>
+                                        <p>Bekijk hieronder wat mijn werkzaamheden waren.</p>
                                     </div>
                                 </div>
                             </div>
@@ -317,7 +319,7 @@ useEffect(() => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <h2 className="text-xl font-semibold">Plaatsen van vacatures: </h2>
-                                                <p className="text-sm ">Ik hield in de eerste plaats bezig met het plaatsen van vacatures. Ik zorgde ervoor dat nieuwe vacatures tijdig werden gepubliceerd, correct waren opgemaakt en goed vindbaar waren voor bezoekers.</p>
+                                                <p className="text-sm ">Ik hield mezelf in de eerste plaats bezig met het plaatsen van vacatures. Ik zorgde ervoor dat nieuwe vacatures tijdig werden gepubliceerd, correct waren opgemaakt en goed vindbaar waren voor bezoekers.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                 <p className="text-sm mt-1">Over het algemeen was dat vrij simpel doordat je blokken kon kopiëren, hier en daar was er wat technische kennis vereist over hoe je bijvoorbeeld de juiste afbeeldingen linkt.</p>
@@ -350,7 +352,7 @@ useEffect(() => {
                                                 <p className="text-sm">Ik vernieuwde regelmatig afbeeldingen op de website om een frisse en aantrekkelijke uitstraling te behouden.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Om de website nog dynamischer te maken, heb ik ook enkele originele GIFs ontworpen en toegevoegd.</p>
+                                                <p className="text-sm mt-1">Om de website nog dynamischer te maken, heb ik ook enkele originele GIF&#39;s ontworpen en toegevoegd.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -371,10 +373,10 @@ useEffect(() => {
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
                                                     <h2 className="text-xl font-semibold">Bugs oplossen: </h2>
-                                                    <p className="text-sm ">Hier en daar zaten er wat kleine bugs in de website zoals linkjes die verkeerd linkten, of verkeerd ingeladen afbeeldingen. Dat was allemaal vrij simpel op te lossen. De grootste bug die de website had was dat het contactformulier niet werkte. </p>
+                                                    <p className="text-sm ">Hier en daar zaten er wat kleine bugs in de website zoals linkjes die verkeerd linkten, of verkeerd ingeladen afbeeldingen. Dat was allemaal vrij simpel op te lossen. De grootste bug die de website had was dat het contactformulier niet goed werkte. </p>
                                                 </div>
                                                 <div className="flex flex-col flex-1 t_slide_up">
-                                                    <p className="text-sm ">Dit heb ik uiteindelijk met een klein stukje extra Javascript code kunnen oplossen. Het probleem zat hem in het feit dat alle mails die werden verstuurd van de site een koppeling hadden naar een vacature. Echter waren dit vacatures die allang niet meer bestonden dus het systeem begreep niet wat het dan met de mails aan moest.</p>
+                                                    <p className="text-sm ">Dit heb ik uiteindelijk met een klein stukje extra JavaScript code kunnen oplossen. Het probleem zat hem in het feit dat alle mails die werden verstuurd van de site een koppeling hadden naar een vacature. Echter waren dit vacatures die allang niet meer bestonden dus het systeem begreep niet wat het dan met de mails aan moest.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -389,10 +391,10 @@ useEffect(() => {
                                 </div>
                                 <div className="flex md:flex-row flex-col gap-3 mt-2 md:px-28">
                                     <div className="flex flex-col flex-1 t_slide_up">
-                                        <p className="text-sm ">Ik heb hier naast het onderhouden van een website ook veel over SEO geleerd. Hoe je een webpagina kan laten voldoen aan alle eisen zodat een search engine je website goed oppakt. </p>
+                                        <p className="text-sm ">Ik heb bij Online ID, naast het onderhouden van de website, ook veel over SEO geleerd. Hoe je een webpagina kan laten voldoen aan alle eisen zodat een search engine je website goed oppakt. </p>
                                     </div>
                                     <div className="flex flex-col flex-1 t_slide_up">
-                                        <p className="text-sm ">Zo is het belangrijk dat je pagina&#39;s zo klein mogelijk zijn zodat ze snel inladen. Interne links zijn belangrijk maar ook de structuur zoals het juiste gebruik van koppen en voetteksten is belangrijk.</p>
+                                        <p className="text-sm ">Zo is het belangrijk dat je pagina&#39;s zo klein mogelijk zijn zodat ze snel inladen. Interne links zijn belangrijk maar ook de structuur zoals het juiste gebruik van koppen en voetteksten is belangrijk. Belangrijke kennis voor elke webdeveloper.</p>
                                     </div>
                                 </div>
                             </div>

@@ -36,12 +36,13 @@ const Projects = () => {
   
 
   useEffect(() => {
-    const img = new Image();
-  img.onload = () => {
-    // when it finishes loading, update the component state
-    setLoaded(true);
-  }
-  img.src = RIVLMEDIAMOCKUPIMG; // by setting an src, you trigger browser download
+    Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+      setLoaded(true);
+  });
+    //disable scroll until page is loaded
+    window.onscroll = function () {
+    window.scrollTo(0, 0);
+};  
   }, [])
 
 
@@ -51,6 +52,7 @@ const Projects = () => {
         setTimeout(function () {
             setScrollt(true)
             }, 100); 
+            window.onscroll = function () { };
     }
   },[loaded])
 
