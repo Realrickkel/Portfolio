@@ -19,6 +19,7 @@ const Projects = () => {
   const [hover3, setHover3] = useState(false)
   const [hover4, setHover4] = useState(false)
   const [hover5, setHover5] = useState(false)
+  const [hover6, setHover6] = useState(false)
   const scrollRef = useRef();
 
     const attrObserver = new MutationObserver(() => {
@@ -153,6 +154,14 @@ const Projects = () => {
       animateUnHoverExperienceWithGsap('#experience-img5', {})
     }
   },[hover5])
+
+  useGSAP(() => {
+    if(hover6===true){
+      animateHoverExperienceWithGsap('#experience-img6', {})
+    } else {
+      animateUnHoverExperienceWithGsap('#experience-img6', {})
+    }
+  },[hover6])
   
   return (
     <section id="Projects" className="text-gray flex flex-col justify-center items-center common-padding">
@@ -258,6 +267,28 @@ const Projects = () => {
                       <img src={CSSIMG} alt="CSS image" className="tech-used"/>
                       <img src={JSIMG} alt="Javascript image" className="tech-used"/>
                       <img src={REACTIMG} alt="React image" className="tech-used"/>
+                    </div>
+                  </div>
+                  <div className="flex flex-col text-right">
+                    <h3 className="text-sm font-semibold text-black">2024</h3>
+                    <h5 className="text-xs text-gray">Persoonlijk</h5>
+                  </div>
+                </div>
+                </NavLink>
+              </div>
+              <div id="experience-img6" className="experience-img" onMouseEnter={() => setHover6(true)} onMouseLeave={() => setHover6(false)}>
+              <NavLink to="/teampage">
+                <img src={FILMREVIEWMOCKUPIMG} alt="PF image" className="img-exp" loading="eager"/>
+                <div className="flex flex-row justify-between mt-1">
+                  <div className="max-w-[70%]">
+                    <h3 className="text-base font-bold">Team Pagina</h3>
+                    <h4 className="text-xs text-gray">Originele Team Pagina</h4>
+                    <div className="flex mt-1 items-center">
+                      <img src={HTMLIMG} alt="HTML image" className="tech-used !ml-0"/>
+                      <img src={CSSIMG} alt="CSS image" className="tech-used"/>
+                      <img src={JSIMG} alt="Javascript image" className="tech-used"/>
+                      <img src={REACTIMG} alt="React image" className="tech-used"/>
+                      <img src={GSAPIMG} alt="GSAP image" className="tech-used"/>
                     </div>
                   </div>
                   <div className="flex flex-col text-right">

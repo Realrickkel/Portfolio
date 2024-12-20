@@ -13,6 +13,7 @@ import JavscriptGame from "./pages/JavscriptGame";
 import Review from "./pages/Review";
 import Projects from "./Components/Projects";
 import Experience from "./Components/Experience";
+import TeamPage from "./pages/TeamPage";
 const App = () => {
 
   return (
@@ -28,6 +29,7 @@ const App = () => {
                 <Route path="/onlineid" element={<OnlineID />} />
                 <Route path="/javascriptgame" element={<JavscriptGame />} />
                 <Route path="/review" element={<Review />} />
+                <Route path="/teampage" element={<TeamPage />} />
             </Routes>
         </Router>
   )
