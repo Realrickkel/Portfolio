@@ -281,8 +281,8 @@ const Projects = () => {
                 <img src={TEAMLANDINGIMG} alt="PF image" className="img-exp" loading="eager"/>
                 <div className="flex flex-row justify-between mt-1">
                   <div className="max-w-[70%]">
-                    <h3 className="text-base font-bold">Team Pagina</h3>
-                    <h4 className="text-xs text-gray">Originele Team Pagina</h4>
+                    <h3 className="text-base font-bold">Teampagina</h3>
+                    <h4 className="text-xs text-gray">Originele Teampagina</h4>
                     <div className="flex mt-1 items-center">
                       <img src={HTMLIMG} alt="HTML image" className="tech-used !ml-0"/>
                       <img src={CSSIMG} alt="CSS image" className="tech-used"/>
