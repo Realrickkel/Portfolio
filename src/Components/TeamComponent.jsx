@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { useGSAP } from "@gsap/react"
-import { CROSSIMG, CSSIMG, DYNAMISCHIMG, HTMLIMG, INTERACTIESIMG, JSIMG, KLEURIMG, MOBILEIMG, RIVLMEDIABANNERIMG, RIVLMEDIALOGOIMG, RIVLMEDIASEOIMG, STRAKIMG } from "../utils"
+import { CROSSIMG, CSSIMG, DYNAMISCHIMG, GSAPIMG, HTMLIMG, INTERACTIESIMG, JSIMG, KLEURIMG, MOBILEIMG, REACTIMG, RIVLMEDIABANNERIMG, RIVLMEDIALOGOIMG, RIVLMEDIASEOIMG, STRAKIMG, TEAMBIANCAIMG, TEAMDAVIDIMG, TEAMLANDINGIMG, TEAMMOBILEIMG, TEAMROUNDIMG } from "../utils"
 import gsap from "gsap"
 import { useContext, useEffect, useRef, useState } from "react"
 import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
@@ -188,123 +188,146 @@ const TeamComponent = () => {
             <div className="">
 
                 <div className="w-[90vw] items-center flex justify-between title-max-width mt-[3.75rem] lg:mt-4 m-0 border-t-2 p-2 pb-[0.7rem] px-2 lg:px-2">
-                    <h2 className="text-lg border-solid border-l-neutral-900">//RIVL media</h2>
+                    <h2 className="text-lg border-solid border-l-neutral-900">//Teampagina</h2>
                     <div className="flex mt-1 items-center">
                       <img src={HTMLIMG} alt="HTML image" className="tech-used !ml-0"/>
                       <img src={CSSIMG} alt="CSS image" className="tech-used"/>
                       <img src={JSIMG} alt="Javascript image" className="tech-used"/>
+                      <img src={REACTIMG} alt="CSS image" className="tech-used"/>
+                      <img src={GSAPIMG} alt="Javascript image" className="tech-used"/>
                     </div>
                 </div>
                     <div className="screen-max-width flex flex-col">
                         <div className="flex lg:max-w-[70vw] xl:max-w-[78vw] m-auto justify-center items-center lg:h-[80vh] h-max lg:py-10 py-52 xl:mt-10 mt-0 my-24 bg-slate-100 lg:rounded-2xl px-10 lg:px-24 xl:px-12">
-                            <img src={RIVLMEDIABANNERIMG} name="RIVLMEDIABANNERIMG" onClick={searchStart} alt="HTML image" className="flex rounded-2xl cursor-pointer"/>
+                            <img src={TEAMLANDINGIMG} name="RIVLMEDIABANNERIMG" onClick={searchStart} alt="HTML image" className="flex rounded-2xl cursor-pointer"/>
                         </div>
                         <div>
-                            <h1 className="text-4xl font-bold text-center t_slide">Een Website designen!</h1>
+                            <h1 className="text-4xl font-bold text-center t_slide">Meet the team!</h1>
                         </div>
 
                         <div className="common-padding !px-0 flex flex-1 lg:flex-row flex-col lg:max-w-[70vw] xl:max-w-[78vw] m-auto gap-10 overflow-hidden h-full t_slide_up">
                             <div id="" className="lg:max-w-[51vw] xl:max-w-[65%] max-w-[90vw] mx-auto flex flex-col justify-between">
-                                <div className="flex flex-col gap-2">
-                                    <h2 className="text-2xl font-bold text-gray-500">Aanpak van de website van <span className="text-gray-950">RIVL Media:</span> Design, UX/UI en SEO verbeteringen</h2> 
-                                    <p>De website van RIVL Media heeft onlangs een uitgebreide vernieuwing ondergaan met als doel een modernere uitstraling, betere gebruikservaring en verbeterde zichtbaarheid online.</p>
-                                    <p>Met deze verbeteringen is de website van RIVL Media niet alleen een stuk gebruiksvriendelijker geworden, maar ook een krachtig instrument om nieuwe klanten aan te trekken en bestaande relaties te versterken. De nieuwe site weerspiegelt nu de professionele en innovatieve aanpak die RIVL Media kenmerkt.</p>
-                                </div>
-                                <div className="">
-                                    <div className="flex flex-row lg:justify-between justify-start flex-wrap">
-                                        <div className="lg:flex hidden flex-row flex-wrap md:justify-normal justify-center mt-5 gap-8">
-                                            <div className="me-3">
-                                                <h3 className="font-semibold">Verbeterpunten</h3>
-                                                <ul className="mt-0">
-                                                    <li>Design,</li>
-                                                    <li>UX/UI,</li>
-                                                    <li>SEO</li>
-                                                </ul>
-                                            </div>
-
-                                            <div className="me-3">
-                                                <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-0">
-                                                    <li>2024</li>
-                                                </ul>
-                                            </div>
-
-                                            <div className="flex flex-row gap-8 mb-3">
-                                                <div className="me-3">
-                                                    <h3 className="font-semibold">Link</h3>
-                                                    <ul className="mt-0 relative">
-                                                        <li><a href="https://www.rivlmedia.nl" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>rivlmedia.nl</a></li>
-                                                        <span id="linkUnderline" className="w-0 absolute"></span>
-                                                    </ul>
-                                                </div>
-
-                                                <div className="lg:hidden flex flex-col">
-                                                    <h3 className="font-semibold">Gebruikte tools</h3>
-                                                    <ul className="mt-0 flex flex-row">
-                                                        <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
-                                                        <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
-                                                        <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="hidden lg:flex flex-row mt-5 gap-8 ms-3 lg:ms-0">
-                                            <div className="ms-3">
-                                                <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-0 flex flex-row mx-auto justify-center">
-                                                    <li><img src={HTMLIMG} alt="HTML image" className="tech-used"/></li>
-                                                    <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
-                                                    <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="lg:hidden justify-center">
-                                        <div className="grid grid-cols-2 mt-5 gap-8">
-                                            <div className="me-3">
-                                                <h3 className="font-semibold">Verbeterpunten</h3>
-                                                <ul className="mt-0">
-                                                    <li>Design,</li>
-                                                    <li>UX/UI,</li>
-                                                    <li>SEO</li>
-                                                </ul>
-                                            </div>
-
-                                            <div className="me-3">
-                                                <h3 className="font-semibold">Periode</h3>
-                                                <ul className="mt-0">
-                                                    <li>2024</li>
-                                                </ul>
-                                            </div>
-
-                                            <div className="me-3">
-                                                <h3 className="font-semibold">Link</h3>
-                                                <ul className="mt-0 relative w-fit">
-                                                    <li><a href="https://www.rivlmedia.nl" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>rivlmedia.nl</a></li>
-                                                    <span id="linkUnderline" className="w-0 absolute"></span>
-                                                </ul>
-                                            </div>
-
-                                            <div className="lg:hidden flex flex-col">
-                                                <h3 className="font-semibold">Gebruikte tools</h3>
-                                                <ul className="mt-0 flex flex-row">
-                                                    <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
-                                                    <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
-                                                    <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
-                                                </ul>
-                                            </div>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="mt-5">
-                                        <p>Bekijk hieronder hoe de verbeteringen zijn toegepast</p>
-                                    </div>
-                                </div>
-                            </div>
+                                                            <div className="flex flex-col gap-2">
+                                                                <h2 className="text-2xl font-bold text-gray-500">Hoe maak je een saai ogende <span className="text-gray-950">teampagina</span> dynamisch?</h2> 
+                                                                <p>Je bent ze vast weleens tegengekomen. De pagina waarop alle werknemers van een bedrijf te vinden zijn. Vaak zijn dit statische weinigzeggende pagina&#39;s. Is er een manier om deze interessanter te maken?</p>
+                                                                <p>Ik ben de uitdaging aangegaan en heb met behulp van React en GSAP een dynamisch ogend originele teampagina gebouwd waarin met simpele elementen heel veel informatie aan de bezoeker wordt duidelijk gemaakt. En dit alles dan ook nogeens in een origineel jasje gestoken.</p>
+                                                                <p>Klik vooral op de link om de website te ervaren!</p>
+                                                            </div>
+                                                            <div className="">
+                                                                <div className="flex flex-row lg:justify-between justify-start flex-wrap">
+                                                                    <div className="lg:flex hidden flex-row flex-wrap md:justify-normal justify-center mt-5 gap-8">
+                                                                        <div className="me-3">
+                                                                            <h3 className="font-semibold">Focuspunten</h3>
+                                                                            <ul className="mt-0">
+                                                                                <li>Design,</li>
+                                                                                <li>Mobile</li>
+                                                                                
+                                                                            </ul>
+                                                                        </div>
+                            
+                                                                        <div className="me-3">
+                                                                            <h3 className="font-semibold">Periode</h3>
+                                                                            <ul className="mt-0">
+                                                                                <li>2024</li>
+                                                                            </ul>
+                                                                        </div>
+                            
+                                                                        <div className="flex flex-row gap-8 mb-3">
+                                                                            <div className="me-3">
+                                                                                <h3 className="font-semibold">Link</h3>
+                                                                                <ul className="mt-0 relative">
+                                                                                    <li><a href="https://democafeteam.netlify.app/"id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>Demo Cafe</a></li>
+                                                                                    <span id="linkUnderline" className="w-0 absolute"></span>
+                                                                                </ul>
+                                                                            </div>
+                            
+                                                                            <div className="lg:hidden flex flex-col">
+                                                                                <h3 className="font-semibold">Gebruikte tools</h3>
+                                                                                <ul className="mt-0 flex flex-row">
+                                                                                <div className="flex flex-row">
+                                                                                    <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
+                                                                                    <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
+                                                                                    <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
+                                                                                </div>
+                                                                                <div className="flex flex-row">
+                                                                                    <li><img src={REACTIMG} alt="React image" className="tech-used"/></li>
+                                                                                    <li><img src={GSAPIMG} alt="GSAP image" className="tech-used"/></li>
+                                                                                    
+                                                                                </div>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="hidden lg:flex flex-row mt-5 gap-8 ms-3 lg:ms-0">
+                                                                        <div className="ms-3">
+                                                                            <h3 className="font-semibold">Gebruikte tools</h3>
+                                                                            <ul className="mt-0 flex flex-col mx-auto justify-center">
+                                                                            <div className="flex flex-row">
+                                                                                    <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
+                                                                                    <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
+                                                                                    <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
+                                                                                </div>
+                                                                                <div className="flex flex-row mt-2">
+                                                                                    <li><img src={REACTIMG} alt="React image" className="tech-used !ms-0"/></li>
+                                                                                    <li><img src={GSAPIMG} alt="GSAP image" className="tech-used"/></li>
+                                                                                    
+                                                                                </div>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                            
+                                                                <div className="lg:hidden justify-center">
+                                                                    <div className="grid grid-cols-2 mt-5 gap-8">
+                                                                        <div className="me-3">
+                                                                            <h3 className="font-semibold">Focuspunten</h3>
+                                                                            <ul className="mt-0">
+                                                                                <li>Design,</li>
+                                                                                <li>Mobile</li>
+                                                                                
+                                                                            </ul>
+                                                                        </div>
+                            
+                                                                        <div className="me-3">
+                                                                            <h3 className="font-semibold">Periode</h3>
+                                                                            <ul className="mt-0">
+                                                                                <li>2024</li>
+                                                                            </ul>
+                                                                        </div>
+                            
+                                                                        <div className="me-3">
+                                                                            <h3 className="font-semibold">Link</h3>
+                                                                            <ul className="mt-0 relative w-fit">
+                                                                                <li><a href="https://democafeteam.netlify.app/" id="link" target="blank" className="link relative" onMouseEnter={() => setAnimate(true)} onMouseLeave={() => setAnimateOut(true)}>Demo Cafe</a></li>
+                                                                                <span id="linkUnderline" className="w-0 absolute"></span>
+                                                                            </ul>
+                                                                        </div>
+                            
+                                                                        <div className="lg:hidden flex flex-col">
+                                                                            <h3 className="font-semibold">Gebruikte tools</h3>
+                                                                            <ul className="mt-0 flex flex-col">
+                                                                                <div className="flex flex-row">
+                                                                                    <li><img src={HTMLIMG} alt="HTML image" className="tech-used !ms-0"/></li>
+                                                                                    <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
+                                                                                    <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
+                                                                                </div>
+                                                                                <div className="flex flex-row mt-2">
+                                                                                    <li><img src={REACTIMG} alt="React image" className="tech-used !ms-0"/></li>
+                                                                                    <li><img src={GSAPIMG} alt="GSAP image" className="tech-used"/></li>
+                                                                                </div>
+                                                                            </ul>
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                                <div className="mt-5">
+                                                                    <p>Bekijk hieronder hoe de website is opgebouwd.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                             <div className="lg:flex hidden flex-col mx-auto flex-1">
-                                <img src={RIVLMEDIALOGOIMG} name="RIVLMEDIALOGOIMG" onClick={searchStart} alt="PF image" className=" rounded-2xl cursor-pointer"/>
+                                <img src={TEAMROUNDIMG} name="RIVLMEDIALOGOIMG" onClick={searchStart} alt="PF image" className=" rounded-2xl cursor-pointer"/>
                                 <h2 className="text-xl font-bold mt-3"></h2>
                             </div>
                         </div>
@@ -319,40 +342,27 @@ const TeamComponent = () => {
                                 </div>
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="my-4">
-                                        <img src={KLEURIMG} name="KLEURIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
+                                        <img src={TEAMDAVIDIMG} name="KLEURIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold">Kleurenschema en Typografie: </h2>
-                                                <p className="text-sm ">Er is een harmonieus kleurenpalet ontwikkeld dat de merkidentiteit van RIVL Media versterkt.</p>
+                                                <h2 className="text-xl font-semibold">Layout: </h2>
+                                                <p className="text-sm ">Ik heb ervoor gekozen om een dynamische layout te bouwen waarin met verschillende elementen diepte wordt gecre&#235;erd. Wanneer je een ander teamlid worden alle elementen via animaties vervangen.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">De gekozen typografie straalt moderniteit en toegankelijkheid uit, wat het leesgemak vergroot.</p>
+                                                <p className="text-sm mt-1">De positie van de elementen veranderd als je een ander teamlid aanklikt. Zo verveelt het design niet en oogt het lekker fris telkens als je een andere aanklikt.</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="my-4">
-                                        <img src={DYNAMISCHIMG} name="DYNAMISCHIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
+                                        <img src={TEAMBIANCAIMG} name="DYNAMISCHIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">Dynamische Elementen: </h2>
-                                                <p className="text-sm">Het gebruik van hoogwaardige afbeeldingen, subtiele animaties en video’s maakt de website levendig en engaging.</p>
+                                                <h2 className="text-xl font-semibold ">Tekst Elementen: </h2>
+                                                <p className="text-sm">In plaats van heel veel nietszeggende teksten die waarschijnlijk toch niemand leest heb ik gekozen om korte statements neer te zetten.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Hierdoor voelen bezoekers zich sneller vertrouwd met de website, wat de kans vergroot dat ze terugkeren of overgaan tot actie.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="mt-4">
-                                        <img src={STRAKIMG} name="STRAKIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">Strak en Gecontroleerd: </h2>
-                                                <p className="text-sm">Overbodige elementen zijn verwijderd om een heldere en overzichtelijke lay-out te creëren. Hierdoor komen de belangrijkste boodschappen beter naar voren.</p>
-                                            </div>
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Deze benadering zorgt ervoor dat bezoekers niet worden afgeleid, wat de navigatie vereenvoudigt en de gebruikerservaring aanzienlijk versterkt.</p>
+                                                <p className="text-sm mt-1">Zo zie je in &#233;&#233;n oogopslag de rol die de persoon in het team vervult, een persoonlijk statement en de kwaliteiten die iemand beheerst.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -362,83 +372,46 @@ const TeamComponent = () => {
 
                             <div className="common-padding px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 ">
                                 <div className="md:text-4xl text-xl font-bold md:leading-[3rem] leading-[1.6rem] italic">
-                                    <p className="t_slide">&ldquo;Het design van de website speelt een cruciale rol in hoe bezoekers RIVL Media ervaren. Bij het herontwerpen is er gefocust op het creëren van een visueel aantrekkelijke en professionele uitstraling die naadloos aansluit bij de missie en waarden van het bedrijf.&ldquo;</p>
+                                    <p className="t_slide">&ldquo;Uiteraard moet de website ook via mobiele apparaten goed te navigeren zijn. Een groot deel van de tijd is dan ook besteed aan het optimaliseren van de mobiele pagina.&ldquo;</p>
                                 </div>
                             </div>
 
                             <div id="UX/UI" className="common-padding !px-0 flex flex-row justify-between items-start h-100%">
                                 <div id="" className="max-w-[15%] sticky top-2">
                                     <div className="relative md:rotate-0 md:translate-y-0 -rotate-90 sm:translate-y-24 translate-y-20">
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">UX/UI</h2>
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">UX/UI</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">Mobile</h2>
+                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">Mobile</h2>
                                     </div>
                                 </div>
                                 <div className="flex flex-col md:max-w-[80%] max-w-[90%]">
                                     <div className="my-4" >
-                                        <img src={INTERACTIESIMG} name="INTERACTIESIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
+                                        <img src={TEAMMOBILEIMG} name="INTERACTIESIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
                                         <div className="flex md:flex-row flex-col gap-3 mt-2">
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">Geoptimaliseerde Interacties: </h2>
-                                                <p className="text-sm">Call-to-actions, zoals knoppen en formulieren, zijn strategisch geplaatst en duidelijk zichtbaar. Dit verhoogt de conversieratio en stimuleert interactie met bezoekers.</p>
+                                                <h2 className="text-xl font-semibold ">Versimpelen: </h2>
+                                                <p className="text-sm">Omdat mobiele apparaten vaak een kleiner oppervlak hebben om dezelfde informatie weer te geven moet je ervoor zorgen dat je een minimaal aantal elementen tegelijk laat zien om de bezoeker niet te overweldigen met informatie.</p>
                                             </div>
                                             <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Door gebruik te maken van visuele hiërarchie en voldoende witruimte, worden bezoekers subtiel maar effectief geleid naar de gewenste acties.</p>
+                                                <p className="text-sm mt-1">Een deel van de elementen van de desktop website is dan ook niet te zien op de mobiele pagina om het overzichtelijk te houden. Toch heeft het design er niet onder geleden en voelen beide website varianten als &#233;&#233;n geheel</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="my-4">
-                                        <img src={MOBILEIMG} name="MOBILEIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <h2 className="text-xl font-semibold ">Mobile-first Design: </h2>
-                                                <p className="text-sm">De website is volledig responsief en biedt een naadloze ervaring op alle apparaten. Of je nu op een desktop, tablet of smartphone kijkt, de website past zich moeiteloos aan.</p>
-                                            </div>
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                <p className="text-sm mt-1">Dit is essentieel in een tijd waarin een groot deel van je bezoekers de website op een telefoon of tablet bekijkt.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            
-                            <div id="SEO" className="common-padding !px-0 flex flex-row justify-between items-start h-100%">
-                                <div id="" className="max-w-[15%] sticky top-2">
-                                    <div className="relative md:rotate-0 md:translate-y-0 -rotate-90 sm:translate-y-24 translate-y-20">
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold absolute opacity-0 z-10 text_light">SEO</h2>
-                                        <h2 className="lg:text-4xl md:text-3xl sm:text-2xl font-bold text-gray-500 absolute text_dark">SEO</h2>
-                                    </div>
-                                </div>
-                                <div  className="flex flex-col md:max-w-[80%] max-w-[90%]">
-                                    <div className="mt-4">
-                                        <img src={RIVLMEDIASEOIMG} name="RIVLMEDIABANNERIMG" onClick={searchStart} alt="PF image" className="rounded-2xl i_fade cursor-pointer"/>
-                                        <div className="flex md:flex-row flex-col gap-3 mt-2">
-                                            <div className="flex flex-col flex-1 t_slide_up">
-                                                    <h2 className="text-xl font-semibold">Technische Optimalisaties: </h2>
-                                                    <p className="text-sm ">De laadsnelheid is verhoogd door bestanden te comprimeren, caching toe te passen en onnodige scripts te verwijderen. Ook is de site-structuur verbeterd, wat niet alleen gebruikers maar ook zoekmachines helpt om de inhoud beter te begrijpen.</p>
-                                                </div>
-                                                <div className="flex flex-col flex-1 t_slide_up">
-                                                    <h2 className="text-xl font-semibold">Gerichte Contentstrategie:</h2>
-                                                    <p className="text-sm ">Door uitgebreid zoekwoordonderzoek is bepaald welke termen de doelgroep van RIVL Media gebruikt. Vervolgens zijn deze geïntegreerd in de tekst, meta-titels, en beschrijvingen zonder afbreuk te doen aan de leesbaarheid en kwaliteit van de content.</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
                             <div className="">
                                 <div className="px-0 md:px-28 flex flex-row justify-start items-start h-100% gap-16 t_slide">
                                     <div className="flex-1 flex text-sm">
-                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">&ldquo;De website van RIVL Media is een krachtig instrument geworden om nieuwe klanten aan te trekken en bestaande relaties te versterken.&ldquo;</p>
+                                        <p className="md:text-4xl text-xl font-bold md:leading-[3rem] italic leading-[1.6rem]">&ldquo;De website heeft een dynamische originele uitstraling waarin het design niet afleidt van de inhoud.&ldquo;</p>
                                     </div>
                                 </div>
                                 <div className="flex md:flex-row flex-col gap-3 mt-2 md:px-28">
                                     <div className="flex flex-col flex-1 t_slide_up">
-                                        <p className="text-sm ">Met een slimme combinatie van visueel aantrekkelijk design en strategische content biedt de website een optimale gebruikerservaring die bezoekers inspireert en overtuigt. Door heldere navigatie en boeiende call-to-actions wordt het voor potentiële klanten eenvoudig om de diensten van RIVL Media te ontdekken en contact op te nemen.</p>
+                                        <p className="text-sm ">Door slim gebruik te maken van bepaalde design technieken krijgt de bezoeker alle informatie tot zich die een saai ogende tekst ook had bevat.</p>
                                     </div>
                                     <div className="flex flex-col flex-1 t_slide_up">
-                                        <p className="text-sm ">De website fungeert als een overtuigend visitekaartje dat direct vertrouwen wekt. Dankzij duidelijke informatie over diensten, succesverhalen en een professioneel design krijgen bezoekers een helder beeld van de waarde die RIVL Media kan bieden, waardoor ze worden aangemoedigd om de eerste stap te zetten naar een samenwerking.</p>
+                                        <p className="text-sm ">Door het gebruik van slimme technische oplossingen wordt de gebruiker naar de juiste informatie geleid.</p>
                                     </div>
                                 </div>
                             </div>

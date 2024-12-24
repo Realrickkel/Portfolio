@@ -301,7 +301,7 @@ useEffect(() => {
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                         <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
                                                     </div>
-                                                    <div className="flex flex-row mt-0">
+                                                    <div className="flex flex-row mt-2">
                                                         <li><img src={REACTIMG} alt="React image" className="tech-used !ms-0"/></li>
                                                         <li><img src={GSAPIMG} alt="GSAP image" className="tech-used"/></li>
                                                         <li><img src={THREEIMG} alt="Three.js image" className="tech-used"/></li>
@@ -314,7 +314,7 @@ useEffect(() => {
                                     <div className="lg:hidden justify-center">
                                         <div className="grid grid-cols-2 mt-5 gap-8">
                                             <div className="me-3">
-                                                <h3 className="font-semibold">Verbeterpunten</h3>
+                                                <h3 className="font-semibold">Focuspunten</h3>
                                                 <ul className="mt-0">
                                                     <li>GSAP,</li>
                                                     <li>Three.js,</li>
@@ -345,7 +345,7 @@ useEffect(() => {
                                                         <li><img src={CSSIMG} alt="CSS image" className="tech-used"/></li>
                                                         <li><img src={JSIMG} alt="Javascript image" className="tech-used"/></li>
                                                     </div>
-                                                    <div className="flex flex-row mt-0">
+                                                    <div className="flex flex-row mt-2">
                                                         <li><img src={REACTIMG} alt="React image" className="tech-used !ms-0"/></li>
                                                         <li><img src={GSAPIMG} alt="GSAP image" className="tech-used"/></li>
                                                         <li><img src={THREEIMG} alt="Three.js image" className="tech-used"/></li>

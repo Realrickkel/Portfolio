@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react'
-import { APPLEMOCKUPIMG, CSSIMG, FILMREVIEWMOCKUPIMG, GSAPIMG, HTMLIMG, JAVASCRIPTMOCKUPIMG, JSIMG, ONLINEIDMOCKUPIMG, REACTIMG, RIVLMEDIAMOCKUPIMG, THREEIMG, WORDIMG } from "../utils"
+import { APPLEMOCKUPIMG, CSSIMG, FILMREVIEWMOCKUPIMG, GSAPIMG, HTMLIMG, JAVASCRIPTMOCKUPIMG, JSIMG, ONLINEIDMOCKUPIMG, REACTIMG, RIVLMEDIAMOCKUPIMG, TEAMLANDINGIMG, THREEIMG, WORDIMG } from "../utils"
 
 import { ScrollTrigger } from "gsap/all";
 import { useContext, useEffect, useRef, useState } from "react";
@@ -278,7 +278,7 @@ const Projects = () => {
               </div>
               <div id="experience-img6" className="experience-img" onMouseEnter={() => setHover6(true)} onMouseLeave={() => setHover6(false)}>
               <NavLink to="/teampage">
-                <img src={FILMREVIEWMOCKUPIMG} alt="PF image" className="img-exp" loading="eager"/>
+                <img src={TEAMLANDINGIMG} alt="PF image" className="img-exp" loading="eager"/>
                 <div className="flex flex-row justify-between mt-1">
                   <div className="max-w-[70%]">
                     <h3 className="text-base font-bold">Team Pagina</h3>

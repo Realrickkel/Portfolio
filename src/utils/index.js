@@ -11,6 +11,12 @@ import Projectsimg from "/assets/images/Icons-Projects.svg";
 import Experienceimg from "/assets/images/Icons-Experience.svg";
 import Aboutimg from "/assets/images/Icons-About.svg";
 
+import TeamLanding from "/assets/images/LandingPageWEBP.webp";
+import TeamDavid from "/assets/images/DavidTeamWEBP.webp";
+import TeamBianca from "/assets/images/BiancaTeamWEBP.webp";
+import TeamMobile from "/assets/images/TeamSiteMobileWEBP.webp";
+import TeamRound from "/assets/images/TeamRoundWEBP.webp";
+
 import RIVLMEDIAMOCKUPimg from "/assets/images/RIVLMEDIA_Mockupv2WEBP.webp";
 import APPLEMOCKUPimg from "/assets/images/Apple_MockupWEBP.webp";
 import OnlineIDMOCKUPimg from "/assets/images/OnlineID_Mockupv2WEBP.webp";
@@ -80,6 +86,12 @@ export const HOMEIMG = Homeimg;
 export const PROJECTIMG = Projectsimg;
 export const EXPERIENCEIMG = Experienceimg;
 export const ABOUTIMG = Aboutimg;
+
+export const TEAMLANDINGIMG = TeamLanding;
+export const TEAMDAVIDIMG = TeamDavid;
+export const TEAMBIANCAIMG = TeamBianca;
+export const TEAMMOBILEIMG = TeamMobile;
+export const TEAMROUNDIMG = TeamRound;
 
 export const RIVLMEDIAMOCKUPIMG = RIVLMEDIAMOCKUPimg;
 export const APPLEMOCKUPIMG = APPLEMOCKUPimg;
